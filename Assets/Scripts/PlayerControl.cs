@@ -21,6 +21,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            StartCoroutine(UnBeatTime());
+        }
+
         PlayerJump();
     }
 
@@ -42,6 +47,27 @@ public class PlayerControl : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         PlayerTransform.Translate(new Vector3(h, 0, 0) * Time.deltaTime * PlayerSpeed);
+    }
+
+    IEnumerator UnBeatTime()
+    {
+        int countTime = 0;
+
+        while(countTime < 10)
+        {
+            if (countTime % 2 == 0)
+                this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(0, 255, 105, 90);
+            else
+                this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(0, 255, 105, 180);
+
+            yield return new WaitForSeconds(0.2f);
+
+            countTime++;
+        }
+
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(0, 255, 105, 255);
+
+        yield return null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

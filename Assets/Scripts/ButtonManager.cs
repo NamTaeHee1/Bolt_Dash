@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
+    public GameObject StoreImage;
+
     public void ClickPlay()
     {
         Debug.Log("Play!");
@@ -12,6 +14,7 @@ public class ButtonManager : MonoBehaviour
     public void ClickStore()
     {
         Debug.Log("Store!");
+        StoreImage.SetActive(true);
     }
 
     public void ClickSetting()

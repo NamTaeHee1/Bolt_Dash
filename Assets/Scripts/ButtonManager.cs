@@ -5,6 +5,22 @@ using UnityEngine;
 public class ButtonManager : MonoBehaviour
 {
     public GameObject StoreImage;
+    [SerializeField]
+    GameObject StorePanelImage;
+    Animator StorePanelImageAnim;
+    [SerializeField]
+    GameObject StorePanelUpLine;
+    Animator StorePanelUpLineAnim;
+    [SerializeField]
+    GameObject StorePanelDownLine;
+    Animator StorePanelDownLineAnim;
+
+    private void Start()
+    {
+        StorePanelImageAnim = StorePanelImage.GetComponent<Animator>();
+        StorePanelUpLineAnim = StorePanelUpLine.GetComponent<Animator>();
+        StorePanelDownLineAnim = StorePanelDownLine.GetComponent<Animator>();
+    }
 
     public void ClickPlay()
     {

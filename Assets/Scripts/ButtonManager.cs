@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonManager : MonoBehaviour
 {
     public GameObject StoreImage;
+    public GameObject StoreObject;
     [SerializeField]
     GameObject StorePanelImage;
     Animator StorePanelImageAnim;
@@ -31,7 +32,11 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Store!");
         StoreImage.SetActive(true);
-    }
+        StorePanelImageAnim.SetBool("isON", true);
+        StorePanelUpLineAnim.SetBool("isON", true);
+        StorePanelDownLineAnim.SetBool("isON", true);
+        Invoke("ShowStoreItem", 0.73f);
+}
 
     public void ClickSetting()
     {
@@ -41,5 +46,24 @@ public class ButtonManager : MonoBehaviour
     public void ClickAcade()
     {
         Debug.Log("Acade!");
+    }
+
+    public void StoreClickBackButton()
+    {
+        StoreObject.SetActive(false);
+        StorePanelImageAnim.SetBool("isON", false);
+        StorePanelUpLineAnim.SetBool("isON", false);
+        StorePanelDownLineAnim.SetBool("isON", false);
+        Invoke("ExitStore", 0.75f);
+    }
+
+    void ExitStore()
+    {
+        StoreImage.SetActive(false);
+    }
+
+    void ShowStoreItem()
+    {
+        StoreObject.SetActive(true);
     }
 }

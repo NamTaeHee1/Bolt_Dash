@@ -844,6 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ade179b599f35649bcb317f8873933e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StoreButton: {fileID: 2135484749}
   StoreImage: {fileID: 1990257786054710076}
   StoreObject: {fileID: 1499582780}
   StorePanelImage: {fileID: 3549624222765190119}
@@ -2130,7 +2131,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 894493349bc6b8842a1b6bd0d985fd04, type: 3}
   m_Color: {r: 0.7607844, g: 0.80392164, b: 0.9058824, a: 1}
   m_FlipX: 0

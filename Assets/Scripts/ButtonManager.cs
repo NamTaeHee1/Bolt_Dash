@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
+    public Button StoreButton;
     public GameObject StoreImage;
     public GameObject StoreObject;
     [SerializeField]
@@ -35,6 +37,7 @@ public class ButtonManager : MonoBehaviour
         StorePanelImageAnim.SetBool("isON", true);
         StorePanelUpLineAnim.SetBool("isON", true);
         StorePanelDownLineAnim.SetBool("isON", true);
+        StoreButton.interactable = false;
         Invoke("ShowStoreItem", 0.73f);
 }
 
@@ -60,6 +63,7 @@ public class ButtonManager : MonoBehaviour
     void ExitStore()
     {
         StoreImage.SetActive(false);
+        StoreButton.interactable = true;
     }
 
     void ShowStoreItem()

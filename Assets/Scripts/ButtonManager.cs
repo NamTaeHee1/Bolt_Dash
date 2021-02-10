@@ -49,6 +49,7 @@ public class ButtonManager : MonoBehaviour
     public void ClickAcade()
     {
         Debug.Log("Acade!");
+        FindObjectOfType<AcadeManager>().GetComponent<AcadeManager>().isAcadeOn = true;
     }
 
     public void StoreClickBackButton()

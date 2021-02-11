@@ -17,6 +17,6 @@ public class AcadeManager : MonoBehaviour
     void Update()
     {
         if (isAcadeOn)
-            CameraTransform.position = Vector3.Lerp(CameraTransform.position, TargetPosition, 0.01f);
+            CameraTransform.position = Vector3.Lerp(CameraTransform.position, TargetPosition, 0.02f);
     }
 }

@@ -26,7 +26,7 @@ public class ButtonManager : MonoBehaviour
     public void ClickAcade()
     {
         Debug.Log("Acade!");
-        FindObjectOfType<AcadeManager>().isAcadeOn = true;
+        FindObjectOfType<AcadeManager>().ClickAcade();
     }
 
 }

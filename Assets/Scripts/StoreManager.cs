@@ -25,12 +25,6 @@ public class StoreManager : MonoBehaviour
         StorePanelDownLineAnim = StorePanelDownLine.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ClickStore()
     {
         StoreImage.SetActive(true);
@@ -41,7 +35,7 @@ public class StoreManager : MonoBehaviour
         Invoke("ShowStoreItem", 0.73f);
     }
 
-    void StoreClickBackButton()
+    public void StoreClickBackButton()
     {
         StoreObject.SetActive(false);
         StorePanelImageAnim.SetBool("isON", false);

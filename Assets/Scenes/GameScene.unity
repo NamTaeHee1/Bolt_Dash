@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &22889076
 Transform:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22889075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.025087751, y: 0.47789443, z: -583.1162}
+  m_LocalPosition: {x: 0.04, y: 0.47789443, z: -583.1162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 277502433472921259}
@@ -521,7 +521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &221851665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,6 +538,7 @@ MonoBehaviour:
   LeftThorn: {fileID: 3525771644181259697}
   RightThorn: {fileID: 4129704538011539232}
   StartPosition: {fileID: 2108944440}
+  ObjectSpeed: 0.01
 --- !u!4 &221851666
 Transform:
   m_ObjectHideFlags: 0
@@ -1128,7 +1129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &417832807
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1657,6 +1658,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &866950083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866950085}
+  - component: {fileID: 866950084}
+  m_Layer: 0
+  m_Name: StoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &866950084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866950083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e118efefb91faa240aa43adbca1cd02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoreButton: {fileID: 2135484749}
+  StoreImage: {fileID: 1990257786054710076}
+  StoreObject: {fileID: 1499582780}
+  StorePanelImage: {fileID: 3549624222765190119}
+  StorePanelUpLine: {fileID: 2917231500323488429}
+  StorePanelDownLine: {fileID: 974137994432503053}
+--- !u!4 &866950085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866950083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.092616946, y: 0.3206179, z: -15.0395355}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027705517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,8 +2099,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 322605305}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 866950084}
+        m_TargetAssemblyTypeName: StoreManager, Assembly-CSharp
         m_MethodName: StoreClickBackButton
         m_Mode: 1
         m_Arguments:
@@ -3189,7 +3239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2108944441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6671,7 +6721,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: a0df6f38daebdea4b88b4fa81d7dfd9b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -6986,7 +7036,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 737356363027246077}
-  - component: {fileID: 1990257786054710077}
   m_Layer: 0
   m_Name: Store
   m_TagString: Untagged
@@ -6994,24 +7043,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1990257786054710077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990257786054710076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e118efefb91faa240aa43adbca1cd02e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StoreButton: {fileID: 0}
-  StoreImage: {fileID: 0}
-  StoreObject: {fileID: 0}
-  StorePanelImage: {fileID: 0}
-  StorePanelUpLine: {fileID: 0}
-  StorePanelDownLine: {fileID: 0}
 --- !u!4 &1995503696239644929
 Transform:
   m_ObjectHideFlags: 0
@@ -10156,7 +10187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &3534000440284068700
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11173,7 +11204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &4166168968943569626
 GameObject:
   m_ObjectHideFlags: 0
@@ -13928,7 +13959,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: -971417866265645156, guid: 3caff4cc8c093534da16c530bbf4f98b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17313,7 +17344,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: -971417866265645156, guid: 3caff4cc8c093534da16c530bbf4f98b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

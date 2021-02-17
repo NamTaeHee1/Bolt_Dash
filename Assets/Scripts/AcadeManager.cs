@@ -5,7 +5,8 @@ using UnityEngine;
 public class AcadeManager : MonoBehaviour
 {
     public bool isAcadeOn = false;
-    Vector3 TargetPosition = new Vector3(5.62f, 0, 0);
+    [SerializeField]
+    Vector3 TargetPosition = new Vector3(5.62f, 0, -10);
     Transform CameraTransform;
 
     private void Start()
@@ -21,13 +22,14 @@ public class AcadeManager : MonoBehaviour
 
     public void ClickAcadeBackClick()
     {
-        TargetPosition = new Vector3(0, 0, 0);
+        Debug.Log("Click");
+        TargetPosition = new Vector3(0, 0, -10);
     }
 
     public void ClickAcade()
     {
         isAcadeOn = true;
-        TargetPosition = new Vector3(5.62f, 0, 0);
+        TargetPosition = new Vector3(5.62f, 0, -10);
     }
 
 }

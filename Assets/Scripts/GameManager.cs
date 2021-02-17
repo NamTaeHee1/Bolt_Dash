@@ -21,9 +21,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameStarted)
+        {
+            LeftThorn.SetActive(true);
+            RightThorn.SetActive(true);
+            StartPosition.SetActive(true);
             LeftThornTransform.position = Vector3.Lerp(LeftThornTransform.position, new Vector3(0, LeftThornTransform.position.y, LeftThornTransform.position.z), ObjectSpeed);
             RightThornTransform.position = Vector3.Lerp(RightThornTransform.position, new Vector3(0, RightThornTransform.position.y, RightThornTransform.position.z), ObjectSpeed);
             StartPositionTransform.position = Vector3.Lerp(StartPositionTransform.position, new Vector3(StartPositionTransform.position.x, -4.7f, StartPositionTransform.position.z), ObjectSpeed);
+        }
+        else
+        {
+            LeftThorn.SetActive(false);
+            RightThorn.SetActive(false);
+            StartPosition.SetActive(false);
+        }
     }
 
 

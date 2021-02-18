@@ -1688,7 +1688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e118efefb91faa240aa43adbca1cd02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StoreButton: {fileID: 2135484749}
+  Buttons:
+  - {fileID: 279804311}
+  - {fileID: 2135484749}
+  - {fileID: 269455636}
+  - {fileID: 1571521278}
   StoreImage: {fileID: 1990257786054710076}
   StoreObject: {fileID: 1499582780}
   StorePanelImage: {fileID: 3549624222765190119}

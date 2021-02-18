@@ -23,12 +23,7 @@ public class GameManager : MonoBehaviour
     {
         if (GameStarted)
         {
-            LeftThorn.SetActive(true);
-            RightThorn.SetActive(true);
-            StartPosition.SetActive(true);
-            LeftThornTransform.position = Vector3.Lerp(LeftThornTransform.position, new Vector3(0, LeftThornTransform.position.y, LeftThornTransform.position.z), ObjectSpeed);
-            RightThornTransform.position = Vector3.Lerp(RightThornTransform.position, new Vector3(0, RightThornTransform.position.y, RightThornTransform.position.z), ObjectSpeed);
-            StartPositionTransform.position = Vector3.Lerp(StartPositionTransform.position, new Vector3(StartPositionTransform.position.x, -4.7f, StartPositionTransform.position.z), ObjectSpeed);
+            GameStart();
         }
         else
         {
@@ -41,8 +36,11 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-/*        LeftThorn.transform.position = Vector3.Lerp(LeftThronPosition, new Vector3(0, LeftThronPosition.y, LeftThronPosition.z), 0.2f);
-        RightThorn.transform.position = Vector3.Lerp(RightThornPosition, new Vector3(0, RightThornPosition.y, LeftThronPosition.z), 0.2f);
-        StartPosition.transform.position = Vector3.Lerp(StartPositionPosition, new Vector3(StartPositionPosition.x, -4.7f, LeftThronPosition.z), 0.2f);*/
+        LeftThorn.SetActive(true);
+        RightThorn.SetActive(true);
+        StartPosition.SetActive(true);
+        LeftThornTransform.position = Vector3.Lerp(LeftThornTransform.position, new Vector3(0, LeftThornTransform.position.y, LeftThornTransform.position.z), ObjectSpeed);
+        RightThornTransform.position = Vector3.Lerp(RightThornTransform.position, new Vector3(0, RightThornTransform.position.y, RightThornTransform.position.z), ObjectSpeed);
+        StartPositionTransform.position = Vector3.Lerp(StartPositionTransform.position, new Vector3(StartPositionTransform.position.x, -4.7f, StartPositionTransform.position.z), ObjectSpeed);
     }
 }

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     Transform LeftThornTransform, RightThornTransform, StartPositionTransform;
     [SerializeField]
     private float ObjectSpeed = 0.5f;
+    public GameObject[] gameObjects;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,5 +43,10 @@ public class GameManager : MonoBehaviour
         LeftThornTransform.position = Vector3.Lerp(LeftThornTransform.position, new Vector3(0, LeftThornTransform.position.y, LeftThornTransform.position.z), ObjectSpeed);
         RightThornTransform.position = Vector3.Lerp(RightThornTransform.position, new Vector3(0, RightThornTransform.position.y, RightThornTransform.position.z), ObjectSpeed);
         StartPositionTransform.position = Vector3.Lerp(StartPositionTransform.position, new Vector3(StartPositionTransform.position.x, -4.7f, StartPositionTransform.position.z), ObjectSpeed);
+
+        for(int i = 0; i < gameObjects.Length; i++)
+        {
+            gameObjects[i].GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
     }
 }

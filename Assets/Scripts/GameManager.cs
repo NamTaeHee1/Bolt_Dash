@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject LeftThorn, RightThorn, StartPosition;
     Transform LeftThornTransform, RightThornTransform, StartPositionTransform;
-    RectTransform BestScoreRectTransform;
-    Vector3 BestScoreTargetPosition;
     [SerializeField]
     private float ObjectSpeed = 0.5f;
     public GameObject[] gameObjects;
@@ -20,8 +18,7 @@ public class GameManager : MonoBehaviour
         LeftThornTransform = LeftThorn.GetComponent<Transform>();
         RightThornTransform = RightThorn.GetComponent<Transform>();
         StartPositionTransform = StartPosition.GetComponent<Transform>();
-        BestScoreRectTransform = gameObjects[2].GetComponent<RectTransform>();
-        BestScoreTargetPosition = new Vector3(BestScoreRectTransform.localPosition.x, -956, BestScoreRectTransform.localPosition.z);
+        StartCoroutine(WaitAnimation());
     }
 
     // Update is called once per frame
@@ -30,7 +27,6 @@ public class GameManager : MonoBehaviour
         if (GameStarted)
         {
             GameStart();
-            SettingBestScore();
         }
         else
         {
@@ -54,6 +50,7 @@ public class GameManager : MonoBehaviour
         {
             gameObjects[0].GetComponent<Rigidbody2D>().AddForce(Vector2.right * ObjectSpeed, ForceMode2D.Impulse);
             gameObjects[1].GetComponent<Rigidbody2D>().AddForce(Vector2.left * ObjectSpeed, ForceMode2D.Impulse);
+            gameObjects[2].GetComponent<Animator>().SetBool("isGameStart", true);
             gameObjects[3].GetComponent<Rigidbody2D>().AddForce(Vector2.down * ObjectSpeed, ForceMode2D.Impulse);
             gameObjects[4].GetComponent<Rigidbody2D>().AddForce(Vector2.down * ObjectSpeed, ForceMode2D.Impulse);
             gameObjects[5].GetComponent<Rigidbody2D>().AddForce(Vector2.down * ObjectSpeed, ForceMode2D.Impulse);
@@ -65,8 +62,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void SettingBestScore()
+
+    IEnumerator WaitAnimation()
     {
-        BestScoreRectTransform.localPosition = Vector3.Lerp(BestScoreRectTransform.position, BestScoreTargetPosition, ObjectSpeed);
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("1");
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("2");
     }
+
 }

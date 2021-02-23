@@ -21,6 +21,7 @@ public class ButtonManager : MonoBehaviour
     public void ClickSetting()
     {
         Debug.Log("Setting!");
+        FindObjectOfType<SettingManager>().ClickSetting();
     }
 
     public void ClickAcade()

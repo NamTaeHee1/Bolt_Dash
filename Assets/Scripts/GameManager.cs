@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
         if (GameStarted)
         {
-            GameStart();
+            BeforeTheGameStarts();
         }
         else
         {
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void GameStart()
+    public void BeforeTheGameStarts()
     {
         LeftThorn.SetActive(true);
         RightThorn.SetActive(true);

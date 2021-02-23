@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StoreManager : MonoBehaviour
 {
     public Button[] Buttons;
-    public GameObject StoreImage;
+    public GameObject StoreParents;
     public GameObject StoreObject;
     [SerializeField]
     GameObject StorePanelImage;
@@ -27,7 +27,7 @@ public class StoreManager : MonoBehaviour
 
     public void ClickStore()
     {
-        StoreImage.SetActive(true);
+        StoreParents.SetActive(true);
         StorePanelImageAnim.SetBool("isON", true);
         StorePanelUpLineAnim.SetBool("isON", true);
         StorePanelDownLineAnim.SetBool("isON", true);
@@ -49,7 +49,7 @@ public class StoreManager : MonoBehaviour
 
     void ExitStore()
     {
-        StoreImage.SetActive(false);
+        StoreParents.SetActive(false);
         for (int i = 0; i < Buttons.Length; i++)
         {
             Buttons[i].interactable = true;

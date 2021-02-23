@@ -8,6 +8,8 @@ public class AcadeManager : MonoBehaviour
     [SerializeField]
     Vector3 TargetPosition = new Vector3(5.62f, 0, -10);
     Transform CameraTransform;
+    [SerializeField]
+    float CameraSpeed = 0.06f;
 
     private void Start()
     {
@@ -17,7 +19,7 @@ public class AcadeManager : MonoBehaviour
     void Update()
     {
         if (isAcadeOn)
-            CameraTransform.position = Vector3.Lerp(CameraTransform.position, TargetPosition, 0.02f);
+            CameraTransform.position = Vector3.Lerp(CameraTransform.position, TargetPosition, CameraSpeed);
     }
 
     public void ClickAcadeBackClick()

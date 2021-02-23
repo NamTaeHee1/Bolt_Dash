@@ -35,7 +35,7 @@ public class StoreManager : MonoBehaviour
         {
             Buttons[i].interactable = false;
         }
-        Invoke("ShowStoreItem", 0.73f);
+        Invoke("ShowStoreItem", 0.63f);
     }
 
     public void StoreClickBackButton()
@@ -44,7 +44,7 @@ public class StoreManager : MonoBehaviour
         StorePanelImageAnim.SetBool("isON", false);
         StorePanelUpLineAnim.SetBool("isON", false);
         StorePanelDownLineAnim.SetBool("isON", false);
-        Invoke("ExitStore", 0.75f);
+        Invoke("ExitStore", 0.65f);
     }
 
     void ExitStore()

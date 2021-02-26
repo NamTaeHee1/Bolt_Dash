@@ -1,2 +1,2 @@
-# Light_Jump
+# Light_Dash
 [2021.01 ~ 2021.02] 유니티 2D 프로젝트

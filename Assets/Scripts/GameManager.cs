@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject LeftThorn, RightThorn, StartPosition;
     Transform LeftThornTransform, RightThornTransform, StartPositionTransform;
-    [SerializeField]
-    private float ObjectSpeed = 0.5f;
     public GameObject[] gameObjects;
     // Start is called before the first frame update
     void Start()

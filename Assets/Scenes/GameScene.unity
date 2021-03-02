@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 269455638}
   - component: {fileID: 269455637}
   - component: {fileID: 269455636}
-  - component: {fileID: 269455640}
+  - component: {fileID: 269455639}
   m_Layer: 5
   m_Name: AcadeButton
   m_TagString: Untagged
@@ -860,7 +860,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269455634}
   m_CullTransparentMesh: 1
---- !u!95 &269455640
+--- !u!95 &269455639
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1177,6 +1177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ade179b599f35649bcb317f8873933e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Buttons:
+  - {fileID: 279804311}
+  - {fileID: 2135484749}
+  - {fileID: 269455636}
+  - {fileID: 1571521278}
 --- !u!4 &322605306
 Transform:
   m_ObjectHideFlags: 0
@@ -2944,7 +2949,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAcadeOn: 0
   TargetPosition: {x: 5.62, y: 0, z: -10}
-  CameraSpeed: 0.04
+  CameraSpeed: 0.15
+  Buttons:
+  - {fileID: 279804311}
+  - {fileID: 2135484749}
+  - {fileID: 269455636}
+  - {fileID: 1571521278}
 --- !u!4 &1128005359
 Transform:
   m_ObjectHideFlags: 0

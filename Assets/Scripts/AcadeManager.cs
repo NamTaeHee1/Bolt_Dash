@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AcadeManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class AcadeManager : MonoBehaviour
     Transform CameraTransform;
     [SerializeField]
     float CameraSpeed = 0.06f;
+    [SerializeField]
+    Button[] Buttons;
 
     private void Start()
     {
@@ -26,6 +29,8 @@ public class AcadeManager : MonoBehaviour
     {
         Debug.Log("Click");
         TargetPosition = new Vector3(0, 0, -10);
+        for (int i = 0; i < 4; i++)
+            Buttons[i].interactable = true;
     }
 
     public void ClickAcade()

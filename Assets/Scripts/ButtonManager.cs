@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
-
+    [SerializeField]
+    Button[] Buttons;
     public void ClickPlay()
     {
         Debug.Log("Play!");
@@ -27,8 +28,10 @@ public class ButtonManager : MonoBehaviour
     public void ClickAcade()
     {
         Debug.Log("Acade!");
+        for (int i = 0; i < 4; i++)
+            Buttons[i].interactable = false;
         FindObjectOfType<AcadeManager>().ClickAcade();
-        FindObjectOfType<AcadeManager>().GetComponent<Animator>().SetBool("isClick", true);
+        Buttons[2].GetComponent<Animator>().SetTrigger("Pressed");
     }
 
 }

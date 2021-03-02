@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject LeftThorn, RightThorn, StartPosition;
     Transform LeftThornTransform, RightThornTransform, StartPositionTransform;
-    public GameObject[] gameObjects;
+    [SerializeField]
+    GameObject BestScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void BeforeTheGameStarts()
     {
-        
+        BestScore.GetComponent<Animator>().SetTrigger("GameStart");
     }
 
 

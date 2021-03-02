@@ -699,18 +699,7 @@ MonoBehaviour:
   LeftThorn: {fileID: 3525771644181259697}
   RightThorn: {fileID: 4129704538011539232}
   StartPosition: {fileID: 2108944440}
-  gameObjects:
-  - {fileID: 1417732697}
-  - {fileID: 729535774}
-  - {fileID: 1027705517}
-  - {fileID: 279804309}
-  - {fileID: 2135484747}
-  - {fileID: 269455634}
-  - {fileID: 1571521276}
-  - {fileID: 4196890191221725869}
-  - {fileID: 7116694270140812205}
-  - {fileID: 474734848}
-  - {fileID: 1741055366}
+  BestScore: {fileID: 1027705517}
 --- !u!4 &221851666
 Transform:
   m_ObjectHideFlags: 0
@@ -1486,8 +1475,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402589989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.017, y: 0, z: 0}
-  m_LocalScale: {x: 8.54, y: 0.0175, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 9.4, y: 0.0175, z: 1}
   m_Children:
   - {fileID: 834039405}
   m_Father: {fileID: 1711611182}
@@ -2436,8 +2425,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751232342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -0.03299999, z: 0}
-  m_LocalScale: {x: 17.274717, y: 1, z: 1}
+  m_LocalPosition: {x: -3.2596e-10, y: -0.03, z: 0}
+  m_LocalScale: {x: 17.2, y: 1, z: 1}
   m_Children:
   - {fileID: 46112544}
   - {fileID: 97280745}
@@ -2949,7 +2938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAcadeOn: 0
   TargetPosition: {x: 5.62, y: 0, z: -10}
-  CameraSpeed: 0.15
+  CameraSpeed: 0.1
   Buttons:
   - {fileID: 279804311}
   - {fileID: 2135484749}
@@ -3561,8 +3550,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596050753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0.033, z: 0}
-  m_LocalScale: {x: 17.274717, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.033, z: 0}
+  m_LocalScale: {x: 17.2, y: 1, z: 1}
   m_Children:
   - {fileID: 300116906}
   - {fileID: 424314326}

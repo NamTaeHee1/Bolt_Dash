@@ -51,9 +51,7 @@ public class SettingManager : MonoBehaviour
     {
         SettingParents.SetActive(false);
         for (int i = 0; i < Buttons.Length; i++)
-        {
             Buttons[i].interactable = true;
-        }
     }
 
     void ShowSettingItem()

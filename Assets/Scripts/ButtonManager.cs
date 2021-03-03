@@ -10,19 +10,24 @@ public class ButtonManager : MonoBehaviour
     public void ClickPlay()
     {
         Debug.Log("Play!");
+        for (int i = 0; i < 4; i++)
+            Buttons[i].interactable = false;
         FindObjectOfType<GameManager>().GameStarted = true;
+        Buttons[0].GetComponent<Animator>().SetTrigger("Pressed");
     }
 
     public void ClickStore()
     {
         Debug.Log("Store!");
         FindObjectOfType<StoreManager>().ClickStore();
+        Buttons[1].GetComponent<Animator>().SetTrigger("Pressed");
 }
 
     public void ClickSetting()
     {
         Debug.Log("Setting!");
         FindObjectOfType<SettingManager>().ClickSetting();
+        Buttons[3].GetComponent<Animator>().SetTrigger("Pressed");
     }
 
     public void ClickAcade()

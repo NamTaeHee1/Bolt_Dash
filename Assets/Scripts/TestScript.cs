@@ -4,22 +4,35 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
-    Transform tr;
-    Vector3 Target;
-    Vector3 BeforeTarget;
-    // Start is called before the first frame update
+    Rigidbody2D[] rigid;
+    [SerializeField]
+    GameObject prefab;
+
+    int RandomX, RandomY;
     void Start()
     {
-        tr = GetComponent<Transform>();
-        BeforeTarget = new Vector3(0, 3.5f, 0);
-        Target = new Vector3(0, -1, 0);
+        rigid = prefab.GetComponentsInChildren<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        tr.position = Vector3.Lerp(tr.position, BeforeTarget, 0.001f);
-        tr.position = Vector3.Lerp(tr.position, Target, 0.01f);
+        if (Input.GetMouseButtonDown(0))
+        {
+            for (int i = 0; i < rigid.Length; i++)
+                rigid[i].gravityScale = 1;
+            Explosion();
+        }
+    }
+
+    void Explosion()
+    {
+        for(int i = 0; i < rigid.Length; i++)
+        {
+            RandomX = (i >= (rigid.Length / 2) + 1) ? Random.Range(-5, -1) : Random.Range(1, 5);
+            RandomY = Random.Range(-5, 5);
+            Debug.Log("게임오브젝트 : " + rigid[i].gameObject.name + " " + "RandomVector3 : " + RandomX + ", " + RandomY + ", 0");
+            rigid[i].AddForce(new Vector3(RandomX, RandomY, 0) * 5.0f, ForceMode2D.Impulse);
+        }    
     }
 
 }

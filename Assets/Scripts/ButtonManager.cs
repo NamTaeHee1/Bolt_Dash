@@ -21,13 +21,6 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("Store!");
         FindObjectOfType<StoreManager>().ClickStore();
         Buttons[1].GetComponent<Animator>().SetTrigger("Pressed");
-}
-
-    public void ClickSetting()
-    {
-        Debug.Log("Setting!");
-        FindObjectOfType<SettingManager>().ClickSetting();
-        Buttons[3].GetComponent<Animator>().SetTrigger("Pressed");
     }
 
     public void ClickAcade()
@@ -38,5 +31,14 @@ public class ButtonManager : MonoBehaviour
         FindObjectOfType<AcadeManager>().ClickAcade();
         Buttons[2].GetComponent<Animator>().SetTrigger("Pressed");
     }
+
+    public void ClickSetting()
+    {
+        Debug.Log("Setting!");
+        FindObjectOfType<SettingManager>().ClickSetting();
+        Buttons[3].GetComponent<Animator>().SetTrigger("Pressed");
+    }
+
+
 
 }

@@ -17,6 +17,9 @@ public class StoreManager : MonoBehaviour
     [SerializeField]
     GameObject StorePanelDownLine;
     Animator StorePanelDownLineAnim;
+
+    static public Color32 CharacterColor;
+    static public Color32 InGameObjectColor;
     // Start is called before the first frame update
     void Start()
     {

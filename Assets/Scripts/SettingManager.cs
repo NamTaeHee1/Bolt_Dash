@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class SettingManager : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class SettingManager : MonoBehaviour
     [SerializeField]
     GameObject SettingPanelRightLine;
     Animator SettingPanelRightLineAnim;
+    [SerializeField]
+    Slider LightControlSlider, SoundControlSlider;
+    [SerializeField]
+    private PostProcessVolume activeVolume;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,5 +62,12 @@ public class SettingManager : MonoBehaviour
     void ShowSettingItem()
     {
         SettingObject.SetActive(true);
+    }
+
+    void LightControlSliderChangeValue()
+    {
+        Bloom bloom;
+        activeVolume.profile.TryGetSettings(out bloom);
+        
     }
 }

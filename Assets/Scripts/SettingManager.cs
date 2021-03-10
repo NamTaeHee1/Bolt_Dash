@@ -19,7 +19,9 @@ public class SettingManager : MonoBehaviour
     GameObject SettingPanelRightLine;
     Animator SettingPanelRightLineAnim;
     [SerializeField]
-    Slider LightControlSlider, SoundControlSlider;
+    Slider LightControlSlider, SoundEffectControlSlider, BGMSoundControlSlider;
+    [SerializeField]
+    Text LightControlSliderValueText, SoundEffectControlSliderValueText, BGMSoundControlSliderValueText;
     [SerializeField]
     private PostProcessVolume postProcessVolume;
     Bloom bloom;
@@ -72,10 +74,22 @@ public class SettingManager : MonoBehaviour
     {
         floatParameter.value = LightControlSlider.value;
         bloom.intensity.Override(floatParameter);
+        ShowValue(LightControlSlider, LightControlSliderValueText);
     }
 
-    IEnumerator ShowValue(Slider slider)
+    public void SoundEffectSliderChangeValue()
     {
+
+    }
+
+    public void BGMSoundSliderChangeValue()
+    {
+
+    }
+
+    IEnumerator ShowValue(Slider slider, Text sliderValueText)
+    {
+        sliderValueText.text = slider.value.ToString();
         yield return new WaitForSeconds(1.0f);
     }
 }

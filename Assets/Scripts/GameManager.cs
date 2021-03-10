@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject LeftThorn, RightThorn, StartPosition;
     Transform LeftThornTransform, RightThornTransform, StartPositionTransform;
-    TextMeshProUGUI BestScoreText;
+    static public TextMeshProUGUI BestScoreText;
     [SerializeField]
     GameObject[] GameObjects;
     bool GameStart = false;
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
             {
                 BeforeTheGameStart();
                 StartCoroutine(BestScoreToScore());
-                StartCoroutine(DestroyMenuObject());
+                StartCoroutine(SetActiveFalseMenuObject());
             }
         }
         else
@@ -66,10 +66,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    IEnumerator DestroyMenuObject()
+    IEnumerator SetActiveFalseMenuObject()
     {
         yield return new WaitForSeconds(3.0f);
         for (int i = 1; i < GameObjects.Length - 1; i++)
-            Destroy(GameObjects[i]);
+            GameObjects[i].SetActive(false);
     }
 }

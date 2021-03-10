@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerSocketExplsionEffect : MonoBehaviour
+public class PowerSocketEffect : MonoBehaviour
 {
     [SerializeField] private GameObject Prefab = null;
     [SerializeField] private float e_Force = 5.0f;

@@ -21,13 +21,17 @@ public class SettingManager : MonoBehaviour
     [SerializeField]
     Slider LightControlSlider, SoundControlSlider;
     [SerializeField]
-    private PostProcessVolume activeVolume;
+    private PostProcessVolume postProcessVolume;
+    Bloom bloom;
+    FloatParameter floatParameter;
     // Start is called before the first frame update
     void Start()
     {
         SettingPanelImageAnim = SettingPanelImage.GetComponent<Animator>();
         SettingPanelLeftLineAnim = SettingPanelLeftLine.GetComponent<Animator>();
         SettingPanelRightLineAnim = SettingPanelRightLine.GetComponent<Animator>();
+        bloom = postProcessVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.Bloom>();
+        floatParameter = new UnityEngine.Rendering.PostProcessing.FloatParameter();
     }
 
     public void ClickSetting()
@@ -64,10 +68,14 @@ public class SettingManager : MonoBehaviour
         SettingObject.SetActive(true);
     }
 
-    void LightControlSliderChangeValue()
+    public void LightControlSliderChangeValue()
     {
-        Bloom bloom;
-        activeVolume.profile.TryGetSettings(out bloom);
-        
+        floatParameter.value = LightControlSlider.value;
+        bloom.intensity.Override(floatParameter);
+    }
+
+    IEnumerator ShowValue(Slider slider)
+    {
+        yield return new WaitForSeconds(1.0f);
     }
 }

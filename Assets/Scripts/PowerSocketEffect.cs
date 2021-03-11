@@ -21,5 +21,7 @@ public class PowerSocketEffect : MonoBehaviour
             Debug.Log("게임오브젝트 : " + rigid[i].gameObject.name + " " + "RandomVector3 : " + RandomX + ", " + RandomY + ", 0");
             rigid[i].AddForce(new Vector3(RandomX, RandomY, 0) * e_Force, ForceMode2D.Impulse);
         }
+
+        Destroy(Prefab, 1.5f);
     }
 }

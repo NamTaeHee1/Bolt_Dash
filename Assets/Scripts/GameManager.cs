@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject[] GameObjects;
     bool GameStart = false;
+    static int Money = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +63,6 @@ public class GameManager : MonoBehaviour
             BestScoreText.text += score[i];
             yield return new WaitForSeconds(0.3f);
         }
-
     }
 
 

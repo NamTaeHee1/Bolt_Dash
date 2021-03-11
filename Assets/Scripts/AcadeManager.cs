@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class AcadeManager : MonoBehaviour
 {
     public bool isAcadeOn = false;
-    [SerializeField]
-    Vector3 PositionOne = new Vector3(5.62f, 0, -10);
+    [SerializeField]    Vector3 PositionOne = new Vector3(5.62f, 0, -10);
     Transform CameraTransform;
-    [SerializeField]
-    float CameraSpeed = 0.06f;
-    [SerializeField]
-    Button[] Buttons;
+    [SerializeField]    float CameraSpeed = 0.06f;
+    [SerializeField]    Button[] Buttons;
+    [SerializeField]    public int AcadeLevel = 0;
+    [SerializeField]    GameObject[] PowerSocketLines;
+    bool isReadyShowNextStage = false;
 
     private void Start()
     {
@@ -22,7 +22,13 @@ public class AcadeManager : MonoBehaviour
     void Update()
     {
         if (isAcadeOn)
+        {
             CameraTransform.position = Vector3.Lerp(CameraTransform.position, PositionOne, CameraSpeed);
+            if (isReadyShowNextStage)
+                PowerSocketLines[AcadeLevel].SetActive(true);
+            StartCoroutine(WaitShowNextStage());
+        }
+
     }
 
     public void ClickAcadeBackClick()
@@ -39,5 +45,9 @@ public class AcadeManager : MonoBehaviour
         PositionOne = new Vector3(5.62f, 0, -10);
     }
 
-
+    IEnumerator WaitShowNextStage()
+    {
+            yield return new WaitForSeconds(1.5f);
+            isReadyShowNextStage = true;
+    }
 }

@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class PowerSocketLineButtonEffect : MonoBehaviour
+{
+    private Image StageButtonImage;
+    private TextMeshProUGUI StageButtonText;
+    [SerializeField] private Color32 ChangeColor = new Color32(255, 255, 255, 0);
+    [SerializeField] private Color32 BasicColor = new Color32(255, 255, 255, 255);
+
+    private void Awake()
+    {
+        StageButtonImage = this.gameObject.GetComponent<Image>();
+        StageButtonText = this.gameObject.GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    void Start() { StartCoroutine(ShowButtonFlicker()); }
+
+    IEnumerator ShowButtonFlicker()
+    {
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < 3; i++)
+        {
+            StageButtonImage.color = ChangeColor;
+            StageButtonText.color = ChangeColor;
+            yield return new WaitForSeconds(0.5f);
+            StageButtonImage.color = BasicColor;
+            StageButtonText.color = BasicColor;
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+}

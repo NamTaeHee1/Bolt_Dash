@@ -7,6 +7,7 @@ using TMPro;
 public class PowerSocketLineButtonEffect : MonoBehaviour
 {
     private Image StageButtonImage;
+    private SpriteRenderer StageSpriteRenderer;
     private TextMeshProUGUI StageButtonText;
     [SerializeField] private Color32 ChangeColor = new Color32(255, 255, 255, 0);
     [SerializeField] private Color32 BasicColor = new Color32(255, 255, 255, 255);
@@ -15,9 +16,10 @@ public class PowerSocketLineButtonEffect : MonoBehaviour
     {
         StageButtonImage = this.gameObject.GetComponent<Image>();
         StageButtonText = this.gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        StageSpriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
-    void Start() { StartCoroutine(ShowButtonFlicker()); }
+    void Start() => StartCoroutine(ShowButtonFlicker());
 
     IEnumerator ShowButtonFlicker()
     {
@@ -26,9 +28,11 @@ public class PowerSocketLineButtonEffect : MonoBehaviour
         {
             StageButtonImage.color = ChangeColor;
             StageButtonText.color = ChangeColor;
+            StageSpriteRenderer.color = new Color32(0, 0, 0, 0);
             yield return new WaitForSeconds(0.5f);
             StageButtonImage.color = BasicColor;
             StageButtonText.color = BasicColor;
+            StageSpriteRenderer.color = new Color32(0, 0, 0, 255);
             yield return new WaitForSeconds(0.5f);
         }
     }

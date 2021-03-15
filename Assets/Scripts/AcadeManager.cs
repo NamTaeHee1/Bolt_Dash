@@ -36,13 +36,21 @@ public class AcadeManager : MonoBehaviour
                 isReadyShowNextStage = false;
             }
         }
-
     }
 
     void CheckShouldShowButton()
     {
-        if (AcadeLevel >= 2)
+        if (AcadeLevel >= 6)
+        {
+            PositionMoveButtons[2].gameObject.SetActive(true);
+            PositionMoveButtons[3].gameObject.SetActive(true);
+        }
+        else if (AcadeLevel >= 3)
+        {
             PositionMoveButtons[0].gameObject.SetActive(true);
+            PositionMoveButtons[1].gameObject.SetActive(true);
+        }
+        
     }
 
     public void ClickBackToMain()

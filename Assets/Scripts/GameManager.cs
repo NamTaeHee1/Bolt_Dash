@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject[] GameObjects;
     bool GameStart = false;
-    static int Money = 0;
     // Start is called before the first frame update
     void Start()
     {

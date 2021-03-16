@@ -7,8 +7,8 @@ public class StopButtonControl : MonoBehaviour
 {
     Animator StopButtonAnim;
     [SerializeField] private GameObject StopButton;
-    [SerializeField] private Button[] buttons;
-
+    [SerializeField] private GameObject PauseImage;
+    
     private void Awake()
     {
         StopButtonAnim = StopButton.GetComponent<Animator>();
@@ -18,7 +18,7 @@ public class StopButtonControl : MonoBehaviour
     {
         Debug.Log("Click");
         StopButtonAnim.SetTrigger("isClick");
-        buttons[0].gameObject.SetActive(false);
+        PauseImage.SetActive(false);
     }
 
     public void RunButtonClick()

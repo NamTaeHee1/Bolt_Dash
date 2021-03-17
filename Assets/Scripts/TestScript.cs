@@ -1,38 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestScript : MonoBehaviour
 {
-    Rigidbody2D[] rigid;
-    [SerializeField]
-    GameObject prefab;
-
-    int RandomX, RandomY;
+    RectTransform rect;
+    Vector2 FirstPosition, EndPosition, MovePosition;
+    [SerializeField] float Speed = 2000.0f;
     void Start()
     {
-        rigid = prefab.GetComponentsInChildren<Rigidbody2D>();
+        rect = GetComponent<RectTransform>();
+        FirstPosition = new Vector3(0, -400, 0);
+        EndPosition = new Vector3(0, 400, 0);
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            for (int i = 0; i < rigid.Length; i++)
-                rigid[i].gravityScale = 1;
-            Explosion();
-        }
-    }
-
-    void Explosion()
-    {
-        for(int i = 0; i < rigid.Length; i++)
-        {
-            RandomX = (i >= (rigid.Length / 2) + 1) ? Random.Range(-5, -1) : Random.Range(1, 5);
-            RandomY = Random.Range(-5, 5);
-            Debug.Log("게임오브젝트 : " + rigid[i].gameObject.name + " " + "RandomVector3 : " + RandomX + ", " + RandomY + ", 0");
-            rigid[i].AddForce(new Vector3(RandomX, RandomY, 0) * 5.0f, ForceMode2D.Impulse);
-        }    
+        if (rect.anchoredPosition.y >= EndPosition.y)
+            rect.anchoredPosition = FirstPosition;
+        MovePosition += Vector2.up * 200.0f * Time.deltaTime;
+        rect.anchoredPosition = MovePosition;
     }
 
 }

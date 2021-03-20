@@ -4,28 +4,14 @@ using UnityEngine;
 
 public class PlayerInputButtonsChangeAnimation : MonoBehaviour
 {
-    [SerializeField]
-    GameObject[] Buttons;
-    int RandomNum;
-    GameObject CurrentWorkingButton;
-    bool isReady = false;
+    [SerializeField] private GameObject[] Buttons;
+    [SerializeField] private float MoveSpeed = 3.0f;
+    [SerializeField] private List<GameObject> ButtonOrders;
 
-    private void Start()
+    void Update()
     {
-        RandomNum = Random.Range(0, 3);
-        for (int i = 0; i < Buttons.Length; i++)
-            if (Buttons[i].activeInHierarchy) CurrentWorkingButton = Buttons[i];
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            StartCoroutine(StartChangeButtonAnimation());
-    }
-
-    IEnumerator StartChangeButtonAnimation()
-    {
-        yield return new WaitForSeconds(1.0f);
+        if (Input.GetKey(KeyCode.Space))
+            Buttons[0].GetComponent<RectTransform>().position += Vector3.up * Time.deltaTime * MoveSpeed;
     }
 
     

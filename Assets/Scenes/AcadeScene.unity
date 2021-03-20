@@ -480,6 +480,8 @@ MonoBehaviour:
   - {fileID: 1938285158}
   - {fileID: 686859069655884419}
   - {fileID: 5530628972232813324}
+  MoveSpeed: 3
+  ButtonOrders: []
 --- !u!1 &57372421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3740,6 +3742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312146417}
   - component: {fileID: 312146418}
+  - component: {fileID: 312146419}
   m_Layer: 0
   m_Name: InputPanel
   m_TagString: Untagged
@@ -3840,6 +3843,27 @@ MonoBehaviour:
   - {fileID: 321387606}
   - {fileID: 1198598302}
   - {fileID: 869028827}
+--- !u!114 &312146419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312146416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff5817951035cd498fb586f4c92e217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  MoveSpeed: 3
+  ButtonOrders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &316238133
 GameObject:
   m_ObjectHideFlags: 0

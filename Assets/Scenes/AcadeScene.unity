@@ -3856,9 +3856,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Buttons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1938285158}
+  - {fileID: 686859069655884419}
+  - {fileID: 5530628972232813324}
   MoveSpeed: 3
   ButtonOrders:
   - {fileID: 0}

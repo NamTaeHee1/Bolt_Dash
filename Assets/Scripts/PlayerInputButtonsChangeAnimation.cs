@@ -10,6 +10,11 @@ public class PlayerInputButtonsChangeAnimation : MonoBehaviour
 
     void Update()
     {
+        if (Buttons[0].GetComponent<RectTransform>().position.y > 2)
+        {
+            Buttons[0].GetComponent<RectTransform>().position = new Vector3(Buttons[0].GetComponent<RectTransform>().position.x,
+            Buttons[0].GetComponent<RectTransform>().position.y - 4, Buttons[0].GetComponent<RectTransform>().position.z);
+        }
         if (Input.GetKey(KeyCode.Space))
             Buttons[0].GetComponent<RectTransform>().position += Vector3.up * Time.deltaTime * MoveSpeed;
     }

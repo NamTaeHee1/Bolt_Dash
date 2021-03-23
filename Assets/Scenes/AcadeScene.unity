@@ -480,8 +480,10 @@ MonoBehaviour:
   - {fileID: 1938285158}
   - {fileID: 686859069655884419}
   - {fileID: 5530628972232813324}
-  MoveSpeed: 3
+  SpineCount: 0
+  SpineSpeed: 0
   ButtonOrders: []
+  CurrentSpineCount: 0
 --- !u!1 &57372421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,11 +3861,13 @@ MonoBehaviour:
   - {fileID: 1938285158}
   - {fileID: 686859069655884419}
   - {fileID: 5530628972232813324}
-  MoveSpeed: 3
+  SpineCount: 10
+  SpineSpeed: 4
   ButtonOrders:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  CurrentSpineCount: 0
 --- !u!1 &316238133
 GameObject:
   m_ObjectHideFlags: 0

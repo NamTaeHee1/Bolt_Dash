@@ -1,50 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerInputButtonsChangeAnimation : MonoBehaviour
 {
     [SerializeField] private GameObject[] Buttons;
-    [SerializeField] private float MoveSpeed = 3.0f;
+    [SerializeField] int SpineCount = 0;
+    [SerializeField] float SpineSpeed = 0;
     [SerializeField] private List<GameObject> ButtonOrders;
-    [SerializeField] private AnimationCurve AnimationValue;
+    [SerializeField] int CurrentSpineCount = 0;
     Vector3 BasicPosition = new Vector3(-2.65f, -1.22f, 0);
     bool isStarted = false;
 
-    void Update() // 1.7 , 4
+    private void Start()
     {
-        Debug.Log(AnimationValue.Evaluate(10.0f));
+        Debug.Log("feofw");
+    }
+
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
             isStarted = true;
         if(isStarted)
         {
-            Buttons[0].GetComponent<RectTransform>().anchoredPosition += Vector2.up * MoveSpeed * Time.deltaTime;
-            StartCoroutine(StartChangeButton(5.0f));
+            StartCoroutine(StartChangeButton());
+            isStarted = false;
         }
-        
-        if (Buttons[0].GetComponent<RectTransform>().anchoredPosition.y >= 1.7f)
-            Buttons[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(Buttons[0].GetComponent<RectTransform>().anchoredPosition.x, -4.0f);
+
     }
 
-    IEnumerator StartChangeButton(float delayTime)
+    IEnumerator StartChangeButton()
     {
-        Debug.Log("빨라지기 시작");
-        while (MoveSpeed <= 20.0f)
+        Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 1.0f).SetEase(Ease.InBack);
+        yield return new WaitForSeconds(1.0f);
+        while (CurrentSpineCount <= SpineCount)
         {
-            MoveSpeed += Time.deltaTime;
+            Buttons[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(Buttons[0].GetComponent<RectTransform>().anchoredPosition.x, -4.0f);
+            Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 0.3f);
             yield return new WaitForSeconds(0.1f);
+            CurrentSpineCount++;
         }
-        Debug.Log("빨라지기 끝");
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("느려지기 시작");
-        while (MoveSpeed >= 3.0f)
-        {
-            MoveSpeed -= Time.deltaTime;
-            yield return new WaitForSeconds(0.1f);
-        }
-        Debug.Log("느려지기 끝");
-        isStarted = false;
-        yield return null;
-        //Buttons[0].GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Buttons[0].GetComponent<RectTransform>().anchoredPosition, new Vector2(-2.65f, -1.22f), 5.0f);
     }
 }

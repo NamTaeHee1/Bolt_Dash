@@ -13,11 +13,6 @@ public class PlayerInputButtonsChangeAnimation : MonoBehaviour
     Vector3 BasicPosition = new Vector3(-2.65f, -1.22f, 0);
     bool isStarted = false;
 
-    private void Start()
-    {
-        Debug.Log("feofw");
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

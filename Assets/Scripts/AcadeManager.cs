@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class AcadeManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class AcadeManager : MonoBehaviour
 
     void Update()
     {
-        CheckShouldShowButton();
+        CheckShouldShowArrowButton();
         if (isAcadeOn)
         {
             CameraTransform.position = Vector3.Lerp(CameraTransform.position, MovingPosition, CameraSpeed);
@@ -38,7 +39,7 @@ public class AcadeManager : MonoBehaviour
         }
     }
 
-    void CheckShouldShowButton()
+    void CheckShouldShowArrowButton()
     {
         if (AcadeLevel >= 6)
         {
@@ -66,9 +67,30 @@ public class AcadeManager : MonoBehaviour
         MovingPosition = new Vector3(5.62f, 0, -10);
     }
 
+    public void ButtonMovePosition()
+    {
+        string ClickButtonName = EventSystem.current.currentSelectedGameObject.name;
+
+        switch(ClickButtonName)
+        {
+            case "PositionOneToPositionTwo":
+                MovingPosition = new Vector3(11.5f, 0, -10);
+                break;
+            case "PositionTwoToPositionOne":
+                MovingPosition = new Vector3(5.62f, 0, -10);
+                break;
+            case "PositionTwoToPositionThree":
+                MovingPosition = new Vector3(17.4f, 0, -10);
+                break;
+            case "PositionThreeToPositionTwo":
+                MovingPosition = new Vector3(11.5f, 0, -10);
+                break;
+        }
+    }
+
     IEnumerator WaitShowNextStage()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1.0f);
         BackToMain.interactable = true;
         isReadyShowNextStage = true;
     }

@@ -119,7 +119,6 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
     {
         if (isButtonDown && isEnd)
             StartCoroutine(ButtonClick("FallButton"));
-        Debug.Log(isButtonDown);
     }
 
     public void ButtonDown()

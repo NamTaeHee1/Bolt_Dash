@@ -7,7 +7,6 @@ public class PlayerInputButtonsChangeAnimation : MonoBehaviour
 {
     [SerializeField] private GameObject[] Buttons;
     [SerializeField] int SpineCount = 0;
-    [SerializeField] float SpineSpeed = 0;
     [SerializeField] private List<GameObject> ButtonOrders;
     [SerializeField] int CurrentSpineCount = 0;
     Vector3 BasicPosition = new Vector3(-2.65f, -1.22f, 0);
@@ -32,8 +31,8 @@ public class PlayerInputButtonsChangeAnimation : MonoBehaviour
         while (CurrentSpineCount <= SpineCount)
         {
             Buttons[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(Buttons[0].GetComponent<RectTransform>().anchoredPosition.x, -4.0f);
+            yield return new WaitForSeconds(0.3f);
             Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 0.3f);
-            yield return new WaitForSeconds(0.1f);
             CurrentSpineCount++;
         }
     }

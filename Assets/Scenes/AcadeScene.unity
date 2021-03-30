@@ -480,8 +480,7 @@ MonoBehaviour:
   - {fileID: 1938285158}
   - {fileID: 686859069655884419}
   - {fileID: 5530628972232813324}
-  SpineCount: 0
-  SpineSpeed: 0
+  SpineCount: 10
   ButtonOrders: []
   CurrentSpineCount: 0
 --- !u!1 &57372421
@@ -3862,7 +3861,6 @@ MonoBehaviour:
   - {fileID: 686859069655884419}
   - {fileID: 5530628972232813324}
   SpineCount: 10
-  SpineSpeed: 4
   ButtonOrders:
   - {fileID: 0}
   - {fileID: 0}

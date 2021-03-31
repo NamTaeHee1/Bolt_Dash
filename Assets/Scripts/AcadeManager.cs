@@ -18,14 +18,15 @@ public class AcadeManager : MonoBehaviour
     [SerializeField]    Button BackToMain;
     [SerializeField]    Button[] PositionMoveButtons;
     bool isReadyShowNextStage = false;
+    bool isClickFirstArrowButton = false, isClickSecondArrowButton = false;
 
     void Start() => CameraTransform = Camera.main.GetComponent<Transform>();
 
     void Update()
     {
-        CheckShouldShowArrowButton();
         if (isAcadeOn)
         {
+            CheckShouldShowArrowButton();
             CameraTransform.position = Vector3.Lerp(CameraTransform.position, MovingPosition, CameraSpeed);
 
             StartCoroutine(WaitShowNextStage());
@@ -93,5 +94,17 @@ public class AcadeManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         BackToMain.interactable = true;
         isReadyShowNextStage = true;
+    }
+
+    IEnumerator CheckClickFirstArrowButton()
+    {
+        yield return new WaitForSeconds(0.5f);
+        PowerSocketLineButtons[3].SetActive(true);
+    }
+
+    IEnumerator CheckClickSecondArrowButton()
+    {
+        yield return new WaitForSeconds(0.5f);
+        PowerSocketLineButtons[6].SetActive(true);
     }
 }

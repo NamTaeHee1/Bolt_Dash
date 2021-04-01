@@ -30,9 +30,10 @@ public class GameManager : MonoBehaviour
         {
             if (!GameStart)
             {
-                BeforeTheGameStart();
+                GameStart = true;
+                BeforeTheGameStartProduction();
                 StartCoroutine(BestScoreToScore());
-                StartCoroutine(SetActiveFalseMenuObject());
+                StartCoroutine(HideMenuObject());
             }
         }
         else
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void BeforeTheGameStart()
+    public void BeforeTheGameStartProduction()
     {
         for (int i = 0; i < GameObjects.Length; i++)
             GameObjects[i].GetComponent<Animator>().SetTrigger("GameStart");
@@ -52,7 +53,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator BestScoreToScore()
     {
-        GameStart = true;
         string[] score = new string[] { "S", "C", "O", "R", "E", "\n", "0" };
         
         BestScoreText.text = "";
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    IEnumerator SetActiveFalseMenuObject()
+    IEnumerator HideMenuObject()
     {
         yield return new WaitForSeconds(3.0f);
         for (int i = 1; i < GameObjects.Length - 1; i++)

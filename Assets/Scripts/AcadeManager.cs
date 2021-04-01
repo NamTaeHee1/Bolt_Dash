@@ -33,9 +33,26 @@ public class AcadeManager : MonoBehaviour
             BackToMain.interactable = false;
             if (isReadyShowNextStage)
             {
-                PowerSocketLines[AcadeLevel].SetActive(true);
-                PowerSocketLineButtons[AcadeLevel].SetActive(true);
-                isReadyShowNextStage = false;
+                if(AcadeLevel == 3)
+                    {
+                    if (isClickFirstArrowButton)
+                        {
+                        StartCoroutine(ShowArrowButtonAfterStage());
+                        }
+                    } 
+                else if(AcadeLevel == 6)
+                    {
+                    if (isClickSecondArrowButton)
+                        {
+                        StartCoroutine(ShowArrowButtonAfterStage());
+                        }
+                    }
+                else
+                    {
+                    PowerSocketLines[AcadeLevel].SetActive(true);
+                    PowerSocketLineButtons[AcadeLevel].SetActive(true);
+                    isReadyShowNextStage = false;
+                    }
             }
         }
     }
@@ -76,12 +93,14 @@ public class AcadeManager : MonoBehaviour
         {
             case "PositionOneToPositionTwo":
                 MovingPosition = new Vector3(11.5f, 0, -10);
+                isClickFirstArrowButton = true;
                 break;
             case "PositionTwoToPositionOne":
                 MovingPosition = new Vector3(5.62f, 0, -10);
                 break;
             case "PositionTwoToPositionThree":
                 MovingPosition = new Vector3(17.4f, 0, -10);
+                isClickSecondArrowButton = true;
                 break;
             case "PositionThreeToPositionTwo":
                 MovingPosition = new Vector3(11.5f, 0, -10);
@@ -96,15 +115,12 @@ public class AcadeManager : MonoBehaviour
         isReadyShowNextStage = true;
     }
 
-    IEnumerator CheckClickFirstArrowButton()
+    IEnumerator ShowArrowButtonAfterStage()
     {
         yield return new WaitForSeconds(0.5f);
-        PowerSocketLineButtons[3].SetActive(true);
+        PowerSocketLines[AcadeLevel].SetActive(true);
+        PowerSocketLineButtons[AcadeLevel].SetActive(true);
+        isReadyShowNextStage = false;
     }
 
-    IEnumerator CheckClickSecondArrowButton()
-    {
-        yield return new WaitForSeconds(0.5f);
-        PowerSocketLineButtons[6].SetActive(true);
-    }
 }

@@ -8,7 +8,7 @@ public class ButtonStateControl : MonoBehaviour
     public ButtonType ButtonState;
     [SerializeField]
     GameObject[] Buttons;
-    string ButtonName = "";
+    public string ButtonName = "";
 
     void Update()
     {

@@ -25,12 +25,11 @@ public class PlayerInputButtonsChangeAnimation : MonoBehaviour
 
     IEnumerator StartChangeButton()
     {
-        for(int i = 0; i < Buttons.Length; i++)
-            Buttons[i].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 1.0f).SetEase(Ease.InBack);
+        Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 1.0f).SetEase(Ease.InBack);
         yield return new WaitForSeconds(1.0f);
         while (CurrentSpineCount <= SpineCount)
         {
-            Buttons[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(Buttons[0].GetComponent<RectTransform>().anchoredPosition.x, -4.0f);
+            Buttons[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(Buttons[0].GetComponent<RectTransform>().anchoredPosition.x, -3.46f);
             yield return new WaitForSeconds(0.3f);
             Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 0.3f);
             CurrentSpineCount++;

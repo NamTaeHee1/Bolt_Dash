@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
             RightThorn.SetActive(false);
         }
     }
-
+   
 
     public void BeforeTheGameStartProduction()
     {

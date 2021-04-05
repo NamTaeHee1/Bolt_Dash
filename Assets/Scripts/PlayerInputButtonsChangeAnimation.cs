@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class PlayerInputButtonsChangeAnimation : MonoBehaviour
@@ -25,24 +26,12 @@ public class PlayerInputButtonsChangeAnimation : MonoBehaviour
 
     IEnumerator StartChangeButton()
     {
-/*        for(int i = 0; i < 2; i++)
-            Buttons[i].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 1.0f).SetEase(Ease.InBack);
+        for (int i = 0; i < Buttons.Length; i++)
+            Buttons[0].GetComponent<Button>().interactable = false;
+        Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 1.0f).SetEase(Ease.InBack);
         yield return new WaitForSeconds(1.0f);
-        while (CurrentSpineCount <= SpineCount)
-        {
-            for(int i = 0; i < 2; i++)
-                Buttons[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(Buttons[i].GetComponent<RectTransform>().anchoredPosition.x, -3.46f);
-            yield return new WaitForSeconds(0.3f);
-            for(int i = 0; i < 2; i++)
-                Buttons[i].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 0.3f);
-            CurrentSpineCount++;
-        }*/
-        while(true)
-          {
-            Buttons[0].GetComponent<RectTransform>().Translate(Vector2.up * 3.0f * Time.deltaTime);
-            if (CurrentSpineCount >= SpineCount)
-                break;
-          }
-        yield return null;
+        Buttons[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(Buttons[0].GetComponent<RectTransform>().anchoredPosition.x, -4f);
+        Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 1.0f).SetLoops(SpineCount, LoopType.Restart);
+
     }
 }

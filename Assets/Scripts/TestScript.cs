@@ -7,12 +7,8 @@ public class TestScript : MonoBehaviour
 {
     Rigidbody2D tr;
     [SerializeField] Vector2 ForcePosition;
+    Color32 Color;
 
-    void Start() => tr = GetComponent<Rigidbody2D>();
+    void Start() => Debug.Log(Color.a);
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-            tr.AddForce(ForcePosition * 3.0f, ForceMode2D.Impulse);
-    }
 }

@@ -18,10 +18,10 @@ public class StoreManager : MonoBehaviour
     GameObject StorePanelDownLine;
     Animator StorePanelDownLineAnim;
 
-    static public Color32 CharacterColor;
-    static public Color32 InGameObjectColor;
+    static public Color32 CharacterColor = new Color32(255, 255, 255, 255);
+    static public Color32 InGameObjectColor = new Color32(255, 255, 255, 255);
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         StorePanelImageAnim = StorePanelImage.GetComponent<Animator>();
         StorePanelUpLineAnim = StorePanelUpLine.GetComponent<Animator>();

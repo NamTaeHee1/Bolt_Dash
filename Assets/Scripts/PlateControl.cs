@@ -8,12 +8,12 @@ public class PlateControl : MonoBehaviour
     Transform PlateTransform;
     SpriteRenderer PlateSR;
     Color32 ObjectColor;
-    bool isStepOn = false;
     void Start()
     {
         PlateTransform = GetComponent<Transform>();
         PlateSR = GetComponent<SpriteRenderer>();
         ObjectColor = StoreManager.InGameObjectColor;
+        Debug.Log(ObjectColor);
         PlateSR.color = new Color32(ObjectColor.r, ObjectColor.g, ObjectColor.b, 140);
     }
 
@@ -22,9 +22,7 @@ public class PlateControl : MonoBehaviour
         if(collision.gameObject.tag.Equals("Player"))
           {
             PlateSR.color = ObjectColor;
-            if(!isStepOn)
-                PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.05f, 0.3f).SetEase(Ease.InBack, 10);
-            isStepOn = true;
+            PlateTransform.DOLocalMoveY(PlateTransform.position.y - 1, 1.0f).SetEase(Ease.InBack);
           }
     }
 }

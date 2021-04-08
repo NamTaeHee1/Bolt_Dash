@@ -17,7 +17,9 @@ public class PlayerArrowControl : MonoBehaviour
 
     void ArrowRotate()
     {
-        if (ArrowTransform.rotation.z >= 0.3f || ArrowTransform.rotation.z <= -0.3f)
+        if (ArrowTransform.rotation.z >= 0.3f)
+            ArrowRotateSpeed *= -1;
+        else if (ArrowTransform.rotation.z <= -0.3f)
             ArrowRotateSpeed *= -1;
         ArrowTransform.RotateAround(GetComponentInParent<Transform>().position, Vector3.forward, Time.deltaTime * ArrowRotateSpeed);
     }

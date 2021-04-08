@@ -7,13 +7,14 @@ public class PlayerControl : MonoBehaviour
     private Transform PlayerTransform;
     private Rigidbody2D PlayerRigid;
     private Transform ArrowTransform;
+    public GameObject Arrow;
 
     [SerializeField] private float JumpHeight = 5.0f;
 
     private void Start()
     {
         PlayerRigid = GetComponent<Rigidbody2D>();
-        ArrowTransform = GameObject.Find("PlayerArrow").GetComponent<Transform>();
+        ArrowTransform = Arrow.GetComponent<Transform>();
     }
 
     private void Update()
@@ -25,7 +26,6 @@ public class PlayerControl : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
           {
-            Debug.Log("Click");
             PlayerTransform.rotation = ArrowTransform.rotation;
             PlayerRigid.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
           }

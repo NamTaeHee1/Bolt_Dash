@@ -26,7 +26,6 @@ public class PlayerControl : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
           {
-            PlayerTransform.rotation = ArrowTransform.rotation;
             PlayerRigid.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
           }
     }

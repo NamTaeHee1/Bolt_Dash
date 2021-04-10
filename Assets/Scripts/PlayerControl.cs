@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
           {
-            PlayerRigid.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
+            PlayerRigid.AddForce(Arrow.GetComponent<Transform>().position * JumpHeight, ForceMode2D.Impulse);
           }
     }
 }

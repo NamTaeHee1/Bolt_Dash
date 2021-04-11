@@ -24,9 +24,6 @@ public class PlayerControl : MonoBehaviour
 
     public void PlayerJump()
     {
-        if(Input.GetMouseButtonDown(0))
-          {
-            PlayerRigid.AddForce(Arrow.GetComponent<Transform>().position * JumpHeight, ForceMode2D.Impulse);
-          }
+        PlayerRigid.AddForce(Arrow.GetComponent<Transform>().position * JumpHeight, ForceMode2D.Impulse);
     }
 }

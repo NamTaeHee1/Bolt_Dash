@@ -24013,9 +24013,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 312146418}
-        m_TargetAssemblyTypeName: ButtonClickAnimation, Assembly-CSharp
-        m_MethodName: JumpButtonClick
+      - m_Target: {fileID: 709410936}
+        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
+        m_MethodName: PlayerJump
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

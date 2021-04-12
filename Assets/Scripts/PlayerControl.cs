@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        PlayerJump();
+        //PlayerJump();
     }
 
     public void PlayerJump()

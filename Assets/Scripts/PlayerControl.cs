@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     private Transform PlayerTransform;
     private Rigidbody2D PlayerRigid;
     private Transform ArrowTransform;
-    public GameObject Arrow;
+    [SerializeField] GameObject Arrow;
 
     [SerializeField] private float JumpHeight = 5.0f;
 
@@ -17,13 +17,17 @@ public class PlayerControl : MonoBehaviour
         ArrowTransform = Arrow.GetComponent<Transform>();
     }
 
-    private void Update()
-    {
-        //PlayerJump();
-    }
-
     public void PlayerJump()
     {
-        PlayerRigid.AddForce(Arrow.GetComponent<Transform>().position * JumpHeight, ForceMode2D.Impulse);
+        PlayerRigid.AddForce(ArrowTransform.transform.up * JumpHeight, ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name.Equals("RightWall"))
+            PlayerRigid.AddForce(Vector2.left * 3.0f, ForceMode2D.Impulse);
+        else if (collision.gameObject.name.Equals("LeftWall"))
+            PlayerRigid.AddForce(Vector2.right * 3.0f, ForceMode2D.Impulse);
     }
 }

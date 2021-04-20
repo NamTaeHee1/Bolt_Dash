@@ -10,7 +10,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     void Start() => ArrowTransform = ArrowObject.GetComponent<Transform>();
 
-    void Update() => ArrowRotate();
+    void FixedUpdate() => ArrowRotate();
 
     void ArrowRotate()
     {

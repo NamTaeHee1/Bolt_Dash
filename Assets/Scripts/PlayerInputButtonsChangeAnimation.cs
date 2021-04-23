@@ -18,20 +18,9 @@ public class PlayerInputButtonsChangeAnimation : MonoBehaviour
             isStarted = true;
         if(isStarted)
         {
-            StartCoroutine(StartChangeButton());
             isStarted = false;
         }
 
     }
 
-    IEnumerator StartChangeButton()
-    {
-        for (int i = 0; i < Buttons.Length; i++)
-            Buttons[0].GetComponent<Button>().interactable = false;
-        Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 1.0f).SetEase(Ease.InBack);
-        yield return new WaitForSeconds(1.0f);
-        Buttons[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(Buttons[0].GetComponent<RectTransform>().anchoredPosition.x, -4f);
-        Buttons[0].GetComponent<RectTransform>().DOAnchorPosY(1.7f, 1.0f).SetLoops(SpineCount, LoopType.Restart);
-
-    }
 }

@@ -19,7 +19,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
         StopAllCoroutines();
         for (int i = 0; i < JumpButtonTiles.Length; i++)
             JumpButtonTiles[i].SetActive(false);
-        Debug.Log("ClickJump!!");
+
         StartCoroutine(ButtonClick("JumpButton"));
     }
 

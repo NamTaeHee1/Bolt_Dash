@@ -20,14 +20,13 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         IEnumerator StartAnimation()
         {
-            InputScroll.AddVelocity(-70 * Vector2.up);
+            InputScroll.AddVelocity(200 * Vector2.down);
             yield return new WaitForSeconds(0.5f);
             for(int i = 2; i <= 150; i += 2)
             {
                 yield return new WaitForSeconds(0.01f);
                 InputScroll.AddVelocity(i  * Vector2.up);
             }    
-            //InputScroll.AddVelocity(VelocityPower * Vector2.up);
         }
     }
 

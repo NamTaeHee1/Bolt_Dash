@@ -11,6 +11,6 @@ public class AcadeCameraSetting : MonoBehaviour
 
     void Update()
     {
-        CameraTransform.position = new Vector3(0, Target.GetComponent<Transform>().position.y, -10);
+
     }
 }

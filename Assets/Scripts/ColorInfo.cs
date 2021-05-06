@@ -33,4 +33,9 @@ public class ColorInfo : MonoBehaviour
         if (!isHaveThisColor)
             CircleColor.a = 80;
     }
+
+    void SelectThisColor()
+    {
+        DanielLochner.Assets.SimpleScrollSnap.StoreManager.CharacterColor = this.GetComponent<ColorInfo>();
+    }
 }

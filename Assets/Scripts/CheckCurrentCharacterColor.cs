@@ -9,9 +9,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
         [SerializeField] SimpleScrollSnap CharacterScrollSnap;
         [SerializeField] Button SelectButton;
 
-        private void Update()
+        public void CheckCurrentColor() 
         {
-            Debug.Log("ÇöÀç »ö±ò : " + StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].ColorNameText);
+            SelectButton.interactable = StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].ColorNameText == StoreManager.CharacterColor.ColorNameText ? true : false;
         }
     }
 

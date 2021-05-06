@@ -22,23 +22,17 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         static public List<ColorInfo> CharacterColorList = new List<ColorInfo>();
         static public List<Color32> InGameObjectColorList = new List<Color32>();
-        static public Color32 CharacterColor;
+        static public ColorInfo CharacterColor;
         static public Color32 InGameObjectColor;
 
         // Start is called before the first frame update
         void Awake()
         {
-            Debug.Log(CharacterColor);
+            CharacterColor = CharacterColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
             StorePanelImageAnim = StorePanelImage.GetComponent<Animator>();
             StorePanelUpLineAnim = StorePanelUpLine.GetComponent<Animator>();
             StorePanelDownLineAnim = StorePanelDownLine.GetComponent<Animator>();
             ColorListUpdate();
-        }
-
-        void Update()
-        {
-            for (int i = 0; i < CharacterColorList.Count; i++)
-                Debug.Log(string.Format("{0}¹ø¤Š »ö±ò : {1}", i, CharacterColorList[i].ColorNameText));
         }
 
         public void ClickStore()

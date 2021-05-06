@@ -7,10 +7,11 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
     public class CheckCurrentCharacterColor : MonoBehaviour
     {
         [SerializeField] SimpleScrollSnap CharacterScrollSnap;
+        [SerializeField] Button SelectButton;
 
         private void Update()
         {
-            Debug.Log(CharacterScrollSnap.CurrentPanel);
+            Debug.Log("ÇöÀç »ö±ò : " + StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].ColorNameText);
         }
     }
 

@@ -13,7 +13,7 @@ public class PlateControl : MonoBehaviour
     {
         PlateTransform = GetComponent<Transform>();
         PlateSR = GetComponent<SpriteRenderer>();
-        ObjectColor = StoreManager.InGameObjectColor;
+        ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;
         PlateSR.color = new Color32(ObjectColor.r, ObjectColor.g, ObjectColor.b, 140);
     }
 

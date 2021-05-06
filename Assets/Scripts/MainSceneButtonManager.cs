@@ -19,7 +19,7 @@ public class MainSceneButtonManager : MonoBehaviour
     public void ClickStore()
     {
         Debug.Log("Store!");
-        FindObjectOfType<StoreManager>().ClickStore();
+        FindObjectOfType<DanielLochner.Assets.SimpleScrollSnap.StoreManager>().ClickStore();
         Buttons[1].GetComponent<Animator>().SetTrigger("Pressed");
     }
 

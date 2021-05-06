@@ -3,65 +3,85 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StoreManager : MonoBehaviour
+namespace DanielLochner.Assets.SimpleScrollSnap
 {
-    public Button[] Buttons;
-    public GameObject StoreParents;
-    public GameObject StoreObject;
-    [SerializeField]
-    GameObject StorePanelImage;
-    Animator StorePanelImageAnim;
-    [SerializeField]
-    GameObject StorePanelUpLine;
-    Animator StorePanelUpLineAnim;
-    [SerializeField]
-    GameObject StorePanelDownLine;
-    Animator StorePanelDownLineAnim;
-
-    static public Color32 CharacterColor = new Color32(255, 255, 255, 255);
-    static public Color32 InGameObjectColor = new Color32(255, 255, 255, 255);
-    // Start is called before the first frame update
-    void Awake()
+    public class StoreManager : MonoBehaviour
     {
-        StorePanelImageAnim = StorePanelImage.GetComponent<Animator>();
-        StorePanelUpLineAnim = StorePanelUpLine.GetComponent<Animator>();
-        StorePanelDownLineAnim = StorePanelDownLine.GetComponent<Animator>();
-    }
+        public Button[] Buttons;
+        public GameObject StoreParents;
+        public GameObject StoreObject;
+        public GameObject CharacterColorContent;
+        public GameObject InGameObjectColorContent;
+        [SerializeField]    GameObject StorePanelImage;
+        [SerializeField]    GameObject StorePanelUpLine;
+        [SerializeField]    GameObject StorePanelDownLine;
 
-    public void ClickStore()
-    {
-        StoreParents.SetActive(true);
-        StorePanelImageAnim.SetBool("isON", true);
-        StorePanelUpLineAnim.SetBool("isON", true);
-        StorePanelDownLineAnim.SetBool("isON", true);
-        for(int i = 0; i < Buttons.Length; i++)
+        Animator StorePanelImageAnim;
+        Animator StorePanelUpLineAnim;
+        Animator StorePanelDownLineAnim;
+
+        static public List<ColorInfo> CharacterColorList = new List<ColorInfo>();
+        static public List<Color32> InGameObjectColorList = new List<Color32>();
+        static public Color32 CharacterColor;
+        static public Color32 InGameObjectColor;
+
+        // Start is called before the first frame update
+        void Awake()
         {
-            Buttons[i].interactable = false;
+            Debug.Log(CharacterColor);
+            StorePanelImageAnim = StorePanelImage.GetComponent<Animator>();
+            StorePanelUpLineAnim = StorePanelUpLine.GetComponent<Animator>();
+            StorePanelDownLineAnim = StorePanelDownLine.GetComponent<Animator>();
+            ColorListUpdate();
         }
-        Invoke("ShowStoreItem", 0.63f);
-    }
 
-    public void StoreClickBackButton()
-    {
-        StoreObject.SetActive(false);
-        StorePanelImageAnim.SetBool("isON", false);
-        StorePanelUpLineAnim.SetBool("isON", false);
-        StorePanelDownLineAnim.SetBool("isON", false);
-        Invoke("ExitStore", 0.65f);
-    }
-
-    void ExitStore()
-    {
-        StoreParents.SetActive(false);
-        for (int i = 0; i < Buttons.Length; i++)
+        void Update()
         {
-            Buttons[i].interactable = true;
+            for (int i = 0; i < CharacterColorList.Count; i++)
+                Debug.Log(string.Format("{0}¹ø¤Š »ö±ò : {1}", i, CharacterColorList[i].ColorNameText));
+        }
+
+        public void ClickStore()
+        {
+            StoreParents.SetActive(true);
+            StorePanelImageAnim.SetBool("isON", true);
+            StorePanelUpLineAnim.SetBool("isON", true);
+            StorePanelDownLineAnim.SetBool("isON", true);
+            for (int i = 0; i < Buttons.Length; i++)
+            {
+                Buttons[i].interactable = false;
+            }
+            Invoke("ShowStoreItem", 0.63f);
+        }
+
+        public void StoreClickBackButton()
+        {
+            StoreObject.SetActive(false);
+            StorePanelImageAnim.SetBool("isON", false);
+            StorePanelUpLineAnim.SetBool("isON", false);
+            StorePanelDownLineAnim.SetBool("isON", false);
+            Invoke("ExitStore", 0.65f);
+        }
+
+        void ExitStore()
+        {
+            StoreParents.SetActive(false);
+            for (int i = 0; i < Buttons.Length; i++)
+            {
+                Buttons[i].interactable = true;
+            }
+        }
+
+        void ShowStoreItem()
+        {
+            StoreObject.SetActive(true);
+        }
+
+        public void ColorListUpdate()
+        {
+            for (int i = 0; i < CharacterColorContent.transform.childCount; i++)
+                CharacterColorList.Add(CharacterColorContent.transform.GetChild(i).GetComponent<ColorInfo>());
+            Debug.Log("¼ö : " + CharacterColorContent.transform.childCount);
         }
     }
-
-    void ShowStoreItem()
-    {
-        StoreObject.SetActive(true);
-    }
-
 }

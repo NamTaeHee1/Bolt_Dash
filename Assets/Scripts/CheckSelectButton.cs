@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace DanielLochner.Assets.SimpleScrollSnap {
-    public class CheckCurrentCharacterColor : MonoBehaviour
+    public class CheckSelectButton : MonoBehaviour
     {
         [SerializeField] SimpleScrollSnap CharacterScrollSnap;
-        [SerializeField] Button SelectButton;
+        public Button SelectButton;
 
-        public void Update() 
+        public void CheckButtonUpdate()
         {
             SelectButton.gameObject.SetActive(StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].ColorNameText != StoreManager.CharacterColor.ColorNameText);
         }

@@ -4,38 +4,58 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ColorInfo : MonoBehaviour
+namespace DanielLochner.Assets.SimpleScrollSnap
 {
-    public Color32 CircleColor;
-    public string ColorNameText;
-    public bool isHaveThisColor = false;
-    TextMeshProUGUI ColorText;
-    SpriteRenderer CircleSpriteRenderer;
-
-    private void Awake()
+    public class ColorInfo : MonoBehaviour
     {
-        ColorText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        CircleSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        public Color32 CircleColor;
+        public string ColorNameText;
+        public bool isHaveThisColor = false;
+        public bool isSelectThisColor = false;
+        TextMeshProUGUI ColorText;
+        SpriteRenderer CircleSpriteRenderer;
+        [SerializeField] TextMeshProUGUI ButtonText;
+        [SerializeField] SimpleScrollSnap CharacterSimpleScroll;
+
+        private void Awake()
+        {
+            ColorText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            CircleSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        }
+
+        private void Start()
+        {
+            CheckThisColor();
+            ColorText.faceColor = CircleColor;
+            ColorText.outlineColor = CircleColor;
+            ColorText.text = ColorNameText;
+            ColorText.GetComponent<RectTransform>().sizeDelta = new Vector2(ColorText.text.Length * 60, 100);
+            CircleSpriteRenderer.color = CircleColor;
+        }
+
+        void CheckThisColor()
+        {
+            if (!isSelectThisColor)
+                CircleColor.a = 80;
+            ButtonText.text = !isHaveThisColor ? "구매" : "선택";
+        }
+
+        public void SelectThisColor()
+        {
+            StoreManager.CharacterColor.TurnOnOff(false);
+            StoreManager.CharacterColor = StoreManager.CharacterColorList[CharacterSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
+            StoreManager.CharacterColor.TurnOnOff(true);
+        }
+
+        IEnumerator TurnOnOff(bool isTurnOn)
+        {
+            CircleColor.a = isTurnOn ? (byte)255 : (byte)80;
+            ColorText.faceColor = CircleColor;
+            ColorText.outlineColor = CircleColor;
+            ColorText.text = ColorNameText;
+            isSelectThisColor = isTurnOn ? true : false;
+            yield return null;
+        }
     }
 
-    private void Start()
-    {
-        CheckHaveThisColor();
-        ColorText.faceColor = CircleColor;
-        ColorText.outlineColor = CircleColor;
-        ColorText.text = ColorNameText;
-        ColorText.GetComponent<RectTransform>().sizeDelta = new Vector2(ColorText.text.Length * 60, 100);
-        CircleSpriteRenderer.color = CircleColor;
-    }
-
-    void CheckHaveThisColor()
-    {
-        if (!isHaveThisColor)
-            CircleColor.a = 80;
-    }
-
-    void SelectThisColor()
-    {
-        DanielLochner.Assets.SimpleScrollSnap.StoreManager.CharacterColor = this.GetComponent<ColorInfo>();
-    }
 }

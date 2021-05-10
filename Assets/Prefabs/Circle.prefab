@@ -316,3 +316,6 @@ MonoBehaviour:
     rgba: 4294967295
   ColorNameText: white
   isHaveThisColor: 1
+  isSelectThisColor: 0
+  ButtonText: {fileID: 0}
+  CharacterSimpleScroll: {fileID: 0}

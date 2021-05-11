@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 namespace DanielLochner.Assets.SimpleScrollSnap
 {
@@ -15,7 +16,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         TextMeshProUGUI ColorText;
         SpriteRenderer CircleSpriteRenderer;
         [SerializeField] TextMeshProUGUI ButtonText;
-        [SerializeField] SimpleScrollSnap CharacterSimpleScroll;
+        [SerializeField] SimpleScrollSnap CharacterSimpleScroll, ObjectSimpleScroll;
 
         private void Awake()
         {
@@ -42,10 +43,20 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public void SelectThisColor()
         {
-            Debug.Log("Å¬¸¯");
-            StoreManager.CharacterColor.TurnOnOff(false);
-            StoreManager.CharacterColor = StoreManager.CharacterColorList[CharacterSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
-            StoreManager.CharacterColor.TurnOnOff(true);
+            Debug.Log("fewofwefwe");
+            Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+            if (EventSystem.current.currentSelectedGameObject.name.Equals("CharacterColorSelectButton"))
+            {
+                StoreManager.CharacterColor.TurnOnOff(false);
+                StoreManager.CharacterColor = StoreManager.CharacterColorList[CharacterSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
+                StoreManager.CharacterColor.TurnOnOff(true);
+            }
+            else if(EventSystem.current.currentSelectedGameObject.name.Equals("ObjectColorSelectButton"))
+            {
+                StoreManager.InGameObjectColor.TurnOnOff(false);
+                StoreManager.InGameObjectColor = StoreManager.InGameObjectColorList[ObjectSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
+                StoreManager.InGameObjectColor.TurnOnOff(true);
+            }
         }
 
         void TurnOnOff(bool isTurnOn)

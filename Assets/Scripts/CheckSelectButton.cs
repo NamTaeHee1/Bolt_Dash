@@ -7,11 +7,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
     public class CheckSelectButton : MonoBehaviour
     {
         [SerializeField] SimpleScrollSnap CharacterScrollSnap;
-        public Button SelectButton;
+        public Button CharacterColorSelectButton;
+        public Button ObjectColorSelectButton;
 
         private void Update()
         {
-            SelectButton.gameObject.SetActive(StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].ColorNameText != StoreManager.CharacterColor.ColorNameText);
+            CharacterColorSelectButton.gameObject.SetActive(StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].ColorNameText != StoreManager.CharacterColor.ColorNameText);
         }
     }
 

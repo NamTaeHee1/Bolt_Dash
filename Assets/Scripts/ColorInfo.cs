@@ -47,14 +47,14 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             StoreManager.CharacterColor.TurnOnOff(true);
         }
 
-        IEnumerator TurnOnOff(bool isTurnOn)
+        void TurnOnOff(bool isTurnOn)
         {
+            Debug.Log(this.ColorNameText + " " + isTurnOn);
             CircleColor.a = isTurnOn ? (byte)255 : (byte)80;
             ColorText.faceColor = CircleColor;
             ColorText.outlineColor = CircleColor;
-            ColorText.text = ColorNameText;
+            CircleSpriteRenderer.color = CircleColor;
             isSelectThisColor = isTurnOn ? true : false;
-            yield return null;
         }
     }
 

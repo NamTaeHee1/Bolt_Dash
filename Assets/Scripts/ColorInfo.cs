@@ -42,6 +42,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public void SelectThisColor()
         {
+            Debug.Log("Å¬¸¯");
             StoreManager.CharacterColor.TurnOnOff(false);
             StoreManager.CharacterColor = StoreManager.CharacterColorList[CharacterSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
             StoreManager.CharacterColor.TurnOnOff(true);

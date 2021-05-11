@@ -21,14 +21,15 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         Animator StorePanelDownLineAnim;
 
         static public List<ColorInfo> CharacterColorList = new List<ColorInfo>();
-        static public List<Color32> InGameObjectColorList = new List<Color32>();
+        static public List<ColorInfo> InGameObjectColorList = new List<ColorInfo>();
         static public ColorInfo CharacterColor;
-        static public Color32 InGameObjectColor;
+        static public ColorInfo InGameObjectColor;
 
         // Start is called before the first frame update
         void Awake()
         {
             CharacterColor = CharacterColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
+            InGameObjectColor = InGameObjectColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
             StorePanelImageAnim = StorePanelImage.GetComponent<Animator>();
             StorePanelUpLineAnim = StorePanelUpLine.GetComponent<Animator>();
             StorePanelDownLineAnim = StorePanelDownLine.GetComponent<Animator>();
@@ -75,7 +76,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             for (int i = 0; i < CharacterColorContent.transform.childCount; i++)
                 CharacterColorList.Add(CharacterColorContent.transform.GetChild(i).GetComponent<ColorInfo>());
+            for (int i = 0; i < InGameObjectColorContent.transform.childCount; i++)
+                InGameObjectColorList.Add(InGameObjectColorContent.transform.GetChild(i).GetComponent<ColorInfo>());
             Debug.Log("¼ö : " + CharacterColorContent.transform.childCount);
+            Debug.Log("¼ö : " + InGameObjectColorContent.transform.childCount);
         }
     }
 }

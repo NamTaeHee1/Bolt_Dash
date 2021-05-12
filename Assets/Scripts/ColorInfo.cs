@@ -20,8 +20,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         private void Awake()
         {
-            ColorText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             CircleSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+            ColorText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         }
 
         private void Start()

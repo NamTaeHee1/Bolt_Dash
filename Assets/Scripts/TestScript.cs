@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class TestScript : MonoBehaviour
 {
-    public void ButtonClick()
-    {
-        Debug.Log("fewofwe");
-    }
+    [SerializeField] private TextMeshProUGUI Text;
+
 }

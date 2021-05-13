@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class StopButtonControl : MonoBehaviour
 {
-    Animator StopButtonAnim;
-    [SerializeField] private GameObject StopButton;
-    [SerializeField] private GameObject StopImage, PlayImage;
+    [SerializeField] Animator StopButtonAnim;
+    [SerializeField] private GameObject StopButton, StopImage, PlayImage;
     bool isON = false;
-    
-    private void Awake() => StopButtonAnim = StopButton.GetComponent<Animator>();
 
     public void StopButtonClick()
     {
@@ -20,6 +18,12 @@ public class StopButtonControl : MonoBehaviour
         StopImage.SetActive(isON ? false : true);
         PlayImage.SetActive(isON ? true : false);
 
+    }
+
+    public void GameStart()
+    {
+        Debug.Log("fweufwe");
+        StopButton.GetComponent<RectTransform>().DOAnchorPosY(-954.91f, 1.0f).SetEase(Ease.OutElastic);
     }
 
     public void RunButtonClick()

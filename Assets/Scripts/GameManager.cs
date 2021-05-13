@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject[] GameObjects;
     bool GameStart = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         LeftThornTransform = LeftThorn.GetComponent<Transform>();
@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
         BestScoreText = GameObjects[0].GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameStarted)
@@ -48,6 +47,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < GameObjects.Length; i++)
             GameObjects[i].GetComponent<Animator>().SetTrigger("GameStart");
+        FindObjectOfType<StopButtonControl>().GameStart();
     }
 
 
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     IEnumerator HideMenuObject()
     {
         yield return new WaitForSeconds(3.0f);
-        for (int i = 1; i < GameObjects.Length - 1; i++)
+        for (int i = 1; i < GameObjects.Length; i++)
             GameObjects[i].SetActive(false);
     }
 }

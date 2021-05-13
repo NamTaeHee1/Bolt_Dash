@@ -23,7 +23,7 @@ public class StopButtonControl : MonoBehaviour
     public void GameStart()
     {
         Debug.Log("fweufwe");
-        StopButton.GetComponent<RectTransform>().DOAnchorPosY(-954.91f, 1.0f).SetEase(Ease.OutElastic);
+        //StopButton.GetComponent<RectTransform>().DOAnchorPosY(0, 1.0f).SetEase(Ease.OutElastic);
     }
 
     public void RunButtonClick()

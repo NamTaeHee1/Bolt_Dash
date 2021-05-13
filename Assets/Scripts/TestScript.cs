@@ -9,13 +9,9 @@ public class TestScript : MonoBehaviour
 {
     [SerializeField] private GameObject RedSquare;
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) SquareMove();
-    }
-
-    void SquareMove()
+    private void Start()
     {
         RedSquare.GetComponent<RectTransform>().DOAnchorPosY(-5.0f, 1.0f);
     }
+
 }

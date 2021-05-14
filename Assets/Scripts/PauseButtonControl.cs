@@ -4,26 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class StopButtonControl : MonoBehaviour
+public class PauseButtonControl : MonoBehaviour
 {
-    [SerializeField] Animator StopButtonAnim;
-    [SerializeField] private GameObject StopButton, StopImage, PlayImage;
+    [SerializeField] private Animator PauseButtonAnim;
+    [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage;
     bool isON = false;
+
+    public void GameStart()
+    {
+        PauseButtonMovement.GetComponent<RectTransform>().DOAnchorPosY(-955.3f, 1.0f).SetEase(Ease.OutBack);
+    }
 
     public void StopButtonClick()
     {
         Debug.Log("Å¬¸¯");
         isON = !isON;
-        StopButtonAnim.SetBool("isON", isON);
-        StopImage.SetActive(isON ? false : true);
+        PauseButtonAnim.SetBool("isON", isON);
+        PauseImage.SetActive(isON ? false : true);
         PlayImage.SetActive(isON ? true : false);
 
-    }
-
-    public void GameStart()
-    {
-        Debug.Log("fweufwe");
-        StopButton.GetComponent<RectTransform>().DOAnchorPosY(-538, 1.0f).SetEase(Ease.OutElastic);
     }
 
     public void RunButtonClick()

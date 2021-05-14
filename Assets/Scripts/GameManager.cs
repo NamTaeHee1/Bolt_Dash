@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < GameObjects.Length; i++)
             GameObjects[i].GetComponent<Animator>().SetTrigger("GameStart");
-        FindObjectOfType<StopButtonControl>().GameStart();
+        FindObjectOfType<PauseButtonControl>().GameStart();
     }
 
 

@@ -23,12 +23,11 @@ public class PauseButtonControl : MonoBehaviour
         PlayImage.SetActive(isON ? true : false);
         PauseButtonAnim.SetBool("isON", isON);
         Debug.Log(PauseButtonAnim.GetCurrentAnimatorStateInfo(0).IsName("PauseButtonClickOFF"));
-/*        if (PauseButtonAnim.GetCurrentAnimatorStateInfo(0).IsName(isON ? "PauseButtonClickOFF" : "PauseButtonClickON")
-            && PauseButtonAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.99f)
-            PauseButtonAnim.SetBool("isON", isON);*/
+        if (PauseButtonAnim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.29f)
+            PauseButtonAnim.SetBool("isON", isON);
 
     }
-    
+
     public void RunButtonClick()
     {
         Debug.Log("Run");

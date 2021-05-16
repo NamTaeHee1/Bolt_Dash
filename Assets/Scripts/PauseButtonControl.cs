@@ -22,7 +22,6 @@ public class PauseButtonControl : MonoBehaviour
         PauseImage.SetActive(isON ? false : true);
         PlayImage.SetActive(isON ? true : false);
         PauseButtonAnim.SetBool("isON", isON);
-
     }
 
     public void RunButtonClick()

@@ -5,8 +5,15 @@ using UnityEngine.UI;
 
 public class MainSceneButtonManager : MonoBehaviour
 {
-    [SerializeField]
-    Button[] Buttons;
+    [SerializeField] Button[] Buttons;
+    [SerializeField] private float AlphaThreshold = 0.1f;
+
+    private void Start()
+    {
+        for (int i = 0; i < Buttons.Length; i++)
+            Buttons[i].GetComponent<Image>().alphaHitTestMinimumThreshold = AlphaThreshold;
+    }
+
     public void ClickPlay()
     {
         Debug.Log("Play!");

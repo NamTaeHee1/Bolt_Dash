@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonStateControl : MonoBehaviour
+public class PlayerInputButtonStateControl : MonoBehaviour
 {
     public enum ButtonType { JUMP, RUN, FALL };
     public ButtonType ButtonState;

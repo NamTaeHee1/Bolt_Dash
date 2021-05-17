@@ -39029,7 +39029,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputScroll: {fileID: 1643781404}
-  VelocityPower: 5000
+  InputButtons: []
+  Timer: 0
 --- !u!1 &1645551141
 GameObject:
   m_ObjectHideFlags: 0

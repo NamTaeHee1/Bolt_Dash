@@ -890,7 +890,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &38444429
 RectTransform:
@@ -5243,7 +5243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &230235615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38907,8 +38907,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1643781403}
   - component: {fileID: 1643781405}
-  - component: {fileID: 1643781406}
   - component: {fileID: 1643781404}
+  - component: {fileID: 1643781406}
   m_Layer: 5
   m_Name: PlayerInputScroll
   m_TagString: Untagged
@@ -39005,7 +39005,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.75
-  m_ScrollSensitivity: 0
+  m_ScrollSensitivity: 100
   m_Viewport: {fileID: 1847382067}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -39029,7 +39029,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputScroll: {fileID: 1643781404}
-  InputButtons: []
+  InputButtons:
+  - {fileID: 1157327763}
+  - {fileID: 1415861694}
+  - {fileID: 1198045402}
+  - {fileID: 998001625}
   Timer: 0
 --- !u!1 &1645551141
 GameObject:

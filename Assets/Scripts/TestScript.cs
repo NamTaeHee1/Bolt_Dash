@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class TestScript : MonoBehaviour
 {
-    [SerializeField] private GameObject RedSquare;
-
-    private void Start()
+    public void Button_Click()
     {
-        RedSquare.GetComponent<RectTransform>().DOAnchorPosY(-5.0f, 1.0f);
+        Debug.Log(EventSystem.current.currentSelectedGameObject);
     }
-
 }

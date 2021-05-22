@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MainSceneButtonManager : MonoBehaviour
 {
     [SerializeField] Button[] Buttons;
-    [SerializeField] private float AlphaThreshold = 0.1f;
+    private float AlphaThreshold = 0.1f;
 
     private void Start()
     {

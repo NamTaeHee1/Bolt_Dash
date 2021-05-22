@@ -13,9 +13,18 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         [SerializeField] Image[] InputButtons;
         [SerializeField] float Timer = 0;
         private bool isDone = false;
+        private float AlphaThreshold = 0.1f;
+
+        private void Start()
+        {
+            for (int i = 0; i < InputButtons.Length; i++)
+                InputButtons[i].GetComponent<Image>().alphaHitTestMinimumThreshold = AlphaThreshold;
+        }
 
         void Update()
          {
+/*            InputScroll.gameObject.GetComponent<ScrollRect>().horizontal = false;
+            InputScroll.gameObject.GetComponent<ScrollRect>().vertical = false;*/
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(StartAnimation());

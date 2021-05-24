@@ -8,7 +8,15 @@ public class PauseButtonControl : MonoBehaviour
 {
     [SerializeField] private Animator PauseButtonAnim;
     [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage;
+    [SerializeField] private Image[] ButtonImages;
     bool isON = false;
+    private float AlphaThreshold = 0.1f;
+
+    private void Start()
+    {
+        for (int i = 0; i < ButtonImages.Length; i++)
+            ButtonImages[i].alphaHitTestMinimumThreshold = AlphaThreshold;
+    }
 
     public void GameStart()
     {

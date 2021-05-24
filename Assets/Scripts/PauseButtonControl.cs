@@ -9,7 +9,8 @@ public class PauseButtonControl : MonoBehaviour
     [SerializeField] private Animator PauseButtonAnim;
     [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage;
     [SerializeField] private Image[] ButtonImages;
-    bool isON = false;
+    [SerializeField] private Button PauseButton;
+    bool isON = false, isPause = false;
     private float AlphaThreshold = 0.1f;
 
     private void Start()
@@ -21,6 +22,13 @@ public class PauseButtonControl : MonoBehaviour
     public void GameStart()
     {
         PauseButtonMovement.GetComponent<RectTransform>().DOAnchorPosY(-955.3f, 1.0f).SetEase(Ease.OutBack);
+        StartCoroutine(InteractableOnPauseButton());
+    }
+
+    IEnumerator InteractableOnPauseButton()
+    {
+        yield return new WaitForSeconds(1.0f);
+        PauseButton.interactable = true;
     }
 
     public void StopButtonClick()
@@ -30,11 +38,13 @@ public class PauseButtonControl : MonoBehaviour
         PauseImage.SetActive(isON ? false : true);
         PlayImage.SetActive(isON ? true : false);
         PauseButtonAnim.SetBool("isON", isON);
+        isPause = !isPause;
+        Time.timeScale = isPause ? 0 : 1;
     }
 
-    public void RunButtonClick()
+    public void ReStartButtonClick()
     {
-        Debug.Log("Run");
+        Debug.Log("Restart");
     }
 
     public void SettingButtonClick()

@@ -53,13 +53,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator BestScoreToScore()
     {
-        string[] score = new string[] { "S", "C", "O", "R", "E", "\n", "0" };
+        string[] Score = new string[] { "S", "C", "O", "R", "E", "\n", "0" };
         
         BestScoreText.text = "";
         yield return new WaitForSeconds(1.0f);
-        for (int i = 0; i < score.Length; i++)
+        for (int i = 0; i < Score.Length; i++)
         {
-            BestScoreText.text += score[i];
+            BestScoreText.text += Score[i];
             yield return new WaitForSeconds(0.3f);
         }
     }

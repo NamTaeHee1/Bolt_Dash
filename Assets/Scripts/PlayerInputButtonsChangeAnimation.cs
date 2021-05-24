@@ -17,7 +17,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         private void Start()
         {
             for (int i = 0; i < InputButtons.Length; i++)
-                InputButtons[i].GetComponent<Image>().alphaHitTestMinimumThreshold = AlphaThreshold;
+                InputButtons[i].alphaHitTestMinimumThreshold = AlphaThreshold;
         }
 
         void Update()

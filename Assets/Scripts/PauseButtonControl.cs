@@ -9,6 +9,7 @@ public class PauseButtonControl : MonoBehaviour
     [SerializeField] private Animator PauseButtonAnim;
     [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage;
     [SerializeField] private Image[] ButtonImages;
+    [SerializeField] private Image PauseButtonPanel;
     [SerializeField] private Button PauseButton;
     bool isON = false, isPause = false;
     private float AlphaThreshold = 0.1f;
@@ -40,6 +41,7 @@ public class PauseButtonControl : MonoBehaviour
         PauseButtonAnim.SetBool("isON", isON);
         isPause = !isPause;
         Time.timeScale = isPause ? 0 : 1;
+        PauseButtonPanel.color = new Color(0, 0, 0, isPause ? 0.3f : 0);
     }
 
     public void ReStartButtonClick()

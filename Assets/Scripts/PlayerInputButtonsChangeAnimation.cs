@@ -11,8 +11,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
     {
         [SerializeField] SimpleScrollSnap InputScroll;
         [SerializeField] Image[] InputButtons;
-        [SerializeField] float Timer = 0;
-        private bool isDone = false;
+        [SerializeField] GameObject BlockScrollRectButtonObject;
         private float AlphaThreshold = 0.1f;
 
         private void Start()
@@ -23,13 +22,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         void Update()
          {
-/*            InputScroll.gameObject.GetComponent<ScrollRect>().horizontal = false;
-            InputScroll.gameObject.GetComponent<ScrollRect>().vertical = false;*/
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(StartAnimation());
-                for (int i = 0; i < InputButtons.Length; i++)
-                    InputButtons[i].enabled = false;
+                StartCoroutine(BlockScrollRect());
             }
          }
 
@@ -47,6 +43,13 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 yield return new WaitForSeconds(0.01f);
                 InputScroll.AddVelocity(i * Vector2.down);
             }
+        }
+
+        IEnumerator BlockScrollRect()
+        {
+            BlockScrollRectButtonObject.SetActive(true);
+            yield return new WaitForSeconds(15.0f);
+            BlockScrollRectButtonObject.SetActive(false);
         }
     }
 

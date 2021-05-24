@@ -21836,7 +21836,7 @@ MonoBehaviour:
   - {fileID: 1415861694}
   - {fileID: 1198045402}
   - {fileID: 998001625}
-  Timer: 0
+  BlockScrollRectButtonObject: {fileID: 2058270275}
 --- !u!1 &1645551141
 GameObject:
   m_ObjectHideFlags: 0
@@ -26086,7 +26086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2058270276
 RectTransform:
   m_ObjectHideFlags: 0

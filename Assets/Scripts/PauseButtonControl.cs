@@ -46,7 +46,7 @@ public class PauseButtonControl : MonoBehaviour
             Time.timeScale = 0;
         else
             StartCoroutine(PauseCountDown());
-        PauseButtonPanel.color = new Color(0, 0, 0, isPause ? 0.3f : 0);
+        PauseButtonPanel.color = new Color(0, 0, 0, 0.3f);
     }
 
     IEnumerator PauseCountDown()
@@ -61,6 +61,7 @@ public class PauseButtonControl : MonoBehaviour
         Time.timeScale = 1;
         PauseCountDownText.text = "";
         PauseButtonPanelBlock.SetActive(false);
+        PauseButtonPanel.color = new Color(0, 0, 0, 0);
     }
 
     public void ReStartButtonClick()

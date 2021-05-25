@@ -36,12 +36,25 @@ public class PauseButtonControl : MonoBehaviour
     {
         Debug.Log("Å¬¸¯");
         isON = !isON;
+        isPause = !isPause;
         PauseImage.SetActive(isON ? false : true);
         PlayImage.SetActive(isON ? true : false);
         PauseButtonAnim.SetBool("isON", isON);
-        isPause = !isPause;
-        Time.timeScale = isPause ? 0 : 1;
+        StartCoroutine(CountDown(isPause));
         PauseButtonPanel.color = new Color(0, 0, 0, isPause ? 0.3f : 0);
+    }
+
+    IEnumerator CountDown(bool isPause)
+    {
+        if(!isPause)
+        {
+            for(int i = 3; i > 0; i--)
+            {
+                Debug.Log(i);
+                yield return new WaitForSeconds(1.0f);
+            }
+        }
+        Time.timeScale = isPause ? 0 : 1;
     }
 
     public void ReStartButtonClick()

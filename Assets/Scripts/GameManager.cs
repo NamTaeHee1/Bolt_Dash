@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator HideMenuObject()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSecondsRealtime(3.0f);
         for (int i = 1; i < GameObjects.Length; i++)
             GameObjects[i].SetActive(false);
     }

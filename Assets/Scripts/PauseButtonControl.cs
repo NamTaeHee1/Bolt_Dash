@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class PauseButtonControl : MonoBehaviour
 {
-    [SerializeField] private Animator PauseButtonAnim;
+    [SerializeField] private Animator PauseButtonAnim, PauseButtonPanelAnim;
     [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage;
     [SerializeField] private Image[] ButtonImages;
     [SerializeField] private Image PauseButtonPanel;
@@ -40,21 +40,31 @@ public class PauseButtonControl : MonoBehaviour
         PauseImage.SetActive(isON ? false : true);
         PlayImage.SetActive(isON ? true : false);
         PauseButtonAnim.SetBool("isON", isON);
-        StartCoroutine(CountDown(isPause));
+        if (isPause) Time.timeScale = 0;
+        else
+        {
+            PauseButtonPanelAnim.SetTrigger("CountDown");
+            StartCoroutine(PauseCountDown());
+        }
         PauseButtonPanel.color = new Color(0, 0, 0, isPause ? 0.3f : 0);
     }
 
-    IEnumerator CountDown(bool isPause)
+    IEnumerator PauseCountDown()
     {
-        if(!isPause)
+        float EndTime = 6f;
+        float CurrentTime = 0;
+
+        while(true)
         {
-            for(int i = 3; i > 0; i--)
+            CurrentTime += Time.unscaledDeltaTime;
+            Debug.Log(CurrentTime);
+            if (CurrentTime >= EndTime)
             {
-                Debug.Log(i);
-                yield return new WaitForSeconds(1.0f);
+                Time.timeScale = 1;
+                yield return null;
             }
         }
-        Time.timeScale = isPause ? 0 : 1;
+
     }
 
     public void ReStartButtonClick()

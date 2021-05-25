@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class PauseButtonControl : MonoBehaviour
 {
     [SerializeField] private Animator PauseButtonAnim, PauseButtonPanelAnim;
-    [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage;
+    [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage, PauseButtonPanelBlock;
     [SerializeField] private Image[] ButtonImages;
     [SerializeField] private Image PauseButtonPanel;
     [SerializeField] private Button PauseButton;
+    [SerializeField] private TextMeshProUGUI PauseCountDownText;
     bool isON = false, isPause = false;
     private float AlphaThreshold = 0.1f;
 
@@ -40,21 +42,25 @@ public class PauseButtonControl : MonoBehaviour
         PauseImage.SetActive(isON ? false : true);
         PlayImage.SetActive(isON ? true : false);
         PauseButtonAnim.SetBool("isON", isON);
-        if (isPause) Time.timeScale = 0;
+        if (isPause)
+            Time.timeScale = 0;
         else
-        {
-            PauseButtonPanelAnim.SetTrigger("CountDown");
             StartCoroutine(PauseCountDown());
-        }
         PauseButtonPanel.color = new Color(0, 0, 0, isPause ? 0.3f : 0);
     }
 
     IEnumerator PauseCountDown()
     {
-        while(true)
+        PauseButtonPanelBlock.SetActive(true);
+        for(int i = 0; i < 3; i++)
         {
-            yield return null;
+            PauseCountDownText.text = (3 - i).ToString();
+            PauseButtonPanelAnim.Play("PauseOffCountDown", -1, 0f);
+            yield return new WaitForSecondsRealtime(1.0f);
         }
+        Time.timeScale = 1;
+        PauseCountDownText.text = "";
+        PauseButtonPanelBlock.SetActive(false);
     }
 
     public void ReStartButtonClick()

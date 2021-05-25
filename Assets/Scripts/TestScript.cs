@@ -17,7 +17,7 @@ public class TestScript : MonoBehaviour
 
     public void Button_Move()
     {
-        ButtonAnim.SetTrigger("Start");
+        ButtonAnim.Play("Test", -1, 0f);
     }
 
     private void Update()

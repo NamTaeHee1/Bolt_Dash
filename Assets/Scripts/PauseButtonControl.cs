@@ -15,6 +15,7 @@ public class PauseButtonControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI PauseCountDownText;
     bool isON = false, isPause = false;
     private float AlphaThreshold = 0.1f;
+    IEnumerator PauseOffCountDown = null;
 
     private void Start()
     {
@@ -45,13 +46,20 @@ public class PauseButtonControl : MonoBehaviour
         if (isPause)
             Time.timeScale = 0;
         else
-            StartCoroutine(PauseCountDown());
+        {
+            if(PauseOffCountDown != null)
+            {
+                StopCoroutine(PauseOffCountDown);
+                PauseCountDownText.text = "";
+            }
+            PauseOffCountDown = PauseCountDown();
+            StartCoroutine(PauseOffCountDown);
+        }
         PauseButtonPanel.color = new Color(0, 0, 0, 0.3f);
     }
 
     IEnumerator PauseCountDown()
     {
-        PauseButtonPanelBlock.SetActive(true);
         for(int i = 0; i < 3; i++)
         {
             PauseCountDownText.text = (3 - i).ToString();
@@ -60,7 +68,6 @@ public class PauseButtonControl : MonoBehaviour
         }
         Time.timeScale = 1;
         PauseCountDownText.text = "";
-        PauseButtonPanelBlock.SetActive(false);
         PauseButtonPanel.color = new Color(0, 0, 0, 0);
     }
 

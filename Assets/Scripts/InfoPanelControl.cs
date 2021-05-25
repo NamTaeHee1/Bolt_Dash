@@ -31,7 +31,12 @@ public class InfoPanelControl : MonoBehaviour
 
     public void ClickYes()
     {
-
+        if (TitleText.text.Contains("종료"))
+        {
+            Debug.Log("종료!");
+        }
+        else
+            Debug.Log("다시시작");
     }
 
     public void ClickNo()

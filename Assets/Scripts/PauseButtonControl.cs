@@ -8,7 +8,7 @@ using TMPro;
 public class PauseButtonControl : MonoBehaviour
 {
     [SerializeField] private Animator PauseButtonAnim, PauseButtonPanelAnim;
-    [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage, PauseButtonPanelBlock;
+    [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage, PauseButtonPanelBlock, InfoPanel;
     [SerializeField] private Image[] ButtonImages;
     [SerializeField] private Image PauseButtonPanel;
     [SerializeField] private Button PauseButton;
@@ -66,16 +66,23 @@ public class PauseButtonControl : MonoBehaviour
 
     public void ReStartButtonClick()
     {
+        PauseButtonPanelBlock.SetActive(true);
+        InfoPanel.SetActive(true);
+        InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 다시시작 하시겠습니까?");
         Debug.Log("Restart");
     }
 
     public void SettingButtonClick()
     {
+        PauseButtonPanelBlock.SetActive(true);
         Debug.Log("Setting");
     }
 
     public void QuitButtonClick()
     {
+        PauseButtonPanelBlock.SetActive(true);
+        InfoPanel.SetActive(true);
+        InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 종료하시겠습니까?");
         Debug.Log("Quit");
     }
 }

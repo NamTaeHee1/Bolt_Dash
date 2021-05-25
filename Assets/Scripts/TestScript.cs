@@ -8,8 +8,20 @@ using UnityEngine.EventSystems;
 
 public class TestScript : MonoBehaviour
 {
+    [SerializeField] private Animator ButtonAnim;
+
     public void Button_Click()
     {
-        Debug.Log(EventSystem.current.currentSelectedGameObject);
+        Debug.Log(ButtonAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
+    }
+
+    public void Button_Move()
+    {
+        ButtonAnim.SetTrigger("Start");
+    }
+
+    private void Update()
+    {
+        Debug.Log("normalizedTime = " + ButtonAnim.GetCurrentAnimatorStateInfo(0).normalizedTime);
     }
 }

@@ -51,20 +51,10 @@ public class PauseButtonControl : MonoBehaviour
 
     IEnumerator PauseCountDown()
     {
-        float EndTime = 6f;
-        float CurrentTime = 0;
-
         while(true)
         {
-            CurrentTime += Time.unscaledDeltaTime;
-            Debug.Log(CurrentTime);
-            if (CurrentTime >= EndTime)
-            {
-                Time.timeScale = 1;
-                yield return null;
-            }
+            yield return null;
         }
-
     }
 
     public void ReStartButtonClick()

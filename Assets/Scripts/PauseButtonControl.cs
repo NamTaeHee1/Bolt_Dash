@@ -25,6 +25,7 @@ public class PauseButtonControl : MonoBehaviour
 
     public void GameStart()
     {
+        PauseButtonMovement.GetComponent<RectTransform>().anchoredPosition = new Vector2(PauseButtonMovement.GetComponent<RectTransform>().anchoredPosition.x, -953.7935f);
         PauseButtonMovement.GetComponent<RectTransform>().DOAnchorPosY(-955.3f, 1.0f).SetEase(Ease.OutBack);
         StartCoroutine(InteractableOnPauseButton());
     }
@@ -58,6 +59,19 @@ public class PauseButtonControl : MonoBehaviour
         PauseButtonPanel.color = new Color(0, 0, 0, 0.3f);
     }
 
+    public void StopButtonClick(string content)
+    {
+        if (content.Equals("ReStart"))
+        {
+            isON = !isON;
+            isPause = !isPause;
+            PauseImage.SetActive(isON ? false : true);
+            PlayImage.SetActive(isON ? true : false);
+            PauseButtonAnim.SetBool("isON", isON);
+            PauseButtonPanel.color = new Color(0, 0, 0, 0);
+        }
+    }
+
     IEnumerator PauseCountDown()
     {
         for(int i = 0; i < 3; i++)
@@ -72,25 +86,14 @@ public class PauseButtonControl : MonoBehaviour
         PauseButtonPanel.color = new Color(0, 0, 0, 0);
     }
 
-    public void ReStartButtonClick()
-    {
-        PauseButtonPanelBlock.SetActive(true);
-        InfoPanel.SetActive(true);
-        InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 다시시작 하시겠습니까?");
-        Debug.Log("Restart");
-    }
+    public void ReStartButtonClick() => InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 다시시작 하시겠습니까?");
+
+    public void QuitButtonClick() => InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 종료하시겠습니까?");
 
     public void SettingButtonClick()
     {
         PauseButtonPanelBlock.SetActive(true);
-        Debug.Log("Setting");
+        FindObjectOfType<SettingManager>().ClickSetting();
     }
 
-    public void QuitButtonClick()
-    {
-        PauseButtonPanelBlock.SetActive(true);
-        InfoPanel.SetActive(true);
-        InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 종료하시겠습니까?");
-        Debug.Log("Quit");
-    }
 }

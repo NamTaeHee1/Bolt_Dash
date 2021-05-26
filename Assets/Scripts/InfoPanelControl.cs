@@ -1,31 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class InfoPanelControl : MonoBehaviour
 {
     [SerializeField] private Animator InfoPanelAnim;
     [SerializeField] private TextMeshProUGUI TitleText;
-    [SerializeField] private GameObject PauseButtonBlock;
+    [SerializeField] private GameObject PauseButtonBlock, PauseButtonPanelBlock, InfoPanel;
 
     private void OnEnable()
     {
         InfoPanelAnim.SetBool("isON", true);
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void SendText(string TitleText)
     {
+        PauseButtonPanelBlock.SetActive(true);
+        InfoPanel.SetActive(true);
         this.TitleText.text = TitleText;
     }
 
@@ -33,10 +26,12 @@ public class InfoPanelControl : MonoBehaviour
     {
         if (TitleText.text.Contains("종료"))
         {
-            Debug.Log("종료!");
+            SceneManager.LoadScene("GameScene");
         }
         else
             FindObjectOfType<GameManager>().ReStart();
+        Time.timeScale = 1;
+        ClickNo();
     }
 
     public void ClickNo()

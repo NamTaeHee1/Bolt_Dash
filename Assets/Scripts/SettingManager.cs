@@ -9,31 +9,21 @@ public class SettingManager : MonoBehaviour
     public Button[] Buttons;
     public GameObject SettingParents;
     public GameObject SettingObject;
-    [SerializeField]
-    GameObject SettingPanelImage;
-    Animator SettingPanelImageAnim;
-    [SerializeField]
-    GameObject SettingPanelLeftLine;
-    Animator SettingPanelLeftLineAnim;
-    [SerializeField]
-    GameObject SettingPanelRightLine;
-    Animator SettingPanelRightLineAnim;
-    [SerializeField]
-    Slider LightControlSlider, SoundEffectControlSlider, BGMSoundControlSlider;
-    [SerializeField]
-    Text LightControlSliderValueText, SoundEffectControlSliderValueText, BGMSoundControlSliderValueText;
-    [SerializeField]
-    private PostProcessVolume postProcessVolume;
+    [SerializeField] GameObject SettingPanelImage, SettingPanelLeftLine, SettingPanelRightLine;
+    Animator SettingPanelImageAnim, SettingPanelLeftLineAnim, SettingPanelRightLineAnim;
+    [SerializeField] Slider LightControlSlider, SoundEffectControlSlider, BGMSoundControlSlider;
+    [SerializeField] Text LightControlSliderValueText, SoundEffectControlSliderValueText, BGMSoundControlSliderValueText;
+    [SerializeField] private PostProcessVolume postProcessVolume;
     Bloom bloom;
     FloatParameter floatParameter;
-    // Start is called before the first frame update
+
     void Start()
     {
         SettingPanelImageAnim = SettingPanelImage.GetComponent<Animator>();
         SettingPanelLeftLineAnim = SettingPanelLeftLine.GetComponent<Animator>();
         SettingPanelRightLineAnim = SettingPanelRightLine.GetComponent<Animator>();
-        bloom = postProcessVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.Bloom>();
-        floatParameter = new UnityEngine.Rendering.PostProcessing.FloatParameter();
+        bloom = postProcessVolume.profile.GetSetting<Bloom>();
+        floatParameter = new FloatParameter();
     }
 
     public void ClickSetting()
@@ -63,6 +53,7 @@ public class SettingManager : MonoBehaviour
         SettingParents.SetActive(false);
         for (int i = 0; i < Buttons.Length; i++)
             Buttons[i].interactable = true;
+
     }
 
     void ShowSettingItem()
@@ -87,9 +78,8 @@ public class SettingManager : MonoBehaviour
 
     }
 
-    IEnumerator ShowValue(Slider slider, Text sliderValueText)
+    void ShowValue(Slider slider, Text sliderValueText)
     {
         sliderValueText.text = slider.value.ToString();
-        yield return new WaitForSeconds(1.0f);
     }
 }

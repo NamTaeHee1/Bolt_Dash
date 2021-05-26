@@ -19,7 +19,7 @@ public class MainSceneButtonManager : MonoBehaviour
         Debug.Log("Play!");
         for (int i = 0; i < 4; i++)
             Buttons[i].interactable = false;
-        FindObjectOfType<GameManager>().GameStarted = true;
+        FindObjectOfType<GameManager>().GameStart();
         Buttons[0].GetComponent<Animator>().SetTrigger("Pressed");
     }
 

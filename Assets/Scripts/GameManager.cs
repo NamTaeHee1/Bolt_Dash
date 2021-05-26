@@ -6,42 +6,23 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public bool GameStarted = false;
-    [SerializeField]
-    GameObject LeftThorn, RightThorn, StartPosition;
-    Transform LeftThornTransform, RightThornTransform, StartPositionTransform;
+    [SerializeField] GameObject LeftThorn, RightThorn, StartPosition;
     static public TextMeshProUGUI BestScoreText;
-    [SerializeField]
-    GameObject[] GameObjects;
-    bool GameStart = false;
+    [SerializeField] GameObject[] GameObjects;
+    IEnumerator ScoreSettingCoroutine = null;
+
 
     void Start()
     {
-        LeftThornTransform = LeftThorn.GetComponent<Transform>();
-        RightThornTransform = RightThorn.GetComponent<Transform>();
-        StartPositionTransform = StartPosition.GetComponent<Transform>();
         BestScoreText = GameObjects[0].GetComponent<TextMeshProUGUI>();
     }
-
-    void Update()
-    {
-        if (GameStarted)
-        {
-            if (!GameStart)
-            {
-                GameStart = true;
-                BeforeTheGameStartProduction();
-                StartCoroutine(BestScoreToScore());
-                StartCoroutine(HideMenuObject());
-            }
-        }
-        else
-        {
-            LeftThorn.SetActive(false);
-            RightThorn.SetActive(false);
-        }
-    }
    
+    public void GameStart()
+    {
+        BeforeTheGameStartProduction();
+        SettingScoreText();
+        StartCoroutine(HideMenuObject());
+    }
 
     public void BeforeTheGameStartProduction()
     {
@@ -50,6 +31,16 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<PauseButtonControl>().GameStart();
     }
 
+    void SettingScoreText()
+    {
+        if(ScoreSettingCoroutine != null)
+        {
+            StopCoroutine(ScoreSettingCoroutine);
+            BestScoreText.text = "";
+        }
+        ScoreSettingCoroutine = BestScoreToScore();
+        StartCoroutine(ScoreSettingCoroutine);
+    }
 
     IEnumerator BestScoreToScore()
     {
@@ -66,7 +57,9 @@ public class GameManager : MonoBehaviour
 
     public void ReStart()
     {
-
+        GameObjects[0].GetComponent<Animator>().Play("GameStart", -1, 0f);
+        SettingScoreText();
+        FindObjectOfType<PauseButtonControl>().StopButtonClick("ReStart");
     }
 
     IEnumerator HideMenuObject()

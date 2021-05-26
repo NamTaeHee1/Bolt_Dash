@@ -86,9 +86,17 @@ public class PauseButtonControl : MonoBehaviour
         PauseButtonPanel.color = new Color(0, 0, 0, 0);
     }
 
-    public void ReStartButtonClick() => InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 다시시작 하시겠습니까?");
+    public void ReStartButtonClick()
+    {
+        InfoPanel.SetActive(true);
+        InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 다시시작 하시겠습니까?");
+    }
 
-    public void QuitButtonClick() => InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 종료하시겠습니까?");
+    public void QuitButtonClick()
+    {
+        InfoPanel.SetActive(true);
+        InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 종료하시겠습니까?");
+    }
 
     public void SettingButtonClick()
     {

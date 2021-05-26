@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
+using TMPro;
 
 public class SettingManager : MonoBehaviour
 {
     public Button[] Buttons;
     public GameObject SettingParents;
     public GameObject SettingObject;
-    [SerializeField] GameObject SettingPanelImage, SettingPanelLeftLine, SettingPanelRightLine;
+    [SerializeField] GameObject SettingPanelImage, SettingPanelLeftLine, SettingPanelRightLine, PauseButtonBlock;
     Animator SettingPanelImageAnim, SettingPanelLeftLineAnim, SettingPanelRightLineAnim;
     [SerializeField] Slider LightControlSlider, SoundEffectControlSlider, BGMSoundControlSlider;
-    [SerializeField] Text LightControlSliderValueText, SoundEffectControlSliderValueText, BGMSoundControlSliderValueText;
-    [SerializeField] private PostProcessVolume postProcessVolume;
+    [SerializeField] TextMeshProUGUI LightControlSliderValueText, SoundEffectControlSliderValueText, BGMSoundControlSliderValueText;
+    [SerializeField] private PostProcessVolume PostProcessVolume;
     Bloom bloom;
     FloatParameter floatParameter;
 
@@ -22,7 +23,7 @@ public class SettingManager : MonoBehaviour
         SettingPanelImageAnim = SettingPanelImage.GetComponent<Animator>();
         SettingPanelLeftLineAnim = SettingPanelLeftLine.GetComponent<Animator>();
         SettingPanelRightLineAnim = SettingPanelRightLine.GetComponent<Animator>();
-        bloom = postProcessVolume.profile.GetSetting<Bloom>();
+        bloom = PostProcessVolume.profile.GetSetting<Bloom>();
         floatParameter = new FloatParameter();
     }
 
@@ -36,29 +37,23 @@ public class SettingManager : MonoBehaviour
         {
             Buttons[i].interactable = false;
         }
-        Invoke("ShowSettingItem", 0.63f);
     }
 
     public void SettingClickBackButton()
     {
-        SettingObject.SetActive(false);
         SettingPanelImageAnim.SetBool("isON", false);
         SettingPanelLeftLineAnim.SetBool("isON", false);
         SettingPanelRightLineAnim.SetBool("isON", false);
-        Invoke("ExitSetting", 0.65f);
+        StartCoroutine(ExitSetting());
     }
 
-    void ExitSetting()
+    IEnumerator ExitSetting()
     {
+        yield return new WaitForSecondsRealtime(0.5f);
         SettingParents.SetActive(false);
         for (int i = 0; i < Buttons.Length; i++)
             Buttons[i].interactable = true;
-
-    }
-
-    void ShowSettingItem()
-    {
-        SettingObject.SetActive(true);
+        PauseButtonBlock.SetActive(false);
     }
 
     public void LightControlSliderChangeValue()
@@ -78,8 +73,8 @@ public class SettingManager : MonoBehaviour
 
     }
 
-    void ShowValue(Slider slider, Text sliderValueText)
+    void ShowValue(Slider Slider, TextMeshProUGUI SliderValueText)
     {
-        sliderValueText.text = slider.value.ToString();
+        SliderValueText.text = ((int)Slider.value).ToString();
     }
 }

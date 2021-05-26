@@ -8,7 +8,7 @@ public class InfoPanelControl : MonoBehaviour
 {
     [SerializeField] private Animator InfoPanelAnim;
     [SerializeField] private TextMeshProUGUI TitleText;
-    [SerializeField] private GameObject PauseButtonBlock, PauseButtonPanelBlock, InfoPanel;
+    [SerializeField] private GameObject PauseButtonBlock, PauseButtonPanelBlock;
 
     private void OnEnable()
     {
@@ -18,7 +18,6 @@ public class InfoPanelControl : MonoBehaviour
     public void SendText(string TitleText)
     {
         PauseButtonPanelBlock.SetActive(true);
-        InfoPanel.SetActive(true);
         this.TitleText.text = TitleText;
     }
 

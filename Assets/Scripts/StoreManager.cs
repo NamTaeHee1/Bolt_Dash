@@ -25,15 +25,15 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         static public ColorInfo CharacterColor;
         static public ColorInfo InGameObjectColor;
 
-        // Start is called before the first frame update
-        void Awake()
+        private void Awake() => ColorListUpdate();
+
+        void Start()
         {
             CharacterColor = CharacterColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
             InGameObjectColor = InGameObjectColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
             StorePanelImageAnim = StorePanelImage.GetComponent<Animator>();
             StorePanelUpLineAnim = StorePanelUpLine.GetComponent<Animator>();
             StorePanelDownLineAnim = StorePanelDownLine.GetComponent<Animator>();
-            ColorListUpdate();
         }
 
         public void ClickStore()

@@ -43,11 +43,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public void SelectThisColor()
         {
-            Debug.Log("fewofwefwe");
-            Debug.Log(EventSystem.current.currentSelectedGameObject.name);
             if (EventSystem.current.currentSelectedGameObject.name.Equals("CharacterColorSelectButton"))
             {
-                StoreManager.CharacterColor.TurnOnOff(false);
+                StoreManager.CharacterColor.TurnOnOff(false); // 여기까지는 ㄱㅊ 
                 StoreManager.CharacterColor = StoreManager.CharacterColorList[CharacterSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
                 StoreManager.CharacterColor.TurnOnOff(true);
             }
@@ -61,7 +59,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         void TurnOnOff(bool isTurnOn)
         {
-            Debug.Log(this.ColorNameText + " " + isTurnOn);
             CircleColor.a = isTurnOn ? (byte)255 : (byte)80;
             ColorText.faceColor = CircleColor;
             ColorText.outlineColor = CircleColor;

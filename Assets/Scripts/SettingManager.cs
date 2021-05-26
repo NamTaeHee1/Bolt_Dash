@@ -49,7 +49,7 @@ public class SettingManager : MonoBehaviour
 
     IEnumerator ExitSetting()
     {
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.65f);
         SettingParents.SetActive(false);
         for (int i = 0; i < Buttons.Length; i++)
             Buttons[i].interactable = true;

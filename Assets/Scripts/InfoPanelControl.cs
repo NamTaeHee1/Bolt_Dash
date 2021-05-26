@@ -36,7 +36,7 @@ public class InfoPanelControl : MonoBehaviour
             Debug.Log("종료!");
         }
         else
-            Debug.Log("다시시작");
+            FindObjectOfType<GameManager>().ReStart();
     }
 
     public void ClickNo()

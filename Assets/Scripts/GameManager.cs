@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ReStart()
+    {
+
+    }
 
     IEnumerator HideMenuObject()
     {

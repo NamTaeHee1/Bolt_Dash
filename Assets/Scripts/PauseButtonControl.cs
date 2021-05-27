@@ -44,15 +44,15 @@ public class PauseButtonControl : MonoBehaviour
         PauseImage.SetActive(isON ? false : true);
         PlayImage.SetActive(isON ? true : false);
         PauseButtonAnim.SetBool("isON", isON);
+        if (PauseOffCountDown != null)
+        {
+            StopCoroutine(PauseOffCountDown);
+            PauseCountDownText.text = "";
+        }
         if (isPause)
             Time.timeScale = 0;
         else
         {
-            if(PauseOffCountDown != null)
-            {
-                StopCoroutine(PauseOffCountDown);
-                PauseCountDownText.text = "";
-            }
             PauseOffCountDown = PauseCountDown();
             StartCoroutine(PauseOffCountDown);
         }

@@ -65,7 +65,7 @@ public class SettingManager : MonoBehaviour
 
     public void SoundEffectSliderChangeValue()
     {
-
+        ShowValue(SoundEffectControlSlider, SoundEffectControlSliderValueText);
     }
 
     public void BGMSoundSliderChangeValue()

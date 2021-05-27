@@ -70,7 +70,7 @@ public class SettingManager : MonoBehaviour
 
     public void BGMSoundSliderChangeValue()
     {
-
+        ShowValue(BGMSoundControlSlider, BGMSoundControlSliderValueText);
     }
 
     void ShowValue(Slider Slider, TextMeshProUGUI SliderValueText)

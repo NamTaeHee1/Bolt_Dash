@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainSceneButtonManager : MonoBehaviour
+public class MainMenuButtonManager : MonoBehaviour
 {
     [SerializeField] Button[] Buttons;
     private float AlphaThreshold = 0.1f;

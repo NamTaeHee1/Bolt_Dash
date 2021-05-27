@@ -74,6 +74,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public void ColorListUpdate()
         {
+            CharacterColorList.Clear();
+            InGameObjectColorList.Clear();
             for (int i = 0; i < CharacterColorContent.transform.childCount; i++)
                 CharacterColorList.Add(CharacterColorContent.transform.GetChild(i).GetComponent<ColorInfo>());
             for (int i = 0; i < InGameObjectColorContent.transform.childCount; i++)

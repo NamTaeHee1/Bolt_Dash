@@ -43,10 +43,11 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public void SelectThisColor()
         {
-            FindObjectOfType<StoreManager>().ColorListUpdate();
             if (EventSystem.current.currentSelectedGameObject.name.Equals("CharacterColorSelectButton"))
             {
-                StoreManager.CharacterColor.TurnOnOff(false); // 여기까지는 ㄱㅊ 
+                StoreManager.CharacterColor.TurnOnOff(false);
+                for (int i = 0; i < StoreManager.CharacterColorList.Count; i++)
+                    Debug.Log(StoreManager.CharacterColorList[i].ColorNameText + " ");
                 StoreManager.CharacterColor = StoreManager.CharacterColorList[CharacterSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
                 StoreManager.CharacterColor.TurnOnOff(true);
             }

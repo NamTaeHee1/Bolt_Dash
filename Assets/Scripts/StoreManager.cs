@@ -12,6 +12,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         public GameObject StoreObject;
         public GameObject CharacterColorContent;
         public GameObject InGameObjectColorContent;
+
         [SerializeField] GameObject StorePanelImage;
         [SerializeField] GameObject StorePanelUpLine;
         [SerializeField] GameObject StorePanelDownLine;
@@ -19,6 +20,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         [SerializeField] Animator StorePanelImageAnim;
         [SerializeField] Animator StorePanelUpLineAnim;
         [SerializeField] Animator StorePanelDownLineAnim;
+
+        [SerializeField] SimpleScrollSnap CharacterScrollSnap;
+        [SerializeField] SimpleScrollSnap ObjectScrollSnap;
 
         static public List<ColorInfo> CharacterColorList = new List<ColorInfo>();
         static public List<ColorInfo> InGameObjectColorList = new List<ColorInfo>();

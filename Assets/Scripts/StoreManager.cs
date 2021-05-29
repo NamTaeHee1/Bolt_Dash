@@ -12,13 +12,13 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         public GameObject StoreObject;
         public GameObject CharacterColorContent;
         public GameObject InGameObjectColorContent;
-        [SerializeField]    GameObject StorePanelImage;
-        [SerializeField]    GameObject StorePanelUpLine;
-        [SerializeField]    GameObject StorePanelDownLine;
+        [SerializeField] GameObject StorePanelImage;
+        [SerializeField] GameObject StorePanelUpLine;
+        [SerializeField] GameObject StorePanelDownLine;
 
-        Animator StorePanelImageAnim;
-        Animator StorePanelUpLineAnim;
-        Animator StorePanelDownLineAnim;
+        [SerializeField] Animator StorePanelImageAnim;
+        [SerializeField] Animator StorePanelUpLineAnim;
+        [SerializeField] Animator StorePanelDownLineAnim;
 
         static public List<ColorInfo> CharacterColorList = new List<ColorInfo>();
         static public List<ColorInfo> InGameObjectColorList = new List<ColorInfo>();
@@ -31,9 +31,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             CharacterColor = CharacterColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
             InGameObjectColor = InGameObjectColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
-            StorePanelImageAnim = StorePanelImage.GetComponent<Animator>();
-            StorePanelUpLineAnim = StorePanelUpLine.GetComponent<Animator>();
-            StorePanelDownLineAnim = StorePanelDownLine.GetComponent<Animator>();
         }
 
         public void ClickStore()

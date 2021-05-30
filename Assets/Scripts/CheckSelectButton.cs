@@ -20,8 +20,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
         {
             CharacterColorSelectButton.gameObject.SetActive(StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].ColorNameText != StoreManager.CharacterColor.ColorNameText);
             ObjectColorSelectButton.gameObject.SetActive(StoreManager.InGameObjectColorList[ObjectScrollSnap.CurrentPanel].ColorNameText != StoreManager.InGameObjectColor.ColorNameText);
-            CharacterColorSelectButtonText.text = StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].isHaveThisColor ? "선택" : "구매";
-            ObjectColorSelectButtonText.text = StoreManager.InGameObjectColorList[ObjectScrollSnap.CurrentPanel].isHaveThisColor ? "선택" : "구매";
+            CharacterColorSelectButtonText.text = StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].isHaveThisColor ? "선택" : StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].NecessaryElectronic.ToString();
+            ObjectColorSelectButtonText.text = StoreManager.InGameObjectColorList[ObjectScrollSnap.CurrentPanel].isHaveThisColor ? "선택" : StoreManager.InGameObjectColorList[ObjectScrollSnap.CurrentPanel].NecessaryElectronic.ToString();
         }
     }
 

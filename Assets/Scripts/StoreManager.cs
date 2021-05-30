@@ -50,16 +50,17 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             StoreObject.SetActive(false);
             StoreAnim.Play("StoreOFF", -1, 0f);
-            Invoke("ExitStore", 0.65f);
+            StartCoroutine(ExitStore());
         }
 
-        void ExitStore()
+        IEnumerator ExitStore()
         {
             StoreParents.SetActive(false);
             for (int i = 0; i < Buttons.Length; i++)
             {
                 Buttons[i].interactable = true;
             }
+            yield return new WaitForSeconds(0.65f);
         }
 
         public void ColorListUpdate()

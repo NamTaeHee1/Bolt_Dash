@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace DanielLochner.Assets.SimpleScrollSnap
 {
@@ -17,9 +18,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         [SerializeField] GameObject StorePanelUpLine;
         [SerializeField] GameObject StorePanelDownLine;
 
-        [SerializeField] Animator StorePanelImageAnim;
-        [SerializeField] Animator StorePanelUpLineAnim;
-        [SerializeField] Animator StorePanelDownLineAnim;
+        [SerializeField] Animator StoreAnim;
 
         [SerializeField] SimpleScrollSnap CharacterScrollSnap;
         [SerializeField] SimpleScrollSnap ObjectScrollSnap;
@@ -40,22 +39,17 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         public void ClickStore()
         {
             StoreParents.SetActive(true);
-            StorePanelImageAnim.SetBool("isON", true);
-            StorePanelUpLineAnim.SetBool("isON", true);
-            StorePanelDownLineAnim.SetBool("isON", true);
+            StoreAnim.Play("StoreON", -1, 0f);
             for (int i = 0; i < Buttons.Length; i++)
             {
                 Buttons[i].interactable = false;
             }
-            Invoke("ShowStoreItem", 0.63f);
         }
 
         public void StoreClickBackButton()
         {
             StoreObject.SetActive(false);
-            StorePanelImageAnim.SetBool("isON", false);
-            StorePanelUpLineAnim.SetBool("isON", false);
-            StorePanelDownLineAnim.SetBool("isON", false);
+            StoreAnim.Play("StoreOFF", -1, 0f);
             Invoke("ExitStore", 0.65f);
         }
 
@@ -66,11 +60,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             {
                 Buttons[i].interactable = true;
             }
-        }
-
-        void ShowStoreItem()
-        {
-            StoreObject.SetActive(true);
         }
 
         public void ColorListUpdate()

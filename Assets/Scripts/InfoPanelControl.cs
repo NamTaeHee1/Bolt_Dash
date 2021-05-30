@@ -41,7 +41,7 @@ public class InfoPanelControl : MonoBehaviour
 
     IEnumerator ExitInfo()
     {
-        yield return new WaitForSecondsRealtime(0.55f);
+        yield return new WaitForSecondsRealtime(0.4f);
         this.gameObject.SetActive(false);
         PauseButtonBlock.SetActive(false);
     }

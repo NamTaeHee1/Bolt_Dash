@@ -15,6 +15,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         public bool isSelectThisColor = false;
         TextMeshProUGUI ColorText;
         SpriteRenderer CircleSpriteRenderer;
+        GameObject Lock;
         [SerializeField] TextMeshProUGUI ButtonText;
         [SerializeField] SimpleScrollSnap CharacterSimpleScroll, ObjectSimpleScroll;
 
@@ -22,6 +23,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             CircleSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
             ColorText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            Lock = transform.GetChild(2).gameObject;
         }
 
         private void Start()
@@ -38,7 +40,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             if (!isSelectThisColor)
                 CircleColor.a = 80;
-            ButtonText.text = !isHaveThisColor ? "구매" : "선택";
+            Lock.SetActive(!isHaveThisColor);
         }
 
         public void SelectThisColor()

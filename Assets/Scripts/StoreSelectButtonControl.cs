@@ -72,7 +72,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
                 FindObjectOfType<StoreManager>().ReloadElectronicMoney();
             }
             else
+            {
                 Debug.Log("∫Œ¡∑");
+                SelectedColor.gameObject.GetComponent<Animator>().Play("LackMoney", -1, 0f);
+            }
         }
     }
 }

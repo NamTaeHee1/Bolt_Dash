@@ -11,28 +11,23 @@ public class SettingManager : MonoBehaviour
     public GameObject SettingParents;
     public GameObject SettingObject;
     [SerializeField] GameObject SettingPanelImage, SettingPanelLeftLine, SettingPanelRightLine, PauseButtonBlock;
-    Animator SettingPanelImageAnim, SettingPanelLeftLineAnim, SettingPanelRightLineAnim;
+    [SerializeField] Animator SettingAnim;
     [SerializeField] Slider LightControlSlider, SoundEffectControlSlider, BGMSoundControlSlider;
     [SerializeField] TextMeshProUGUI LightControlSliderValueText, SoundEffectControlSliderValueText, BGMSoundControlSliderValueText;
     [SerializeField] private PostProcessVolume PostProcessVolume;
-    Bloom bloom;
+    Bloom Bloom;
     FloatParameter floatParameter;
 
     void Start()
     {
-        SettingPanelImageAnim = SettingPanelImage.GetComponent<Animator>();
-        SettingPanelLeftLineAnim = SettingPanelLeftLine.GetComponent<Animator>();
-        SettingPanelRightLineAnim = SettingPanelRightLine.GetComponent<Animator>();
-        bloom = PostProcessVolume.profile.GetSetting<Bloom>();
+        Bloom = PostProcessVolume.profile.GetSetting<Bloom>();
         floatParameter = new FloatParameter();
     }
 
     public void ClickSetting()
     {
         SettingParents.SetActive(true);
-        SettingPanelImageAnim.SetBool("isON", true);
-        SettingPanelLeftLineAnim.SetBool("isON", true);
-        SettingPanelRightLineAnim.SetBool("isON", true);
+        SettingAnim.Play("SettingON", -1, 0f);
         for (int i = 0; i < Buttons.Length; i++)
         {
             Buttons[i].interactable = false;
@@ -41,15 +36,13 @@ public class SettingManager : MonoBehaviour
 
     public void SettingClickBackButton()
     {
-        SettingPanelImageAnim.SetBool("isON", false);
-        SettingPanelLeftLineAnim.SetBool("isON", false);
-        SettingPanelRightLineAnim.SetBool("isON", false);
+        SettingAnim.Play("SettingOFF", -1, 0f);
         StartCoroutine(ExitSetting());
     }
 
     IEnumerator ExitSetting()
     {
-        yield return new WaitForSecondsRealtime(0.65f);
+        yield return new WaitForSecondsRealtime(0.55f);
         SettingParents.SetActive(false);
         for (int i = 0; i < Buttons.Length; i++)
             Buttons[i].interactable = true;
@@ -59,7 +52,7 @@ public class SettingManager : MonoBehaviour
     public void LightControlSliderChangeValue()
     {
         floatParameter.value = LightControlSlider.value;
-        bloom.intensity.Override(floatParameter);
+        Bloom.intensity.Override(floatParameter);
         ShowValue(LightControlSlider, LightControlSliderValueText);
     }
 

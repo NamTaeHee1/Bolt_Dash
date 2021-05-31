@@ -63,7 +63,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         IEnumerator ExitStore()
         {
-            yield return new WaitForSeconds(0.65f);
+            yield return new WaitForSeconds(0.55f);
             StoreParents.SetActive(false);
             for (int i = 0; i < Buttons.Length; i++)
             {

@@ -60,6 +60,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
                 }
             }
             CheckSelectButtonState();
+            FindObjectOfType<StoreManager>().ReloadElectronicMoney();
         }
 
         public void BuyColor(ColorInfo SelectedColor)

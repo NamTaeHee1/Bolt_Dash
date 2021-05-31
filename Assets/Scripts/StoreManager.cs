@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 namespace DanielLochner.Assets.SimpleScrollSnap
 {
@@ -20,6 +21,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         [SerializeField] Animator StoreAnim;
 
+        [SerializeField] TextMeshProUGUI ElectronicMoneyText;
+
         [SerializeField] SimpleScrollSnap CharacterScrollSnap;
         [SerializeField] SimpleScrollSnap ObjectScrollSnap;
 
@@ -27,9 +30,13 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         static public List<ColorInfo> InGameObjectColorList = new List<ColorInfo>();
         static public ColorInfo CharacterColor;
         static public ColorInfo InGameObjectColor;
-        static public int ElectronicMoney = 3000;
+        static public int ElectronicMoney = 0;
 
-        private void Awake() => ColorListUpdate();
+        private void Awake()
+        {
+            ColorListUpdate();
+            ReloadElectronicMoney();
+        }
 
         void Start()
         {
@@ -76,5 +83,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             Debug.Log("¼ö : " + InGameObjectColorContent.transform.childCount);
         }
 
+        public void ReloadElectronicMoney()
+        {
+            ElectronicMoneyText.text = ElectronicMoney.ToString();
+        }
     }
 }

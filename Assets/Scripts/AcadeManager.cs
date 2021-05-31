@@ -17,6 +17,7 @@ public class AcadeManager : MonoBehaviour
     [SerializeField] public int AcadeLevel = 0;
     [SerializeField] GameObject[] PowerSocketLines;
     [SerializeField] GameObject[] PowerSocketLineButtons;
+    [SerializeField] GameObject[] DontDestroyGameObjects;
     [SerializeField] GameObject RightPowerSocketImage;
     [SerializeField] Button BackToMain;
     [SerializeField] Button[] PositionMoveButtons;
@@ -129,7 +130,7 @@ public class AcadeManager : MonoBehaviour
         isReadyShowNextStage = false;
     }
 
-    void ClickPowerSocketLineButton()
+    public void ClickPowerSocketLineButton()
     {
         GameObject SelectGameObject = EventSystem.current.currentSelectedGameObject;
         if (SelectGameObject.name.Contains("PowerSocketLine"))

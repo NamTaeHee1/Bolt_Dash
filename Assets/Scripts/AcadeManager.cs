@@ -128,7 +128,8 @@ public class AcadeManager : MonoBehaviour
 
     void ClickPowerSocketLineButton()
     {
-        if(EventSystem.current.currentSelectedGameObject.name.Contains("PowerSocketLine"))
+        GameObject SelectGameObject = EventSystem.current.currentSelectedGameObject;
+        if (SelectGameObject.name.Contains("PowerSocketLine"))
         {
 
         }

@@ -10,13 +10,14 @@ public class AcadeManager : MonoBehaviour
     public bool isAcadeOn = false;
     [SerializeField]    Vector3 MovingPosition = new Vector3(5.62f, 0, -10);
     Transform CameraTransform;
-    [SerializeField]    float CameraSpeed = 0.06f;
-    [SerializeField]    Button[] Buttons;
-    [SerializeField]    public int AcadeLevel = 0;
-    [SerializeField]    GameObject[] PowerSocketLines;
-    [SerializeField]    GameObject[] PowerSocketLineButtons;
-    [SerializeField]    Button BackToMain;
-    [SerializeField]    Button[] PositionMoveButtons;
+    [SerializeField] float CameraSpeed = 0.06f;
+    [SerializeField] Button[] Buttons;
+    [SerializeField] public int AcadeLevel = 0;
+    [SerializeField] GameObject[] PowerSocketLines;
+    [SerializeField] GameObject[] PowerSocketLineButtons;
+    [SerializeField] GameObject RightSocketImage;
+    [SerializeField] Button BackToMain;
+    [SerializeField] Button[] PositionMoveButtons;
     bool isReadyShowNextStage = false;
     bool isClickFirstArrowButton = false, isClickSecondArrowButton = false;
 

@@ -17,7 +17,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         TextMeshProUGUI ColorText;
         SpriteRenderer CircleSpriteRenderer;
         GameObject Lock;
-        [SerializeField] TextMeshProUGUI ButtonText;
 
         private void Awake()
         {
@@ -36,7 +35,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             CircleSpriteRenderer.color = CircleColor;
         }
 
-        void CheckThisColor()
+        public void CheckThisColor()
         {
             if (!isSelectThisColor)
                 CircleColor.a = 80;

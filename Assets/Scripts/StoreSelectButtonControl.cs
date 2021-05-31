@@ -67,6 +67,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
             if (StoreManager.ElectronicMoney >= SelectedColor.NecessaryElectronic)
             {
                 SelectedColor.isHaveThisColor = true;
+                SelectedColor.CheckThisColor();
                 StoreManager.ElectronicMoney -= SelectedColor.NecessaryElectronic;
                 FindObjectOfType<StoreManager>().ReloadElectronicMoney();
             }

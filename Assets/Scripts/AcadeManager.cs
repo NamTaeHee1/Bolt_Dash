@@ -126,4 +126,11 @@ public class AcadeManager : MonoBehaviour
         isReadyShowNextStage = false;
     }
 
+    void ClickPowerSocketLineButton()
+    {
+        if(EventSystem.current.currentSelectedGameObject.name.Contains("PowerSocketLine"))
+        {
+
+        }
+    }
 }

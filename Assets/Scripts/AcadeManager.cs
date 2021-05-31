@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class AcadeManager : MonoBehaviour
 {
@@ -139,6 +141,6 @@ public class AcadeManager : MonoBehaviour
 
     void GoToAcadeScene(string CurrentAcadeLevel)
     {
-
+        SceneManager.LoadScene("AcadeScene");
     }
 }

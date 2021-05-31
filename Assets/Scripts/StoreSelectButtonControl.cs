@@ -64,7 +64,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
 
         public void BuyColor(ColorInfo SelectedColor)
         {
-
+            if (StoreManager.ElectronicMoney >= SelectedColor.NecessaryElectronic)
+            {
+                SelectedColor.isHaveThisColor = true;
+            }
+            else
+                Debug.Log("∫Œ¡∑");
         }
     }
 }

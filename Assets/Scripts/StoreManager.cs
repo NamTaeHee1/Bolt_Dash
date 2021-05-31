@@ -27,6 +27,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         static public List<ColorInfo> InGameObjectColorList = new List<ColorInfo>();
         static public ColorInfo CharacterColor;
         static public ColorInfo InGameObjectColor;
+        static public int ElectronicMoney = 3000;
 
         private void Awake() => ColorListUpdate();
 

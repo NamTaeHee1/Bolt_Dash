@@ -60,7 +60,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
                 }
             }
             CheckSelectButtonState();
-            FindObjectOfType<StoreManager>().ReloadElectronicMoney();
         }
 
         public void BuyColor(ColorInfo SelectedColor)
@@ -68,6 +67,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
             if (StoreManager.ElectronicMoney >= SelectedColor.NecessaryElectronic)
             {
                 SelectedColor.isHaveThisColor = true;
+                StoreManager.ElectronicMoney -= SelectedColor.NecessaryElectronic;
+                FindObjectOfType<StoreManager>().ReloadElectronicMoney();
             }
             else
                 Debug.Log("∫Œ¡∑");

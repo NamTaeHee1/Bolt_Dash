@@ -30,7 +30,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         static public List<ColorInfo> InGameObjectColorList = new List<ColorInfo>();
         static public ColorInfo CharacterColor;
         static public ColorInfo InGameObjectColor;
-        static public int ElectronicMoney = 0;
+        static public int ElectronicMoney = 300;
 
         private void Awake()
         {
@@ -63,12 +63,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         IEnumerator ExitStore()
         {
+            yield return new WaitForSeconds(0.65f);
             StoreParents.SetActive(false);
             for (int i = 0; i < Buttons.Length; i++)
             {
                 Buttons[i].interactable = true;
             }
-            yield return new WaitForSeconds(0.65f);
         }
 
         public void ColorListUpdate()

@@ -32,22 +32,39 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
 
         public void SelectThisColor()
         {
-            if (EventSystem.current.currentSelectedGameObject.name.Equals("CharacterColorSelectButton"))
+            string SelectedGameObjectName = EventSystem.current.currentSelectedGameObject.gameObject.name;
+            if (SelectedGameObjectName.Equals("CharacterColorSelectButton"))
             {
-                StoreManager.CharacterColor.TurnOnOff(false);
-                for (int i = 0; i < StoreManager.CharacterColorList.Count; i++)
-                    Debug.Log(StoreManager.CharacterColorList[i].ColorNameText + " ");
-                StoreManager.CharacterColor = StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].GetComponent<ColorInfo>();
-                StoreManager.CharacterColor.TurnOnOff(true);
+                ColorInfo CurrentCharacterColorInfo = StoreManager.CharacterColorList[CharacterScrollSnap.CurrentPanel].GetComponent<ColorInfo>();
+
+                if (!CurrentCharacterColorInfo.isHaveThisColor)
+                    BuyColor(CurrentCharacterColorInfo);
+                else
+                {
+                    StoreManager.CharacterColor.TurnOnOff(false);
+                    StoreManager.CharacterColor = CurrentCharacterColorInfo;
+                    StoreManager.CharacterColor.TurnOnOff(true);
+                }
             }
-            else if (EventSystem.current.currentSelectedGameObject.name.Equals("ObjectColorSelectButton"))
+            else if (SelectedGameObjectName.Equals("ObjectColorSelectButton"))
             {
-                StoreManager.InGameObjectColor.TurnOnOff(false);
-                StoreManager.InGameObjectColor = StoreManager.InGameObjectColorList[ObjectScrollSnap.CurrentPanel].GetComponent<ColorInfo>();
-                StoreManager.InGameObjectColor.TurnOnOff(true);
+                ColorInfo CurrentObjectColorInfo = StoreManager.InGameObjectColorList[ObjectScrollSnap.CurrentPanel].GetComponent<ColorInfo>();
+
+                if (!CurrentObjectColorInfo.isHaveThisColor)
+                    BuyColor(CurrentObjectColorInfo);
+                else
+                {
+                    StoreManager.InGameObjectColor.TurnOnOff(false);
+                    StoreManager.InGameObjectColor = CurrentObjectColorInfo;
+                    StoreManager.InGameObjectColor.TurnOnOff(true);
+                }
             }
             CheckSelectButtonState();
         }
-    }
 
+        public void BuyColor(ColorInfo SelectedColor)
+        {
+
+        }
+    }
 }

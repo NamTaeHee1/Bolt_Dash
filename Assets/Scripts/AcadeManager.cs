@@ -20,6 +20,7 @@ public class AcadeManager : MonoBehaviour
     [SerializeField] Button[] PositionMoveButtons;
     bool isReadyShowNextStage = false;
     bool isClickFirstArrowButton = false, isClickSecondArrowButton = false;
+    private string SelectAcadeLevel = "";
 
     void Start() => CameraTransform = Camera.main.GetComponent<Transform>();
 
@@ -131,7 +132,13 @@ public class AcadeManager : MonoBehaviour
         GameObject SelectGameObject = EventSystem.current.currentSelectedGameObject;
         if (SelectGameObject.name.Contains("PowerSocketLine"))
         {
-
+            SelectAcadeLevel = SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text;
+            GoToAcadeScene(SelectAcadeLevel);
         }
+    }
+
+    void GoToAcadeScene(string CurrentAcadeLevel)
+    {
+
     }
 }

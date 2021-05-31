@@ -9,6 +9,7 @@ public class PowerSocketLineButtonInfo : MonoBehaviour
     private Image StageButtonImage;
     private SpriteRenderer StageSpriteRenderer;
     private TextMeshProUGUI StageButtonText;
+    [SerializeField] private bool isAchieve = false;
     [SerializeField] private Color32 ChangeColor = new Color32(255, 255, 255, 0);
     [SerializeField] private Color32 BasicColor = new Color32(255, 255, 255, 255);
 
@@ -21,7 +22,8 @@ public class PowerSocketLineButtonInfo : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ShowButtonFlicker());
+        if(!isAchieve)
+            StartCoroutine(ShowButtonFlicker());
     }
 
     IEnumerator ShowButtonFlicker()

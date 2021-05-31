@@ -17,10 +17,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
         [SerializeField] TextMeshProUGUI CharacterColorSelectButtonText;
         [SerializeField] TextMeshProUGUI ObjectColorSelectButtonText;
 
-        private void Start()
-        {
-            CheckSelectButtonState();
-        }
+        private void Start() => CheckSelectButtonState();
 
         public void CheckSelectButtonState()
         {
@@ -67,7 +64,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
             if (StoreManager.ElectronicMoney >= SelectedColor.NecessaryElectronic)
             {
                 SelectedColor.isHaveThisColor = true;
-                SelectedColor.CheckThisColor();
+                SelectedColor.gameObject.GetComponent<Animator>().Play("ReleaseLock", -1, 0f);
+                StartCoroutine(LockOff(SelectedColor.gameObject));
                 StoreManager.ElectronicMoney -= SelectedColor.NecessaryElectronic;
                 FindObjectOfType<StoreManager>().ReloadElectronicMoney();
             }
@@ -76,6 +74,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap {
                 Debug.Log("∫Œ¡∑");
                 SelectedColor.gameObject.GetComponent<Animator>().Play("LackMoney", -1, 0f);
             }
+        }
+
+        IEnumerator LockOff(GameObject ColorCircle)
+        {
+            yield return new WaitForSeconds(0.5f);
+            ColorCircle.transform.GetChild(2).gameObject.SetActive(false);
         }
     }
 }

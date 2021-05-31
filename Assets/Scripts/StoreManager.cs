@@ -74,5 +74,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             Debug.Log("¼ö : " + CharacterColorContent.transform.childCount);
             Debug.Log("¼ö : " + InGameObjectColorContent.transform.childCount);
         }
+
     }
 }

@@ -18,7 +18,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         SpriteRenderer CircleSpriteRenderer;
         GameObject Lock;
         [SerializeField] TextMeshProUGUI ButtonText;
-        [SerializeField] SimpleScrollSnap CharacterSimpleScroll, ObjectSimpleScroll;
 
         private void Awake()
         {
@@ -44,25 +43,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             Lock.SetActive(!isHaveThisColor);
         }
 
-        public void SelectThisColor()
-        {
-            if (EventSystem.current.currentSelectedGameObject.name.Equals("CharacterColorSelectButton"))
-            {
-                StoreManager.CharacterColor.TurnOnOff(false);
-                for (int i = 0; i < StoreManager.CharacterColorList.Count; i++)
-                    Debug.Log(StoreManager.CharacterColorList[i].ColorNameText + " ");
-                StoreManager.CharacterColor = StoreManager.CharacterColorList[CharacterSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
-                StoreManager.CharacterColor.TurnOnOff(true);
-            }
-            else if(EventSystem.current.currentSelectedGameObject.name.Equals("ObjectColorSelectButton"))
-            {
-                StoreManager.InGameObjectColor.TurnOnOff(false);
-                StoreManager.InGameObjectColor = StoreManager.InGameObjectColorList[ObjectSimpleScroll.CurrentPanel].GetComponent<ColorInfo>();
-                StoreManager.InGameObjectColor.TurnOnOff(true);
-            }
-        }
-
-        void TurnOnOff(bool isTurnOn)
+        public void TurnOnOff(bool isTurnOn)
         {
             CircleColor.a = isTurnOn ? (byte)255 : (byte)80;
             ColorText.faceColor = CircleColor;

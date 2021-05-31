@@ -15,7 +15,7 @@ public class AcadeManager : MonoBehaviour
     [SerializeField] public int AcadeLevel = 0;
     [SerializeField] GameObject[] PowerSocketLines;
     [SerializeField] GameObject[] PowerSocketLineButtons;
-    [SerializeField] GameObject RightSocketImage;
+    [SerializeField] GameObject RightPowerSocketImage;
     [SerializeField] Button BackToMain;
     [SerializeField] Button[] PositionMoveButtons;
     bool isReadyShowNextStage = false;
@@ -50,6 +50,8 @@ public class AcadeManager : MonoBehaviour
                     }
                 else
                     {
+                    if (AcadeLevel == 8)
+                        RightPowerSocketImage.SetActive(true);
                     PowerSocketLines[AcadeLevel].SetActive(true);
                     PowerSocketLineButtons[AcadeLevel].SetActive(true);
                     isReadyShowNextStage = false;

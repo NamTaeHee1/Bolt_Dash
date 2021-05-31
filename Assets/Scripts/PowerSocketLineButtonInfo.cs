@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PowerSocketLineButtonEffect : MonoBehaviour
+public class PowerSocketLineButtonInfo : MonoBehaviour
 {
     private Image StageButtonImage;
     private SpriteRenderer StageSpriteRenderer;
@@ -19,7 +19,10 @@ public class PowerSocketLineButtonEffect : MonoBehaviour
         StageSpriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
-    void Start() => StartCoroutine(ShowButtonFlicker());
+    private void Start()
+    {
+        StartCoroutine(ShowButtonFlicker());
+    }
 
     IEnumerator ShowButtonFlicker()
     {

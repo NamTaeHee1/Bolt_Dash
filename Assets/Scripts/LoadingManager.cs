@@ -25,7 +25,7 @@ public class LoadingManager : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        yield return null;
+        yield return new WaitForSeconds(1.5f);
         AsyncOperation Op = SceneManager.LoadSceneAsync(NextScene);
         Op.allowSceneActivation = false;
         float Timer = 0.0f;
@@ -44,6 +44,7 @@ public class LoadingManager : MonoBehaviour
                 ProgressBar.fillAmount = Mathf.Lerp(ProgressBar.fillAmount, 1f, Timer);
                 if(ProgressBar.fillAmount == 1.0f)
                 {
+                    yield return new WaitForSeconds(1.0f);
                     Op.allowSceneActivation = true;
                     yield break;
                 }

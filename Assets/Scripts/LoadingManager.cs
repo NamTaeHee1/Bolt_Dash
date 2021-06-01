@@ -7,6 +7,7 @@ using TMPro;
 public class LoadingManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI[] LoadingText;
+    [SerializeField] Image ProgressBar;
 
     private void Start()
     {

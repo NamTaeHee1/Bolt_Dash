@@ -25,7 +25,7 @@ public class LoadingManager : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        StartCoroutine(FadeIn());
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         AsyncOperation Op = SceneManager.LoadSceneAsync(NextScene);
         Op.allowSceneActivation = false;
@@ -50,7 +50,7 @@ public class LoadingManager : MonoBehaviour
                     yield break;
                 }
             }
-            StartCoroutine(FadeOut());
+            FadeOut();
         }
     }
 
@@ -69,13 +69,13 @@ public class LoadingManager : MonoBehaviour
         }
     }
 
-    IEnumerator FadeIn()
+    static void FadeIn()
     {
-        yield return null;
+        GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeIn");
     }
 
-    IEnumerator FadeOut()
+    static void FadeOut()
     {
-        yield return null;
+
     }
 }

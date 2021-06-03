@@ -71,4 +71,9 @@ public class LoadingManager : MonoBehaviour
     {
         yield return null;
     }
+
+    IEnumerator FadeOut()
+    {
+        yield return null;
+    }
 }

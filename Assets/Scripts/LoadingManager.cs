@@ -25,6 +25,7 @@ public class LoadingManager : MonoBehaviour
 
     IEnumerator LoadScene()
     {
+        StartCoroutine(FadeIn());
         yield return new WaitForSeconds(1.5f);
         AsyncOperation Op = SceneManager.LoadSceneAsync(NextScene);
         Op.allowSceneActivation = false;

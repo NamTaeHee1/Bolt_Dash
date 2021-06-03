@@ -66,4 +66,9 @@ public class LoadingManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
     }
+
+    IEnumerator FadeIn()
+    {
+        yield return null;
+    }
 }

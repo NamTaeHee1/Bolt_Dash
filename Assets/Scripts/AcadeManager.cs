@@ -136,17 +136,18 @@ public class AcadeManager : MonoBehaviour
         if (SelectGameObject.name.Contains("PowerSocketLine"))
         {
             SelectedAcadeLevel = SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text;
+            LoadingManager.FadeOut();
             GoToAcadeScene(SelectedAcadeLevel);
         }
     }
 
-    void GoToAcadeScene(string CurrentAcadeLevel)
+    IEnumerator GoToAcadeScene(string CurrentAcadeLevel)
     {
+        yield return new WaitForSeconds(0.3f);
         LoadingManager.LoadScene("AcadeScene");
         isAcadeOn = false;
         SelectedAcadeLevel = CurrentAcadeLevel;
         for (int i = 0; i < DontDestroyGameObjects.Length; i++)
             DontDestroyOnLoad(DontDestroyGameObjects[i]);
-        LoadingManager.FadeOut();
     }
 }

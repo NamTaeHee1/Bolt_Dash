@@ -137,13 +137,13 @@ public class AcadeManager : MonoBehaviour
         {
             SelectedAcadeLevel = SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text;
             LoadingManager.FadeOut();
-            GoToAcadeScene(SelectedAcadeLevel);
+            StartCoroutine(GoToAcadeScene(SelectedAcadeLevel));
         }
     }
 
     IEnumerator GoToAcadeScene(string CurrentAcadeLevel)
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         LoadingManager.LoadScene("AcadeScene");
         isAcadeOn = false;
         SelectedAcadeLevel = CurrentAcadeLevel;

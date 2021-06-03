@@ -50,6 +50,7 @@ public class LoadingManager : MonoBehaviour
                     yield break;
                 }
             }
+            StartCoroutine(FadeOut());
         }
     }
 

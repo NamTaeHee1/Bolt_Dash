@@ -69,13 +69,13 @@ public class LoadingManager : MonoBehaviour
         }
     }
 
-    static void FadeIn()
+    public static void FadeIn()
     {
         GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeIn");
     }
 
-    static void FadeOut()
+    public static void FadeOut()
     {
-
+        GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeOut");
     }
 }

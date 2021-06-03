@@ -147,5 +147,6 @@ public class AcadeManager : MonoBehaviour
         SelectedAcadeLevel = CurrentAcadeLevel;
         for (int i = 0; i < DontDestroyGameObjects.Length; i++)
             DontDestroyOnLoad(DontDestroyGameObjects[i]);
+        LoadingManager.FadeOut();
     }
 }

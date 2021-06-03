@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using TMPro;
+using DG.Tweening;
 
 
 public class AcadeManager : MonoBehaviour
@@ -32,7 +33,7 @@ public class AcadeManager : MonoBehaviour
         if (isAcadeOn)
         {
             CheckShouldShowArrowButton();
-            CameraTransform.position = Vector3.Lerp(CameraTransform.position, MovingPosition, CameraSpeed);
+            CameraTransform.DOMove(MovingPosition, 0.5f);
 
             StartCoroutine(WaitShowNextStage());
             BackToMain.interactable = false;

@@ -7,7 +7,7 @@ public class AcadeSceneManager : MonoBehaviour
     static public string AcadeLevel;
     void Start()
     {
-        LoadingManager.FadeOut();
+        LoadingManager.FadeIn();
     }
 
     void Update()

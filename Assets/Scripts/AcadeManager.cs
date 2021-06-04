@@ -18,7 +18,7 @@ public class AcadeManager : MonoBehaviour
     [SerializeField] public int AcadeLevel = 0;
     [SerializeField] GameObject[] PowerSocketLines;
     [SerializeField] GameObject[] PowerSocketLineButtons;
-    [SerializeField] GameObject[] DontDestroyGameObjects;
+    [SerializeField] GameObject DontDestroyGameObject;
     [SerializeField] GameObject RightPowerSocketImage;
     [SerializeField] Button BackToMain;
     [SerializeField] Button[] PositionMoveButtons;
@@ -147,5 +147,6 @@ public class AcadeManager : MonoBehaviour
         AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
         yield return new WaitForSeconds(0.5f);
         LoadingManager.LoadScene("AcadeScene");
+
     }
 }

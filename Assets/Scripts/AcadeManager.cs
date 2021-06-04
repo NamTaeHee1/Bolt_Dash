@@ -144,11 +144,8 @@ public class AcadeManager : MonoBehaviour
 
     IEnumerator GoToAcadeScene(string CurrentAcadeLevel)
     {
+        AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
         yield return new WaitForSeconds(0.5f);
         LoadingManager.LoadScene("AcadeScene");
-        isAcadeOn = false;
-        AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
-        for (int i = 0; i < DontDestroyGameObjects.Length; i++)
-            DontDestroyOnLoad(DontDestroyGameObjects[i]);
     }
 }

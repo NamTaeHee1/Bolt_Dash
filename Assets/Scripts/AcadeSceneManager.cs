@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AcadeSceneManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    static public string AcadeLevel;
     void Start()
     {
         

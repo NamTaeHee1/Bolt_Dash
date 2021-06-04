@@ -148,6 +148,7 @@ public class AcadeManager : MonoBehaviour
         LoadingManager.LoadScene("AcadeScene");
         isAcadeOn = false;
         SelectedAcadeLevel = CurrentAcadeLevel;
+        AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
         for (int i = 0; i < DontDestroyGameObjects.Length; i++)
             DontDestroyOnLoad(DontDestroyGameObjects[i]);
     }

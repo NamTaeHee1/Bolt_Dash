@@ -147,6 +147,6 @@ public class AcadeManager : MonoBehaviour
         AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
         yield return new WaitForSeconds(0.5f);
         LoadingManager.LoadScene("AcadeScene");
-
+        DontDestroyOnLoad(DontDestroyGameObject);
     }
 }

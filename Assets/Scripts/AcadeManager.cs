@@ -11,20 +11,24 @@ using DG.Tweening;
 public class AcadeManager : MonoBehaviour
 {
     public bool isAcadeOn = false;
-    [SerializeField]    Vector3 MovingPosition = new Vector3(5.62f, 0, -10);
-    Transform CameraTransform;
-    [SerializeField] float CameraSpeed = 0.06f;
-    [SerializeField] Button[] Buttons;
-    [SerializeField] public int AcadeLevel = 0;
-    [SerializeField] GameObject[] PowerSocketLines;
-    [SerializeField] GameObject[] PowerSocketLineButtons;
-    [SerializeField] GameObject DontDestroyGameObject;
-    [SerializeField] GameObject RightPowerSocketImage;
-    [SerializeField] Button BackToMain;
-    [SerializeField] Button[] PositionMoveButtons;
     bool isReadyShowNextStage = false;
     bool isClickFirstArrowButton = false, isClickSecondArrowButton = false;
-    private string SelectedAcadeLevel = "";
+
+    [SerializeField] Vector3 MovingPosition = new Vector3(5.62f, 0, -10);
+
+    Transform CameraTransform;
+
+    [SerializeField] float CameraSpeed = 0.06f;
+
+    [SerializeField] public int AcadeLevel = 0;
+
+    [SerializeField] GameObject[] PowerSocketLines;
+    [SerializeField] GameObject[] PowerSocketLineButtons;
+    [SerializeField] GameObject RightPowerSocketImage;
+
+    [SerializeField] Button[] Buttons;
+    [SerializeField] Button BackToMain;
+    [SerializeField] Button[] PositionMoveButtons;
 
     void Start() => CameraTransform = Camera.main.GetComponent<Transform>();
 
@@ -137,7 +141,7 @@ public class AcadeManager : MonoBehaviour
         if (SelectGameObject.name.Contains("PowerSocketLine"))
         {
             LoadingManager.FadeOut();
-            StartCoroutine(GoToAcadeScene(SelectedAcadeLevel));
+            StartCoroutine(GoToAcadeScene(SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text));
         }
     }
 
@@ -146,6 +150,5 @@ public class AcadeManager : MonoBehaviour
         AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
         yield return new WaitForSeconds(0.5f);
         LoadingManager.LoadScene("AcadeScene");
-        DontDestroyOnLoad(DontDestroyGameObject);
     }
 }

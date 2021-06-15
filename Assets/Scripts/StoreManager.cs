@@ -52,6 +52,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             {
                 Buttons[i].interactable = false;
             }
+
         }
 
         public void StoreClickBackButton()

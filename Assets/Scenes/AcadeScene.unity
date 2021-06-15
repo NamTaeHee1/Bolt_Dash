@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 38444427}
   - component: {fileID: 38444426}
   m_Layer: 5
-  m_Name: PlayerInputCanvas
+  m_Name: BackGroundCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18457,6 +18457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57abc3852f4fb494d80946b240b999a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowLevelText: {fileID: 0}
 --- !u!4 &1399335116
 Transform:
   m_ObjectHideFlags: 0

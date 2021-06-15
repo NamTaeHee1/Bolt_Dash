@@ -26,15 +26,6 @@ public class PowerSocketLineButtonInfo : MonoBehaviour
             StartCoroutine(ShowButtonFlicker());
     }
 
-    private void Update()
-    {
-        if(FindObjectOfType<AcadeManager>().isClickButton)
-        {
-            StopAllCoroutines();
-            this.gameObject.SetActive(false);
-        }
-    }
-
     IEnumerator ShowButtonFlicker()
     {
         yield return new WaitForSeconds(0.5f);

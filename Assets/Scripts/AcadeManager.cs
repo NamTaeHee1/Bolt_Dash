@@ -11,7 +11,6 @@ using DG.Tweening;
 public class AcadeManager : MonoBehaviour
 {
     public bool isAcadeOn = false;
-    public bool isClickButton = false;
     bool isReadyShowNextStage = false;
     bool isClickFirstArrowButton = false, isClickSecondArrowButton = false;
 
@@ -145,7 +144,6 @@ public class AcadeManager : MonoBehaviour
         if (SelectGameObject.name.Contains("PowerSocketLine"))
         {
             LoadingManager.FadeOut();
-            isClickButton = true;
             StartCoroutine(GoToAcadeScene(SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text));
         }
     }

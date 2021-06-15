@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class AcadeSceneManager : MonoBehaviour
 {
     static public string AcadeLevel;
     void Start()
     {
-        LoadingManager.FadeIn();
+        StartCoroutine(StartAnimation());
     }
 
-    void Update()
+    IEnumerator StartAnimation()
     {
-        Debug.Log(AcadeLevel);
+        LoadingManager.FadeIn();
+        yield return new WaitForSeconds(1.0f);
+
     }
 }

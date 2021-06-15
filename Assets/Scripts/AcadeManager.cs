@@ -145,7 +145,7 @@ public class AcadeManager : MonoBehaviour
         if (SelectGameObject.name.Contains("PowerSocketLine"))
         {
             LoadingManager.FadeOut();
-
+            isClickButton = true;
             StartCoroutine(GoToAcadeScene(SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text));
         }
     }

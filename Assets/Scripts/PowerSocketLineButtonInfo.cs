@@ -28,7 +28,11 @@ public class PowerSocketLineButtonInfo : MonoBehaviour
 
     private void Update()
     {
-        
+        if(FindObjectOfType<AcadeManager>().isClickButton)
+        {
+            StopAllCoroutines();
+            this.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator ShowButtonFlicker()

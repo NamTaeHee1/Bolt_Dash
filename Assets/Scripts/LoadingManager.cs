@@ -79,7 +79,6 @@ public class LoadingManager : MonoBehaviour
 
     public static void FadeOut()
     {
-        GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeOut");
-        Debug.Log("FadeOut");
+        BlackScreen.GetComponent<Animator>().Play("FadeOut");
     }
 }

@@ -26,6 +26,11 @@ public class PowerSocketLineButtonInfo : MonoBehaviour
             StartCoroutine(ShowButtonFlicker());
     }
 
+    private void Update()
+    {
+        
+    }
+
     IEnumerator ShowButtonFlicker()
     {
         yield return new WaitForSeconds(0.5f);

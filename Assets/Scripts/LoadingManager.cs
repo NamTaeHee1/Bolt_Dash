@@ -9,7 +9,8 @@ public class LoadingManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI[] LoadingText;
     [SerializeField] Image ProgressBar;
-    [SerializeField] GameObject BlackScreen;
+
+    public static GameObject BlackScreen;
     public static string NextScene = "";
 
     private void Start()
@@ -73,7 +74,7 @@ public class LoadingManager : MonoBehaviour
 
     public static void FadeIn()
     {
-
+        BlackScreen.GetComponent<Animator>().Play("FadeIn");
     }
 
     public static void FadeOut()

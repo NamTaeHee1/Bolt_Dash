@@ -12,6 +12,6 @@ public class AcadeSceneManager : MonoBehaviour
 
     void Update()
     {
-        
+        Debug.Log(AcadeLevel);
     }
 }

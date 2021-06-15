@@ -10,14 +10,12 @@ public class LoadingManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] LoadingText;
     [SerializeField] Image ProgressBar;
 
-    public static GameObject BlackScreen;
     public static string NextScene = "";
 
     private void Start()
     {
         StartCoroutine(LoadingTextAnimation());
         StartCoroutine(LoadScene());
-        DontDestroyOnLoad(BlackScreen);
     }
 
     public static void LoadScene(string SceneName)
@@ -74,11 +72,11 @@ public class LoadingManager : MonoBehaviour
 
     public static void FadeIn()
     {
-        BlackScreen.GetComponent<Animator>().Play("FadeIn");
+        GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeIn");
     }
 
     public static void FadeOut()
     {
-        BlackScreen.GetComponent<Animator>().Play("FadeOut");
+        GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeOut");
     }
 }

@@ -25,12 +25,17 @@ public class AcadeManager : MonoBehaviour
     [SerializeField] GameObject[] PowerSocketLines;
     [SerializeField] GameObject[] PowerSocketLineButtons;
     [SerializeField] GameObject RightPowerSocketImage;
+    [SerializeField] GameObject BlackScreen;
 
     [SerializeField] Button[] Buttons;
     [SerializeField] Button BackToMain;
     [SerializeField] Button[] PositionMoveButtons;
 
-    void Start() => CameraTransform = Camera.main.GetComponent<Transform>();
+    void Start()
+    {
+        CameraTransform = Camera.main.GetComponent<Transform>();
+        DontDestroyOnLoad(BlackScreen);
+    }
 
     void Update()
     {

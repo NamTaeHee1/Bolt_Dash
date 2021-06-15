@@ -136,7 +136,6 @@ public class AcadeManager : MonoBehaviour
         GameObject SelectGameObject = EventSystem.current.currentSelectedGameObject;
         if (SelectGameObject.name.Contains("PowerSocketLine"))
         {
-            SelectedAcadeLevel = SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text;
             LoadingManager.FadeOut();
             StartCoroutine(GoToAcadeScene(SelectedAcadeLevel));
         }

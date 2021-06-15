@@ -10,7 +10,7 @@ using DG.Tweening;
 
 public class AcadeManager : MonoBehaviour
 {
-    public bool isAcadeOn = false;
+    public bool isAcadeOn = false, isClickAcadeButton = false;
     bool isReadyShowNextStage = false;
     bool isClickFirstArrowButton = false, isClickSecondArrowButton = false;
 
@@ -37,7 +37,7 @@ public class AcadeManager : MonoBehaviour
 
     void Update()
     {
-        if (isAcadeOn)
+        if (isAcadeOn && !isClickAcadeButton)
         {
             CheckShouldShowArrowButton();
             CameraTransform.DOMove(MovingPosition, 0.5f);
@@ -144,6 +144,8 @@ public class AcadeManager : MonoBehaviour
         if (SelectGameObject.name.Contains("PowerSocketLine"))
         {
             LoadingManager.FadeOut();
+            Destroy(SelectGameObject);
+            isClickAcadeButton = true;
             StartCoroutine(GoToAcadeScene(SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text));
         }
     }

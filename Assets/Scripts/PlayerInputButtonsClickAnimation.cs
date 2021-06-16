@@ -67,9 +67,13 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                     yield return new WaitForSeconds(0.1f);
                     for (int j = 0; j < JumpButtonTiles.Length; j++)
                         JumpButtonTiles[j].SetActive(true);
+                    yield return new WaitForSeconds(0.1f);
                 }
+                for (int j = 0; j < JumpButtonTiles.Length; j++)
+                    JumpButtonTiles[j].SetActive(false);
                 isJumpEnd = true;
                 break;
+
             case "RunUpButton":
                 for(int i = 3; i < RunUpButtonTiles.Length; i++)
                     {
@@ -84,6 +88,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                     RunUpButtonTiles[i - 3].SetActive(false);
                     }
                 break;
+
             case "RunDownButton":
                 for(int i = RunDownButtonTiles.Length - 4; i > -1; i--)
                     {
@@ -98,6 +103,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                     RunDownButtonTiles[i + 3].SetActive(false);
                 }
                 break;
+
             case "FallButton":
                 isFallEnd = false;
                     for (int i = FallButtonTiles.Length - 4; i > -1; i--)
@@ -136,12 +142,12 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
 
     public void JumpButtonDown()
     {
-
+        isJumpButtonDown = true;
     }
 
     public void JumpButtonUp()
     {
-
+        isJumpButtonDown = false;
     }
 
 }

@@ -143,6 +143,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
     public void JumpButtonUp()
     {
         isJumpButtonDown = false;
+        StopAllCoroutines();
     }
 
 }

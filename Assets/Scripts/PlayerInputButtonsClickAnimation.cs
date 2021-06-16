@@ -52,18 +52,14 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
         switch(ButtonName)
         {
             case "JumpButton":
-                for(int i = 3; i < JumpButtonTiles.Length; i++)
+                isJumpEnd = false;
+                float WaitTime = 0.35f;
+                for(int i = 0; i < JumpButtonTiles.Length; i++)
                     {
                     JumpButtonTiles[i].SetActive(true);
-                    JumpButtonTiles[i - 1].SetActive(true);
-                    JumpButtonTiles[i - 2].SetActive(true);
-                    JumpButtonTiles[i - 3].SetActive(true);
-                    yield return new WaitForSeconds(0.095f);
-                    JumpButtonTiles[i].SetActive(false);
-                    JumpButtonTiles[i -1].SetActive(false);
-                    JumpButtonTiles[i - 2].SetActive(false);
-                    JumpButtonTiles[i - 3].SetActive(false);
+                    yield return new WaitForSeconds(0.35f - (i / 100));
                     }
+                isJumpEnd = true;
                 break;
             case "RunUpButton":
                 for(int i = 3; i < RunUpButtonTiles.Length; i++)

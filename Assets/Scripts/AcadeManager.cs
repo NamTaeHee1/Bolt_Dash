@@ -18,8 +18,6 @@ public class AcadeManager : MonoBehaviour
 
     Transform CameraTransform;
 
-    [SerializeField] float CameraSpeed = 0.06f;
-
     [SerializeField] public int AcadeLevel = 0;
 
     [SerializeField] GameObject[] PowerSocketLines;

@@ -12,8 +12,8 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
     [SerializeField]
     GameObject[] FallButtonTiles;
 
-    bool isButtonDown = false;
-    bool isEnd = true;
+    bool isFallButtonDown = false;
+    bool isFallEnd = true;
     IEnumerator RunUpCoroutine = null, RunDownCoroutine = null;
     public void JumpButtonClick()
     {
@@ -97,7 +97,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                 }
                 break;
             case "FallButton":
-                isEnd = false;
+                isFallEnd = false;
                     for (int i = FallButtonTiles.Length - 4; i > -1; i--)
                     {
                         FallButtonTiles[i].SetActive(true);
@@ -111,25 +111,25 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                         FallButtonTiles[i + 3].SetActive(false);
                     }
                 yield return new WaitForSeconds(0.1f);
-                isEnd = true;
+                isFallEnd = true;
                 break;
         }
     }
 
     private void Update()
     {
-        if (isButtonDown && isEnd)
+        if (isFallButtonDown && isFallEnd)
             StartCoroutine(ButtonClick("FallButton"));
     }
 
-    public void ButtonDown()
+    public void FallButtonDown()
     {
-        isButtonDown = true;
+        isFallButtonDown = true;
     }
 
-    public void ButtonUp()
+    public void FallButtonUp()
     {
-        isButtonDown = false;
+        isFallButtonDown = false;
     }
 
 }

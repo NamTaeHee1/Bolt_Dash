@@ -5,15 +5,12 @@ using UnityEngine.EventSystems;
 
 public class PlayerInputButtonsClickAnimation : MonoBehaviour
 {
-    [SerializeField]
-    GameObject[] JumpButtonTiles;
-    [SerializeField]
-    GameObject[] RunUpButtonTiles, RunDownButtonTiles;
-    [SerializeField]
-    GameObject[] FallButtonTiles;
+    [SerializeField] GameObject[] JumpButtonTiles;
+    [SerializeField] GameObject[] RunUpButtonTiles, RunDownButtonTiles;
+    [SerializeField] GameObject[] FallButtonTiles;
 
-    bool isFallButtonDown = false;
-    bool isFallEnd = true;
+    bool isFallButtonDown = false, isFallEnd = true;
+    bool isJumpButtonDown = false, isJumpEnd = true;
     IEnumerator RunUpCoroutine = null, RunDownCoroutine = null;
     public void JumpButtonClick()
     {
@@ -130,6 +127,16 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
     public void FallButtonUp()
     {
         isFallButtonDown = false;
+    }
+
+    public void JumpButtonDown()
+    {
+
+    }
+
+    public void JumpButtonUp()
+    {
+
     }
 
 }

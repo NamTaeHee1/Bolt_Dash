@@ -12,14 +12,6 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
     bool isFallButtonDown = false, isFallEnd = true;
     bool isJumpButtonDown = false, isJumpEnd = true;
     IEnumerator RunUpCoroutine = null, RunDownCoroutine = null;
-    public void JumpButtonClick()
-    {
-        StopAllCoroutines();
-        for (int i = 0; i < JumpButtonTiles.Length; i++)
-            JumpButtonTiles[i].SetActive(false);
-
-        StartCoroutine(ButtonClick("JumpButton"));
-    }
 
     public void RunUpButtonClick()
     {
@@ -128,6 +120,9 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
     {
         if (isFallButtonDown && isFallEnd)
             StartCoroutine(ButtonClick("FallButton"));
+
+        if (isJumpButtonDown && isJumpEnd)
+            StartCoroutine(ButtonClick("JumpButton"));
     }
 
     public void FallButtonDown()

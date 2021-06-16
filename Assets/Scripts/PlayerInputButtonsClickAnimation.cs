@@ -49,7 +49,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                 for (float i = 0; i < JumpButtonTiles.Length; i++)
                    {
                     JumpButtonTiles[(int)i].SetActive(true);
-                    WaitTime -= 0.02f;
+                    WaitTime -= 0.025f;
                     yield return new WaitForSeconds(WaitTime);
                    }
                 for(int i = 0; i < 3; i++)

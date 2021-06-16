@@ -18454,8 +18454,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 312146418}
-          m_TargetAssemblyTypeName: ButtonClickAnimation, Assembly-CSharp
-          m_MethodName: ButtonUp
+          m_TargetAssemblyTypeName: PlayerInputButtonsClickAnimation, Assembly-CSharp
+          m_MethodName: FallButtonUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -18470,8 +18470,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 312146418}
-          m_TargetAssemblyTypeName: ButtonClickAnimation, Assembly-CSharp
-          m_MethodName: ButtonDown
+          m_TargetAssemblyTypeName: PlayerInputButtonsClickAnimation, Assembly-CSharp
+          m_MethodName: FallButtonDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

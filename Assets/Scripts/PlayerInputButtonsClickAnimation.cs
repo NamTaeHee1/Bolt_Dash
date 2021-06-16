@@ -144,6 +144,8 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
     {
         isJumpButtonDown = false;
         StopAllCoroutines();
+        for (int i = 0; i < JumpButtonTiles.Length; i++)
+            JumpButtonTiles[i].SetActive(false);
     }
 
 }

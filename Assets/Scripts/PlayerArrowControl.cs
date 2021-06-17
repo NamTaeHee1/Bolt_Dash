@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class PlayerArrowControl : MonoBehaviour
 {
-    Transform ArrowTransform;
+    [SerializeField] private Transform ArrowTransform;
     [SerializeField] private GameObject ArrowObject;
     [SerializeField] private GameObject ParentObject;
     [SerializeField] private float ArrowRotateSpeed = 3.0f;
-
-    private void Start()
-    {
-        ArrowTransform = GetComponent<Transform>();
-    }
 
     private void Update()
     {

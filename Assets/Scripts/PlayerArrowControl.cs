@@ -6,6 +6,7 @@ public class PlayerArrowControl : MonoBehaviour
 {
     Transform ArrowTransform;
     [SerializeField] private GameObject ArrowObject;
+    [SerializeField] private GameObject ParentObject;
     [SerializeField] private float ArrowRotateSpeed = 3.0f; 
 
     void Start() => ArrowTransform = ArrowObject.GetComponent<Transform>();
@@ -14,16 +15,16 @@ public class PlayerArrowControl : MonoBehaviour
 
     void ArrowRotate()
     {
-        if (ArrowTransform.rotation.z > 0.3f)
+        if (ArrowTransform.eulerAngles.z >= 60)
         {
             ArrowRotateSpeed *= -1;
             Debug.Log("왼쪽으로");
         }
-        else if (ArrowTransform.rotation.z < -0.3f)
+        else if (ArrowTransform.eulerAngles.z <= -60)
         {
             ArrowRotateSpeed *= -1;
             Debug.Log("오른쪽으로");
         }
-        ArrowTransform.RotateAround(GetComponentInParent<Transform>().position, Vector3.forward, Time.deltaTime * ArrowRotateSpeed);
+        ArrowTransform.RotateAround(ParentObject.transform.position, Vector3.forward, Time.deltaTime * ArrowRotateSpeed);
     }
 }

@@ -9112,6 +9112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowObject: {fileID: 1292139575}
+  ParentObject: {fileID: 709410930}
   ArrowRotateSpeed: 100
 --- !u!114 &709410936
 MonoBehaviour:

@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DanielLochner.Assets.SimpleScrollSnap;
 
 public class AcadeSceneManager : MonoBehaviour
 {
     static public string AcadeLevel;
+
     [SerializeField] TextMeshProUGUI ShowLevelText;
+
+    [SerializeField] SimpleScrollSnap PlayerInputScrollSnap;
+
     void Start()
     {
         StartCoroutine(StartAnimation());
@@ -26,6 +31,10 @@ public class AcadeSceneManager : MonoBehaviour
 
     void SettingInputPanel()
     {
+        int AcadeLevelNumber = int.Parse(AcadeLevel[5].ToString());
+        switch(AcadeLevelNumber)
+        {
 
+        }
     }
 }

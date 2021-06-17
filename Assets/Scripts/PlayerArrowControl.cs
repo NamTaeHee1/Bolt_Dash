@@ -7,9 +7,12 @@ public class PlayerArrowControl : MonoBehaviour
     Transform ArrowTransform;
     [SerializeField] private GameObject ArrowObject;
     [SerializeField] private GameObject ParentObject;
-    [SerializeField] private float ArrowRotateSpeed = 3.0f; 
+    [SerializeField] private float ArrowRotateSpeed = 3.0f;
 
-    void Start() => ArrowTransform = ArrowObject.GetComponent<Transform>();
+    private void Start()
+    {
+        ArrowTransform = GetComponent<Transform>();
+    }
 
     private void Update()
     {

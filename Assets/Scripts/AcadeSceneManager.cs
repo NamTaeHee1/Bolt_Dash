@@ -16,6 +16,7 @@ public class AcadeSceneManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartAnimation());
+        SettingInputPanel();
     }
 
     IEnumerator StartAnimation()
@@ -32,9 +33,11 @@ public class AcadeSceneManager : MonoBehaviour
     void SettingInputPanel()
     {
         int AcadeLevelNumber = int.Parse(AcadeLevel[5].ToString());
-        switch(AcadeLevelNumber)
-        {
-
-        }
+        if (AcadeLevelNumber >= 7)
+            PlayerInputScrollSnap.startingPanel = 1;
+        else if (AcadeLevelNumber >= 4)
+            PlayerInputScrollSnap.startingPanel = 2;
+        else
+            PlayerInputScrollSnap.startingPanel = 3;
     }
 }

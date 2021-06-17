@@ -23,4 +23,9 @@ public class AcadeSceneManager : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
     }
+
+    void SettingInputPanel()
+    {
+
+    }
 }

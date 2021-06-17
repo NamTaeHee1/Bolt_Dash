@@ -14,12 +14,12 @@ public class PlayerArrowControl : MonoBehaviour
 
     void ArrowRotate()
     {
-        if (ArrowTransform.rotation.z >= 0.3f)
+        if (ArrowTransform.rotation.z > 0.3f)
         {
             ArrowRotateSpeed *= -1;
             Debug.Log("왼쪽으로");
         }
-        else if (ArrowTransform.rotation.z <= -0.3f)
+        else if (ArrowTransform.rotation.z < -0.3f)
         {
             ArrowRotateSpeed *= -1;
             Debug.Log("오른쪽으로");

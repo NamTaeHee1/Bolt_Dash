@@ -11,11 +11,6 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] private float JumpHeight = 5.0f;
 
-    private void Start()
-    {
-
-    }
-
     public void PlayerJump()
     {
         PlayerRigid.AddForce(ArrowTransform.transform.up * JumpHeight, ForceMode2D.Impulse);

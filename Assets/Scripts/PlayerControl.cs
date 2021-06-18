@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private Transform PlayerTransform;
-    [SerializeField] private Rigidbody2D PlayerRigid;
     [SerializeField] private Transform ArrowTransform;
+    [SerializeField] private Rigidbody2D PlayerRigid;
+
     [SerializeField] private GameObject Arrow;
 
     [SerializeField] private float JumpHeight = 5.0f;

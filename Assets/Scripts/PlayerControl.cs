@@ -6,6 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private Transform PlayerTransform;
     [SerializeField] private Transform ArrowTransform;
+
     [SerializeField] private Rigidbody2D PlayerRigid;
 
     [SerializeField] private GameObject Arrow;

@@ -41,5 +41,4 @@ public class AcadeSceneManager : MonoBehaviour
             PlayerInputScrollSnap.startingPanel = 3;
     }
 
-
 }

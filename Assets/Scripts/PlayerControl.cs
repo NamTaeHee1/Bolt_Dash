@@ -15,6 +15,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         [SerializeField] private float JumpHeight = 5.0f;
 
+        ColorInfo PlayerColor = StoreManager.CharacterColor;
+
+
+
         public void PlayerJump()
         {
             PlayerRigid.AddForce(ArrowTransform.transform.up * JumpHeight, ForceMode2D.Impulse);

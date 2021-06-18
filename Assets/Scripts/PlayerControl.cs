@@ -21,7 +21,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         private void Start()
         {
-            
+            PlayerSpriteRenderer.color = PlayerColor.CircleColor;
         }
 
         public void PlayerJump()

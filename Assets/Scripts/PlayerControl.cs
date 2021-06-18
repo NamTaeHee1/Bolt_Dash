@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    private Transform PlayerTransform;
+    [SerializeField] private Transform PlayerTransform;
     [SerializeField] private Rigidbody2D PlayerRigid;
     [SerializeField] private Transform ArrowTransform;
     [SerializeField] private GameObject Arrow;

@@ -23,5 +23,4 @@ public class PlayerInputButtonStateControl : MonoBehaviour
                 ButtonName = Buttons[i].gameObject.name;
         }
     }
-
 }

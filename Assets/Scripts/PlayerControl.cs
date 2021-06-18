@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Start()
     {
-        PlayerRigid = GetComponent<Rigidbody2D>();
+
     }
 
     public void PlayerJump()

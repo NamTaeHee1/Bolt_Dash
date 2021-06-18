@@ -6,8 +6,7 @@ public class PlayerInputButtonStateControl : MonoBehaviour
 {
     public enum ButtonType { JUMP, RUN, FALL };
     public ButtonType ButtonState;
-    [SerializeField]
-    GameObject[] Buttons;
+    [SerializeField] GameObject[] Buttons;
     public string ButtonName = "";
 
     void Update()

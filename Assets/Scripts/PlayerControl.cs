@@ -18,7 +18,6 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name.Equals("RightWall"))
             PlayerRigid.AddForce(Vector2.left * 3.0f, ForceMode2D.Impulse);
         else if (collision.gameObject.name.Equals("LeftWall"))

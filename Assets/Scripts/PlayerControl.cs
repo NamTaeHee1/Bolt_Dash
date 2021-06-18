@@ -15,9 +15,14 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         [SerializeField] private float JumpHeight = 5.0f;
 
+        [SerializeField] private SpriteRenderer PlayerSpriteRenderer;
+
         ColorInfo PlayerColor = StoreManager.CharacterColor;
 
-
+        private void Start()
+        {
+            
+        }
 
         public void PlayerJump()
         {

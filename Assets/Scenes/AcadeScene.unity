@@ -9126,6 +9126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe3de12b1c64684f9883459e44b821e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerTransform: {fileID: 709410934}
+  PlayerRigid: {fileID: 709410931}
+  ArrowTransform: {fileID: 1292139577}
   Arrow: {fileID: 1292139575}
   JumpHeight: 15
 --- !u!1 &709436802

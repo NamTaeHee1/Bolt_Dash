@@ -7,5 +7,8 @@ public class PlayerInputButtonStateControl : MonoBehaviour
     public enum ButtonType { JUMP, RUN, FALL };
     public static ButtonType ButtonState;
 
+    void SetButtonState()
+    {
 
+    }
 }

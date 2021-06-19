@@ -9,11 +9,6 @@ public class GameManager : MonoBehaviour
     static public TextMeshProUGUI BestScoreText;
     [SerializeField] GameObject[] GameObjects;
     IEnumerator ScoreSettingCoroutine = null;
-
-    void Start()
-    {
-    
-    }
    
     public void GameStart()
     {

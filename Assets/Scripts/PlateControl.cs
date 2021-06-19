@@ -10,10 +10,7 @@ public class PlateControl : MonoBehaviour
     DanielLochner.Assets.SimpleScrollSnap.ColorInfo ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;
     bool isStepOn = false;
 
-    private void Awake()
-    {
-        PlateSpriteRenderer.color = new Color(ObjectColor.CircleColor.a, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
-    }
+    private void Awake() => PlateSpriteRenderer.color = new Color(ObjectColor.CircleColor.a, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

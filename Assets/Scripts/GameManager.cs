@@ -6,7 +6,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    static public TextMeshProUGUI BestScoreText;
+    public TextMeshProUGUI BestScoreText;
     [SerializeField] GameObject[] GameObjects;
     IEnumerator ScoreSettingCoroutine = null;
    

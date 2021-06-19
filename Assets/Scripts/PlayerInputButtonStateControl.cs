@@ -9,12 +9,4 @@ public class PlayerInputButtonStateControl : MonoBehaviour
     [SerializeField] GameObject[] Buttons;
     public string ButtonName = "";
 
-    void GetCurrentButtonName()
-    {
-        for (int i = 0; i < Buttons.Length; i++)
-        {
-            if (Buttons[i].activeInHierarchy)
-                ButtonName = Buttons[i].gameObject.name;
-        }
-    }
 }

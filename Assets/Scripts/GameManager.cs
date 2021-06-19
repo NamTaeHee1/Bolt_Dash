@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < Score.Length; i++)
         {
             BestScoreText.text += Score[i];
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.4f);
         }
     }
 

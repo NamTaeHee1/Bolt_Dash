@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] GameObjects;
     IEnumerator ScoreSettingCoroutine = null;
 
-
     void Start()
     {
         BestScoreText = GameObjects[0].GetComponent<TextMeshProUGUI>();
@@ -43,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator BestScoreToScore()
     {
-        string[] Score = new string[] { "S", "C", "O", "R", "E", "\n", "0" };
+        string Score = "Score\n0";
         
         BestScoreText.text = "";
         yield return new WaitForSeconds(1.0f);

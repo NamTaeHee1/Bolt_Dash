@@ -4126,6 +4126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359344bfa24aeea42a470e36481549d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlateTransform: {fileID: 0}
+  PlateSpriteRenderer: {fileID: 0}
 --- !u!70 &365559435
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8976,7 +8978,6 @@ GameObject:
   - component: {fileID: 709410933}
   - component: {fileID: 709410931}
   - component: {fileID: 709410932}
-  - component: {fileID: 709410935}
   - component: {fileID: 709410936}
   m_Layer: 0
   m_Name: Player
@@ -9098,22 +9099,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &709410935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709410930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1572858e00196de4b95b21fd9a7be66d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ArrowTransform: {fileID: 1292139577}
-  ArrowObject: {fileID: 1292139575}
-  ParentObject: {fileID: 709410930}
-  ArrowRotateSpeed: 100
 --- !u!114 &709410936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9127,10 +9112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerTransform: {fileID: 709410934}
-  PlayerRigid: {fileID: 709410931}
   ArrowTransform: {fileID: 1292139577}
+  PlayerRigid: {fileID: 709410931}
   Arrow: {fileID: 1292139575}
   JumpHeight: 15
+  PlayerSpriteRenderer: {fileID: 0}
 --- !u!1 &709436802
 GameObject:
   m_ObjectHideFlags: 0
@@ -16826,6 +16812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1292139577}
   - component: {fileID: 1292139576}
+  - component: {fileID: 1292139578}
   m_Layer: 0
   m_Name: PlayerArrow
   m_TagString: Untagged
@@ -16898,6 +16885,22 @@ Transform:
   m_Father: {fileID: 709410934}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1292139578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292139575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1572858e00196de4b95b21fd9a7be66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArrowTransform: {fileID: 1292139577}
+  ArrowObject: {fileID: 1292139575}
+  ParentObject: {fileID: 709410930}
+  ArrowRotateSpeed: 100
 --- !u!1 &1300107916
 GameObject:
   m_ObjectHideFlags: 0

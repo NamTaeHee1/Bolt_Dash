@@ -19,6 +19,7 @@ public class PlateControl : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("Player"))
           {
+            PlateSpriteRenderer.color = ObjectColor.CircleColor;
             if(!isStepOn)
                 PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.05f, 0.3f).SetEase(Ease.InBack, 10);
             isStepOn = true;

@@ -22,6 +22,13 @@ public class GameManager : MonoBehaviour
         StartCoroutine(HideMenuObject());
     }
 
+    public void ReStart()
+    {
+        GameObjects[0].GetComponent<Animator>().Play("GameStart", -1, 0f);
+        SettingScoreText();
+        FindObjectOfType<PauseButtonControl>().StopButtonClick("ReStart");
+    }
+
     public void BeforeTheGameStartProduction()
     {
         for (int i = 0; i < GameObjects.Length; i++)
@@ -51,13 +58,6 @@ public class GameManager : MonoBehaviour
             BestScoreText.text += Score[i];
             yield return new WaitForSeconds(0.4f);
         }
-    }
-
-    public void ReStart()
-    {
-        GameObjects[0].GetComponent<Animator>().Play("GameStart", -1, 0f);
-        SettingScoreText();
-        FindObjectOfType<PauseButtonControl>().StopButtonClick("ReStart");
     }
 
     IEnumerator HideMenuObject()

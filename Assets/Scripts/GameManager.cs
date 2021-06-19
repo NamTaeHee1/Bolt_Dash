@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        BestScoreText = GameObjects[0].GetComponent<TextMeshProUGUI>();
+    
     }
    
     public void GameStart()

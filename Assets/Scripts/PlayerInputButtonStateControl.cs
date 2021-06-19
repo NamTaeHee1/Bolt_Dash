@@ -5,6 +5,6 @@ using UnityEngine;
 public class PlayerInputButtonStateControl : MonoBehaviour
 {
     public enum ButtonType { JUMP, RUN, FALL };
-    public ButtonType ButtonState;
+    public static ButtonType ButtonState;
 
 }

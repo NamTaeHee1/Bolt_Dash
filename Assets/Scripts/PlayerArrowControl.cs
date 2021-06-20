@@ -10,7 +10,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     private void Update()
     {
-        
+        RotateArrow();
     }
 
     void RotateArrow()

@@ -8,10 +8,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     [SerializeField] private Transform ArrowTransform;
 
-    private void Update()
-    {
-        RotateArrow();
-    }
+    private void Update() => RotateArrow();
 
     void RotateArrow()
     {

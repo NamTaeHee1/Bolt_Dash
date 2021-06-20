@@ -2463,7 +2463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowRotateSpeed: 3
-  ArrowTransform: {fileID: 0}
+  ArrowTransform: {fileID: 202472941}
 --- !u!1 &205374224
 GameObject:
   m_ObjectHideFlags: 0

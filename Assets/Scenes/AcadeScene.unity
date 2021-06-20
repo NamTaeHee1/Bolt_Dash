@@ -16843,7 +16843,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1292139577}
   - component: {fileID: 1292139576}
-  - component: {fileID: 1292139578}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -16916,22 +16915,6 @@ Transform:
   m_Father: {fileID: 202472941}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1292139578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292139575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1572858e00196de4b95b21fd9a7be66d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ArrowTransform: {fileID: 1292139577}
-  ArrowObject: {fileID: 1292139575}
-  ParentObject: {fileID: 202472940}
-  ArrowRotateSpeed: 100
 --- !u!1 &1300107916
 GameObject:
   m_ObjectHideFlags: 0

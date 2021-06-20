@@ -11,10 +11,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     [SerializeField] private float ArrowRotateSpeed = 3.0f;
 
-    private void Update()
-    {
-        ArrowRotate();
-    }
+    private void Update() => ArrowRotate();
 
     void ArrowRotate()
     {

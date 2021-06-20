@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     public void ReStart()
     {
         GameObjects[0].GetComponent<Animator>().Play("GameStart", -1, 0f);
-        SettingScoreText();
         FindObjectOfType<PauseButtonControl>().StopButtonClick("ReStart");
     }
 

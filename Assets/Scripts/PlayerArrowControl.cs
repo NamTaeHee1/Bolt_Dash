@@ -15,7 +15,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     void ArrowRotate()
     {
-        if (ArrowTransform.eulerAngles.z >= 60 || ArrowTransform.eulerAngles.z <= 300)
+        if (ArrowTransform.eulerAngles.z >= 60 || ArrowTransform.eulerAngles.z <= -60)
             ArrowRotateSpeed *= -1;
         ArrowTransform.RotateAround(ParentObject.transform.position, Vector3.forward, Time.deltaTime * ArrowRotateSpeed);
     }

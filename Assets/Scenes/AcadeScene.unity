@@ -18271,7 +18271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowLevelText: {fileID: 1356510689}
-  PlayerInputScrollSnap: {fileID: 0}
+  PlayerInputScrollSnap: {fileID: 1643781404}
 --- !u!4 &1399335116
 Transform:
   m_ObjectHideFlags: 0

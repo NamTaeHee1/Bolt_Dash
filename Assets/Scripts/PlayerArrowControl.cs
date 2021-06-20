@@ -11,5 +11,8 @@ public class PlayerArrowControl : MonoBehaviour
         
     }
 
+    void RotateArrow()
+    {
 
+    }
 }

@@ -8,10 +8,12 @@ public class PlayerArrowControl : MonoBehaviour
 
     [SerializeField] private Transform ArrowTransform;
 
-    private void Update() => RotateArrow();
-
-    void RotateArrow()
+    IEnumerator RotateArrow()
     {
-        Debug.Log("화살표 각도 : " + ArrowTransform.localEulerAngles.z);
+        yield return null;
     }
 }
+
+/*        if (ArrowTransform.eulerAngles.z >= 35 || ArrowTransform.eulerAngles.z <= -100)
+            ArrowRotateSpeed *= -1;
+        ArrowTransform.Rotate(Vector3.forward* ArrowRotateSpeed * Time.deltaTime);*/

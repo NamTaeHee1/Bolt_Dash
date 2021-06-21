@@ -10,7 +10,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     private void Start()
     {
-
+        StartCoroutine(RotateArrow());
     }
 
     IEnumerator RotateArrow()

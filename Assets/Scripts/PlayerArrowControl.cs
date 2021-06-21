@@ -18,10 +18,9 @@ public class PlayerArrowControl : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(0.3f);
+            if (ArrowTransform.eulerAngles.z >= 35 || ArrowTransform.eulerAngles.z <= -100)
+                ArrowRotateSpeed *= -1;
+            ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
         }
     }
 }
-
-/*        if (ArrowTransform.eulerAngles.z >= 35 || ArrowTransform.eulerAngles.z <= -100)
-            ArrowRotateSpeed *= -1;
-        ArrowTransform.Rotate(Vector3.forward* ArrowRotateSpeed * Time.deltaTime);*/

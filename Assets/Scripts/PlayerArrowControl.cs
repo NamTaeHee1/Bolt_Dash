@@ -13,14 +13,17 @@ public class PlayerArrowControl : MonoBehaviour
         StartCoroutine(RotateArrow());
     }
 
+    private void Update()
+    {
+        ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
+    }
+
     IEnumerator RotateArrow()
     {
         while(true)
         {
             yield return new WaitForSeconds(0.3f);
-            if (ArrowTransform.eulerAngles.z >= 35 || ArrowTransform.eulerAngles.z <= -100)
-                ArrowRotateSpeed *= -1;
-            ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
+            ArrowRotateSpeed *= -1;
         }
     }
 }

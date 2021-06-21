@@ -2462,7 +2462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1572858e00196de4b95b21fd9a7be66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArrowRotateSpeed: 300
+  ArrowRotateSpeed: 100
   ArrowTransform: {fileID: 202472941}
 --- !u!1 &205374224
 GameObject:

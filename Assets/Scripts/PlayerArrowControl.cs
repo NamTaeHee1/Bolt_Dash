@@ -8,9 +8,17 @@ public class PlayerArrowControl : MonoBehaviour
 
     [SerializeField] private Transform ArrowTransform;
 
+    private void Start()
+    {
+
+    }
+
     IEnumerator RotateArrow()
     {
-        yield return null;
+        while(true)
+        {
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 }
 

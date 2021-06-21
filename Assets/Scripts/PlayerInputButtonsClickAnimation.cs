@@ -60,13 +60,19 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                    {
                     for (int j = 0; j < JumpButtonTiles.Length; j++)
                         JumpButtonTiles[j].SetActive(false);
+                    for (int j = 0; j < JumpYellowBoxParts.Length; j++)
+                        JumpYellowBoxParts[j].SetActive(false);
                     yield return new WaitForSeconds(0.1f);
                     for (int j = 0; j < JumpButtonTiles.Length; j++)
                         JumpButtonTiles[j].SetActive(true);
+                    for (int j = 0; j < JumpYellowBoxParts.Length; j++)
+                        JumpYellowBoxParts[j].SetActive(true);
                     yield return new WaitForSeconds(0.1f);
                    }
                 for (int j = 0; j < JumpButtonTiles.Length; j++)
                     JumpButtonTiles[j].SetActive(false);
+                for (int j = 0; j < JumpYellowBoxParts.Length; j++)
+                    JumpYellowBoxParts[j].SetActive(false);
                 isJumpEnd = true;
                 break;
 
@@ -151,6 +157,8 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
         isJumpEnd = true;
         for (int i = 0; i < JumpButtonTiles.Length; i++)
             JumpButtonTiles[i].SetActive(false);
+        for (int i = 0; i < JumpYellowBoxParts.Length; i++)
+            JumpYellowBoxParts[i].SetActive(false);
     }
 
 }

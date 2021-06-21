@@ -13,10 +13,7 @@ public class PlayerArrowControl : MonoBehaviour
         StartCoroutine(RotateArrow());
     }
 
-    private void Update()
-    {
-        ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
-    }
+    private void Update() => ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
 
     IEnumerator RotateArrow()
     {

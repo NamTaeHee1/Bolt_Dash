@@ -21,6 +21,7 @@ public class PlayerArrowControl : MonoBehaviour
         {
             yield return new WaitForSeconds(0.3f);
             ArrowRotateSpeed *= -1;
+            Debug.Log(ArrowTransform.eulerAngles.z);
         }
     }
 }

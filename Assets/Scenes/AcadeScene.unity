@@ -3530,6 +3530,13 @@ MonoBehaviour:
   - {fileID: 1212153185}
   - {fileID: 1659878048}
   - {fileID: 2124208006}
+  JumpYellowBoxParts:
+  - {fileID: 1480550079}
+  - {fileID: 1350072498}
+  - {fileID: 1647954960}
+  - {fileID: 356546270}
+  - {fileID: 1815016790}
+  - {fileID: 454271627}
   RunUpButtonTiles:
   - {fileID: 10728506}
   - {fileID: 650935052}

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class PlayerInputButtonsClickAnimation : MonoBehaviour
 {
     [SerializeField] GameObject[] JumpButtonTiles;
+    [SerializeField] GameObject[] JumpYellowBoxParts;
     [SerializeField] GameObject[] RunUpButtonTiles, RunDownButtonTiles;
     [SerializeField] GameObject[] FallButtonTiles;
 
@@ -46,8 +47,11 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
             case "JumpButton":
                 isJumpEnd = false;
                 float WaitTime = 0.35f;
+                int YellowBoxCount = 0;
                 for (float i = 0; i < JumpButtonTiles.Length; i++)
                    {
+                    if (i % 2 == 1)
+                        JumpYellowBoxParts[YellowBoxCount++].SetActive(true);
                     JumpButtonTiles[(int)i].SetActive(true);
                     WaitTime -= 0.025f;
                     yield return new WaitForSeconds(WaitTime);

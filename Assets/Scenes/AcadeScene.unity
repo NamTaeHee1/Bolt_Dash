@@ -4287,8 +4287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359344bfa24aeea42a470e36481549d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlateTransform: {fileID: 0}
-  PlateSpriteRenderer: {fileID: 0}
+  PlateTransform: {fileID: 365559438}
+  PlateSpriteRenderer: {fileID: 365559437}
 --- !u!70 &365559435
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

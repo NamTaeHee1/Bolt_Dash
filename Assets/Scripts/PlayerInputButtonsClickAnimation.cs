@@ -155,6 +155,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
         isJumpButtonDown = false;
         StopAllCoroutines();
         isJumpEnd = true;
+        FindObjectOfType<DanielLochner.Assets.SimpleScrollSnap.PlayerControl>().PlayerJump();
         for (int i = 0; i < JumpButtonTiles.Length; i++)
             JumpButtonTiles[i].SetActive(false);
         for (int i = 0; i < JumpYellowBoxParts.Length; i++)

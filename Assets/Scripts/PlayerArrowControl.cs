@@ -8,6 +8,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     [SerializeField] private Transform ArrowTransform;
 
+    [SerializeField] private GameObject[] ArrowYellowBoxParts;
     private void Start()
     {
         StartCoroutine(RotateArrow());
@@ -27,5 +28,13 @@ public class PlayerArrowControl : MonoBehaviour
     public Vector3 GetArrowAngle()
     {
         return ArrowTransform.transform.up;
+    }
+
+    public int GetJumpPower()
+    {
+        int ChargeCount = 0;
+        for (int i = 0; i < ArrowYellowBoxParts.Length; i++)
+            if (ArrowYellowBoxParts[i].activeInHierarchy) ChargeCount++;
+        return ChargeCount;
     }
 }

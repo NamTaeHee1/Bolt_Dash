@@ -13,8 +13,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         [SerializeField] private GameObject Arrow;
 
-        [SerializeField] private float JumpHeight = 5.0f;
-
         [SerializeField] private SpriteRenderer PlayerSpriteRenderer;
 
         ColorInfo PlayerColor = StoreManager.CharacterColor;
@@ -26,7 +24,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public void PlayerJump()
         {
-            PlayerRigid.AddForce(ArrowTransform.transform.up * JumpHeight, ForceMode2D.Impulse);
+            Vector3 ArrowRotation = FindObjectOfType<PlayerArrowControl>().GetArrowAngle();
+            int JumpPower = FindObjectOfType<PlayerArrowControl>().GetJumpPower();
+            PlayerRigid.AddForce(ArrowRotation *  JumpPower, ForceMode2D.Impulse);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

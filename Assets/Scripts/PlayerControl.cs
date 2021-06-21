@@ -17,16 +17,13 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         ColorInfo PlayerColor = StoreManager.CharacterColor;
 
-        private void Start()
-        {
-            PlayerSpriteRenderer.color = PlayerColor.CircleColor;
-        }
+        private void Start() => PlayerSpriteRenderer.color = PlayerColor.CircleColor;
 
         public void PlayerJump()
         {
             Vector3 ArrowRotation = FindObjectOfType<PlayerArrowControl>().GetArrowAngle();
             int JumpPower = FindObjectOfType<PlayerArrowControl>().GetJumpPower();
-            PlayerRigid.AddForce(ArrowRotation *  JumpPower, ForceMode2D.Impulse);
+            PlayerRigid.AddForce(ArrowRotation *  JumpPower * 5, ForceMode2D.Impulse);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

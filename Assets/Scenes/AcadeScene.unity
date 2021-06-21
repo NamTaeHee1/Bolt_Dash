@@ -2464,6 +2464,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrowRotateSpeed: 100
   ArrowTransform: {fileID: 202472941}
+  ArrowYellowBoxParts:
+  - {fileID: 1480550079}
+  - {fileID: 1350072498}
+  - {fileID: 1647954960}
+  - {fileID: 356546270}
+  - {fileID: 1815016790}
+  - {fileID: 454271627}
 --- !u!1 &205374224
 GameObject:
   m_ObjectHideFlags: 0
@@ -9563,7 +9570,6 @@ MonoBehaviour:
   ArrowTransform: {fileID: 1292139577}
   PlayerRigid: {fileID: 709410931}
   Arrow: {fileID: 1292139575}
-  JumpHeight: 15
   PlayerSpriteRenderer: {fileID: 0}
 --- !u!1 &709436802
 GameObject:

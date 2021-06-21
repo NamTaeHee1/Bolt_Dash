@@ -53,14 +53,14 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                     yield return new WaitForSeconds(WaitTime);
                    }
                 for(int i = 0; i < 3; i++)
-                {
+                   {
                     for (int j = 0; j < JumpButtonTiles.Length; j++)
                         JumpButtonTiles[j].SetActive(false);
                     yield return new WaitForSeconds(0.1f);
                     for (int j = 0; j < JumpButtonTiles.Length; j++)
                         JumpButtonTiles[j].SetActive(true);
                     yield return new WaitForSeconds(0.1f);
-                }
+                   }
                 for (int j = 0; j < JumpButtonTiles.Length; j++)
                     JumpButtonTiles[j].SetActive(false);
                 isJumpEnd = true;

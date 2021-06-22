@@ -14,8 +14,6 @@ public class PlateControl : MonoBehaviour
     [SerializeField] GameObject MiddleRayCast;
     [SerializeField] GameObject RightRayCast;
 
-    RaycastHit2D MiddleRayCastHit;
-
     private void Awake()
     {
         ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;

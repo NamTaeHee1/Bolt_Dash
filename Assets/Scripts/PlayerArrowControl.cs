@@ -11,10 +11,6 @@ public class PlayerArrowControl : MonoBehaviour
     [SerializeField] private Transform ArrowTransform;
 
     [SerializeField] private GameObject[] ArrowYellowBoxParts;
-    private void Start()
-    {
-        StartCoroutine(RotateArrow());
-    }
 
     private void Update() => ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
 

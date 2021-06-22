@@ -33,12 +33,12 @@ public class AcadeSceneManager : MonoBehaviour
     void SettingInputPanel()
     {
         int AcadeLevelNumber = int.Parse(AcadeLevel[6].ToString());
-        if (AcadeLevelNumber >= 7)
-            PlayerInputScrollSnap.startingPanel = 0;
-        else if (AcadeLevelNumber >= 4)
-            PlayerInputScrollSnap.startingPanel = 1;
-        else
+        if (AcadeLevelNumber >= 7) // FALL
             PlayerInputScrollSnap.startingPanel = 2;
+        else if (AcadeLevelNumber >= 4) // RUN
+            PlayerInputScrollSnap.startingPanel = 1;
+        else // JUMP
+            PlayerInputScrollSnap.startingPanel = 0;
     }
 
 }

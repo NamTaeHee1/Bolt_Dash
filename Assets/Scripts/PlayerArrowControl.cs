@@ -6,7 +6,7 @@ public class PlayerArrowControl : MonoBehaviour
 {
     [SerializeField] private float ArrowRotateSpeed = 3.0f;
 
-    public int ChargeCount = 0;
+    public static int ChargeCount = 0;
 
     [SerializeField] private Transform ArrowTransform;
 
@@ -34,8 +34,6 @@ public class PlayerArrowControl : MonoBehaviour
 
     public int GetJumpPower()
     {
-        for (int i = 0; i < ArrowYellowBoxParts.Length; i++)
-            if (ArrowYellowBoxParts[i].activeInHierarchy) ChargeCount++;
         return ChargeCount;
     }
 }

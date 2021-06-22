@@ -51,7 +51,10 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                 for (float i = 0; i < JumpButtonTiles.Length; i++)
                    {
                     if (i % 2 == 1)
+                    {
                         JumpYellowBoxParts[YellowBoxCount++].SetActive(true);
+                        PlayerArrowControl.ChargeCount++;
+                    }
                     JumpButtonTiles[(int)i].SetActive(true);
                     WaitTime -= 0.025f;
                     yield return new WaitForSeconds(WaitTime);
@@ -160,6 +163,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
             JumpButtonTiles[i].SetActive(false);
         for (int i = 0; i < JumpYellowBoxParts.Length; i++)
             JumpYellowBoxParts[i].SetActive(false);
+        PlayerArrowControl.ChargeCount = 0;
     }
 
 }

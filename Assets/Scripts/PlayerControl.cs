@@ -15,9 +15,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         [SerializeField] private SpriteRenderer PlayerSpriteRenderer;
 
-        ColorInfo PlayerColor = StoreManager.CharacterColor;
-
-        private void Start() => PlayerSpriteRenderer.color = PlayerColor.CircleColor;
+        private void Start() => PlayerSpriteRenderer.color = StoreManager.CharacterColor.CircleColor;
 
         public void PlayerJump()
         {

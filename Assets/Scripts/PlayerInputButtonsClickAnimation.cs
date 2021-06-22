@@ -48,6 +48,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
                 isJumpEnd = false;
                 float WaitTime = 0.35f;
                 int YellowBoxCount = 0;
+                PlayerArrowControl.ChargeCount = 0;
                 for (float i = 0; i < JumpButtonTiles.Length; i++)
                    {
                     if (i % 2 == 1)

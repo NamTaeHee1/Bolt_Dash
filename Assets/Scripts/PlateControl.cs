@@ -5,12 +5,22 @@ using DG.Tweening;
 
 public class PlateControl : MonoBehaviour
 {
-    [SerializeField] Transform PlateTransform;
-    [SerializeField] SpriteRenderer PlateSpriteRenderer;
-    DanielLochner.Assets.SimpleScrollSnap.ColorInfo ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;
+    Transform PlateTransform;
+    SpriteRenderer PlateSpriteRenderer;
+    DanielLochner.Assets.SimpleScrollSnap.ColorInfo ObjectColor;
     bool isStepOn = false;
 
-    private void Awake() => PlateSpriteRenderer.color = new Color(ObjectColor.CircleColor.a, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
+    private void Awake()
+    {
+        ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;
+        PlateTransform = GetComponent<Transform>();
+        PlateSpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        PlateSpriteRenderer.color = new Color(ObjectColor.CircleColor.a, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

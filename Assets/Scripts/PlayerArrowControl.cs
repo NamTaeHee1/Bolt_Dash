@@ -27,7 +27,7 @@ public class PlayerArrowControl : MonoBehaviour
         }
     }
 
-    void CheckToStepOnPlate()
+    void CheckToStepOnJumpPlate()
     {
 
     }

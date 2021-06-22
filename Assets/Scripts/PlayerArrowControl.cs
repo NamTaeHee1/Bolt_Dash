@@ -34,6 +34,6 @@ public class PlayerArrowControl : MonoBehaviour
 
     public float GetJumpPower()
     {
-        return ChargeCount * 1.5f;
+        return ChargeCount * 2.0f;
     }
 }

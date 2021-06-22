@@ -35,10 +35,8 @@ public class PlateControl : MonoBehaviour
 
     void CheckToStepOnJumpPlate()
     {
-        Debug.DrawRay(MiddleRayCast.transform.position, Vector2.up * 2.0f, Color.red, 3.0f);
         if (Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up * 2.0f, 3.0f).collider.gameObject.CompareTag("Player"))
             Debug.Log("À¸¾Ç");
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -14,9 +14,7 @@ public class PlateControl : MonoBehaviour
     [SerializeField] GameObject MiddleRayCast;
     [SerializeField] GameObject RightRayCast;
 
-    RaycastHit2D LeftRayCastHit;
     RaycastHit2D MiddleRayCastHit;
-    RaycastHit2D RightRayCastHit;
 
     private void Awake()
     {
@@ -38,12 +36,9 @@ public class PlateControl : MonoBehaviour
 
     void CheckToStepOnJumpPlate()
     {
-        LeftRayCastHit = Physics2D.Raycast(LeftRayCast.transform.position, Vector2.up, 2.0f);
-        Debug.DrawRay(LeftRayCast.transform.position, Vector2.up * 2.0f, Color.red, 0.3f);
-        MiddleRayCastHit = Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up, 2.0f);
-        Debug.DrawRay(MiddleRayCast.transform.position, Vector2.up * 2.0f, Color.red, 0.3f);
-        RightRayCastHit = Physics2D.Raycast(RightRayCast.transform.position, Vector2.up, 2.0f);
-        Debug.DrawRay(RightRayCast.transform.position, Vector2.up * 2.0f, Color.red, 0.3f);
+        if (Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up * 2.0f, 3.0f).collider.transform.name == "Player")
+            Debug.Log("À¸¾Ç");
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

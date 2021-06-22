@@ -20,7 +20,7 @@ public class PlateControl : MonoBehaviour
     private void Start()
     {
         Debug.Log(string.Format("»ö±ò ÀÌ¸§ : {0}, »ö±ò : {1}", ObjectColor.ColorNameText, ObjectColor.CircleColor));
-        PlateSpriteRenderer.color = new Color32(ObjectColor.CircleColor.a, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
+        PlateSpriteRenderer.color = new Color32(ObjectColor.CircleColor.r, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

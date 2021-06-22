@@ -14,13 +14,10 @@ public class PlayerArrowControl : MonoBehaviour
 
     private void Update() => ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
 
-    IEnumerator RotateArrow()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        while(true)
-        {
-            yield return new WaitForSeconds(0.8f);
+        if (collision.gameObject.name.Equals("LeftRotationLimit") || collision.gameObject.name.Equals("RightRotationLimit"))
             ArrowRotateSpeed *= -1;
-        }
     }
 
     public Vector3 GetArrowAngle()

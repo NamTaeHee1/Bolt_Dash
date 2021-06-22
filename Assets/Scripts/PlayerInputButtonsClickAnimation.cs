@@ -12,6 +12,7 @@ public class PlayerInputButtonsClickAnimation : MonoBehaviour
 
     bool isFallButtonDown = false, isFallEnd = true;
     bool isJumpButtonDown = false, isJumpEnd = true;
+
     IEnumerator RunUpCoroutine = null, RunDownCoroutine = null;
 
     public void RunUpButtonClick()

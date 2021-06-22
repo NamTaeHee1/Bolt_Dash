@@ -6,14 +6,20 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 {
     public class PlayerControl : MonoBehaviour
     {
-        [SerializeField] private Transform PlayerTransform;
+       private Transform PlayerTransform;
         [SerializeField] private Transform ArrowTransform;
 
         [SerializeField] private Rigidbody2D PlayerRigid;
 
         [SerializeField] private GameObject Arrow;
 
-        [SerializeField] private SpriteRenderer PlayerSpriteRenderer;
+       private SpriteRenderer PlayerSpriteRenderer;
+
+        private void Awake()
+        {
+            PlayerTransform = GetComponent<Transform>();
+            PlayerSpriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         private void Start() => PlayerSpriteRenderer.color = StoreManager.CharacterColor.CircleColor;
 

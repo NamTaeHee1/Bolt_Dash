@@ -32,8 +32,8 @@ public class PlayerArrowControl : MonoBehaviour
         return ArrowTransform.transform.up;
     }
 
-    public int GetJumpPower()
+    public float GetJumpPower()
     {
-        return ChargeCount;
+        return ChargeCount * 1.5f;
     }
 }

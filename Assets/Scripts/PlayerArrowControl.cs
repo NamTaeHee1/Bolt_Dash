@@ -27,11 +27,6 @@ public class PlayerArrowControl : MonoBehaviour
         }
     }
 
-    void CheckToStepOnJumpPlate()
-    {
-
-    }
-
     public Vector3 GetArrowAngle()
     {
         return ArrowTransform.transform.up;

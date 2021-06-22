@@ -38,12 +38,12 @@ public class PlateControl : MonoBehaviour
 
     void CheckToStepOnJumpPlate()
     {
-        LeftRayCastHit = Physics2D.Raycast(LeftRayCast.transform.position, Vector2.up, 5.0f);
-        Debug.DrawRay(LeftRayCast.transform.position, Vector2.up * 5.0f, Color.red, 0.3f);
-        MiddleRayCastHit = Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up, 5.0f);
-        Debug.DrawRay(MiddleRayCast.transform.position, Vector2.up * 5.0f, Color.red, 0.3f);
-        RightRayCastHit = Physics2D.Raycast(RightRayCastHit.transform.position, Vector2.up, 5.0f);
-        Debug.DrawRay(RightRayCast.transform.position, Vector2.up * 5.0f, Color.red, 0.3f);
+        LeftRayCastHit = Physics2D.Raycast(LeftRayCast.transform.position, Vector2.up, 2.0f);
+        Debug.DrawRay(LeftRayCast.transform.position, Vector2.up * 2.0f, Color.red, 0.3f);
+        MiddleRayCastHit = Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up, 2.0f);
+        Debug.DrawRay(MiddleRayCast.transform.position, Vector2.up * 2.0f, Color.red, 0.3f);
+        RightRayCastHit = Physics2D.Raycast(RightRayCast.transform.position, Vector2.up, 2.0f);
+        Debug.DrawRay(RightRayCast.transform.position, Vector2.up * 2.0f, Color.red, 0.3f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

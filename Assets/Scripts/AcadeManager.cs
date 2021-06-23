@@ -138,13 +138,10 @@ public class AcadeManager : MonoBehaviour
     public void ClickPowerSocketLineButton()
     {
         GameObject SelectGameObject = EventSystem.current.currentSelectedGameObject;
-        if (SelectGameObject.name.Contains("PowerSocketLine"))
-        {
-            LoadingManager.FadeOut();
-            Destroy(SelectGameObject);
-            isClickAcadeButton = true;
-            StartCoroutine(GoToAcadeScene(SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text, Camera.main.transform.position.x));
-        }
+        LoadingManager.FadeOut();
+        Destroy(SelectGameObject);
+        isClickAcadeButton = true;
+        StartCoroutine(GoToAcadeScene(SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text, Camera.main.transform.position.x));
     }
 
     IEnumerator GoToAcadeScene(string CurrentAcadeLevel, float MainCameraX)

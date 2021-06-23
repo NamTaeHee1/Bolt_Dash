@@ -34,7 +34,7 @@ public class PlateControl : MonoBehaviour
     void CheckToStepOnJumpPlate()
     {
         if (Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up * 2.0f, 3.0f).collider.gameObject.CompareTag("Player"))
-            Debug.Log("Hit");
+            Debug.Log("R");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -43,7 +43,7 @@ public class PlateControl : MonoBehaviour
           {
             PlateSpriteRenderer.color = ObjectColor.CircleColor;
             if(!isStepOn)
-                PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.01f, 0.3f).SetEase(Ease.InBack, 10);
+                PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.05f, 0.3f).SetEase(Ease.InBack, 5);
             isStepOn = true;
           }
     }

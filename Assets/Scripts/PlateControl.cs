@@ -6,8 +6,13 @@ using DG.Tweening;
 public class PlateControl : MonoBehaviour
 {
     Transform PlateTransform;
+
+    Rigidbody2D PlateRigidbody;
+
     SpriteRenderer PlateSpriteRenderer;
+
     DanielLochner.Assets.SimpleScrollSnap.ColorInfo ObjectColor;
+
     bool isStepOn = false;
 
     [SerializeField] GameObject LeftRayCast;
@@ -43,8 +48,9 @@ public class PlateControl : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
           {
             PlateSpriteRenderer.color = ObjectColor.CircleColor;
-            if(!isStepOn)
-                PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.05f, 0.3f).SetEase(Ease.InBack, 5);
+            if (!isStepOn)
+                PlateRigidbody.AddForce(Vector2.down * 2.0f, ForceMode2D.Impulse);
+            //PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.05f, 0.3f).SetEase(Ease.InBack, 5);
             isStepOn = true;
           }
     }

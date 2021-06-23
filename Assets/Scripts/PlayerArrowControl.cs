@@ -12,6 +12,11 @@ public class PlayerArrowControl : MonoBehaviour
 
     [SerializeField] private GameObject[] ArrowYellowBoxParts;
 
+    private void Start()
+    {
+        ArrowTransform.rotation = Quaternion.identity;
+    }
+
     private void Update() => ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
 
     private void OnTriggerEnter2D(Collider2D collision)

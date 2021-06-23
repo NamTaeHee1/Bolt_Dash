@@ -8,11 +8,16 @@ using DanielLochner.Assets.SimpleScrollSnap;
 public class AcadeSceneManager : MonoBehaviour
 {
     static public string AcadeLevel;
+
     static public float MainSceneCameraX;
+
+    static public bool isAchieve;
 
     [SerializeField] TextMeshProUGUI ShowLevelText;
 
     [SerializeField] SimpleScrollSnap PlayerInputScrollSnap;
+
+    [SerializeField] GameObject InfoObject;
 
     void Start()
     {
@@ -44,6 +49,6 @@ public class AcadeSceneManager : MonoBehaviour
 
     public void CreateAcadeSceneInfoObject()
     {
-
+        GameObject AcadeSceneInfoObject = Instantiate(InfoObject);
     }
 }

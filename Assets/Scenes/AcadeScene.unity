@@ -4441,9 +4441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359344bfa24aeea42a470e36481549d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftRayCast: {fileID: 909868145}
-  MiddleRayCast: {fileID: 1819523533}
-  RightRayCast: {fileID: 2135334251}
+  LeftUpRayCast: {fileID: 909868145}
+  MiddleUpRayCast: {fileID: 1819523533}
+  RightUpRayCast: {fileID: 2135334251}
   PlateCollider: {fileID: 340304910}
 --- !u!50 &365559436
 Rigidbody2D:

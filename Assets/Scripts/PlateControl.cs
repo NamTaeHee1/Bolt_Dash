@@ -13,9 +13,7 @@ public class PlateControl : MonoBehaviour
 
     bool isStepOn = false;
 
-    [SerializeField] GameObject LeftUpRayCast;
-    [SerializeField] GameObject MiddleUpRayCast;
-    [SerializeField] GameObject RightUpRayCast;
+    [SerializeField] GameObject LeftUpRayCast, MiddleUpRayCast, RightUpRayCast;
     [SerializeField] GameObject PlateCollider;
 
     private void Awake()
@@ -38,7 +36,7 @@ public class PlateControl : MonoBehaviour
     void CheckToStepOnJumpPlate()
     {
         Debug.DrawRay(MiddleUpRayCast.transform.position, new Vector2(0, 5), Color.red, 3.0f);
-        if (Physics2D.Raycast(MiddleUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
+        if (Physics2D.Raycast(MiddleUpRayCast.transform.position, Vector2.up, 3.0f,  LayerMask.GetMask("Player")) ||
             Physics2D.Raycast(LeftUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
             Physics2D.Raycast(RightUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player"))) PlateCollider.SetActive(true);
 

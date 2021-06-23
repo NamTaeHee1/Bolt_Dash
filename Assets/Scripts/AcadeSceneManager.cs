@@ -8,6 +8,7 @@ using DanielLochner.Assets.SimpleScrollSnap;
 public class AcadeSceneManager : MonoBehaviour
 {
     static public string AcadeLevel;
+    static public float MainSceneCameraX;
 
     [SerializeField] TextMeshProUGUI ShowLevelText;
 

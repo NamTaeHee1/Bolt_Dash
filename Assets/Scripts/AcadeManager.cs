@@ -144,11 +144,11 @@ public class AcadeManager : MonoBehaviour
             LoadingManager.FadeOut();
             Destroy(SelectGameObject);
             isClickAcadeButton = true;
-            StartCoroutine(GoToAcadeScene(SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text));
+            StartCoroutine(GoToAcadeScene(SelectGameObject.GetComponent<PowerSocketLineButtonInfo>().StageButtonText.text, Camera.main.transform.position.x));
         }
     }
 
-    IEnumerator GoToAcadeScene(string CurrentAcadeLevel)
+    IEnumerator GoToAcadeScene(string CurrentAcadeLevel, float MainCameraX)
     {
         AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
         yield return new WaitForSeconds(0.5f);

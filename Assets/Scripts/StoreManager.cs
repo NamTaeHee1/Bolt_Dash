@@ -9,11 +9,11 @@ namespace DanielLochner.Assets.SimpleScrollSnap
     public class StoreManager : MonoBehaviour
     {
         public Button[] Buttons;
+
         public GameObject StoreParents;
         public GameObject StoreObject;
         public GameObject CharacterColorContent;
         public GameObject InGameObjectColorContent;
-
         [SerializeField] GameObject StorePanelImage;
         [SerializeField] GameObject StorePanelUpLine;
         [SerializeField] GameObject StorePanelDownLine;
@@ -27,8 +27,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         static public List<ColorInfo> CharacterColorList = new List<ColorInfo>();
         static public List<ColorInfo> InGameObjectColorList = new List<ColorInfo>();
+
         static public ColorInfo CharacterColor;
         static public ColorInfo InGameObjectColor;
+
         static public int ElectronicMoney = 300;
 
         private void Awake()

@@ -18,8 +18,9 @@ public class TestScript : MonoBehaviour
 
     private void Update()
     {
+        int layerMask = 1 << LayerMask.NameToLayer("Player");
         Debug.DrawRay(tr.position, Vector2.up * Height, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(tr.position, Vector2.up, 3.0f);
+        RaycastHit2D hit = Physics2D.Raycast(tr.position, Vector2.up, 3.0f, layerMask);
         if (hit.collider != null)
             Debug.Log(hit.collider.name);
     }

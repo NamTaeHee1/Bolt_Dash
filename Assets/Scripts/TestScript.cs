@@ -8,20 +8,19 @@ using UnityEngine.EventSystems;
 
 public class TestScript : MonoBehaviour
 {
-    [SerializeField] private Animator ButtonAnim;
+    Transform tr;
+    [SerializeField] float Height = 3.0f;
 
-    public void Button_Click()
+    private void Awake()
     {
-        Debug.Log(ButtonAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
-    }
-
-    public void Button_Move()
-    {
-        ButtonAnim.Play("Test", -1, 0f);
+        tr = GetComponent<Transform>();
     }
 
     private void Update()
     {
-        Debug.Log("normalizedTime = " + ButtonAnim.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        Debug.DrawRay(tr.position, Vector2.up * Height, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(tr.position, Vector2.up, 3.0f);
+        if (hit.collider != null)
+            Debug.Log(hit.collider.name);
     }
 }

@@ -82,7 +82,6 @@ public class AcadeManager : MonoBehaviour
             PositionMoveButtons[0].gameObject.SetActive(true);
             PositionMoveButtons[1].gameObject.SetActive(true);
         }
-        
     }
 
     public void ClickBackToMain()
@@ -151,6 +150,7 @@ public class AcadeManager : MonoBehaviour
     IEnumerator GoToAcadeScene(string CurrentAcadeLevel, float MainCameraX)
     {
         AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
+        AcadeSceneManager.MainSceneCameraX = MainCameraX;
         yield return new WaitForSeconds(0.5f);
         LoadingManager.LoadScene("AcadeScene");
     }

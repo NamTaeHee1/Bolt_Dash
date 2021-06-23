@@ -14,6 +14,7 @@ public class PlateControl : MonoBehaviour
     bool isStepOn = false;
 
     [SerializeField] GameObject LeftUpRayCast, MiddleUpRayCast, RightUpRayCast;
+    [SerializeField] GameObject LeftRayCast, RightRayCast;
     [SerializeField] GameObject PlateCollider;
 
     private void Awake()

@@ -107,7 +107,7 @@ public class PauseButtonControl : MonoBehaviour
 
     public void AcadeSceneQuitButtonClick()
     {
-
+        FindObjectOfType<AcadeSceneManager>().CreateAcadeSceneInfoObject();
     }
 
     public void SettingButtonClick()

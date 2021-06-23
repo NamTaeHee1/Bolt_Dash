@@ -42,4 +42,8 @@ public class AcadeSceneManager : MonoBehaviour
             PlayerInputScrollSnap.startingPanel = 0;
     }
 
+    public void CreateAcadeSceneInfoObject()
+    {
+
+    }
 }

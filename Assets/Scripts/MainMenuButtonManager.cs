@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MainMenuButtonManager : MonoBehaviour
 {
     [SerializeField] Button[] MainButtons;
+
     private float AlphaThreshold = 0.1f;
 
     private void Start()

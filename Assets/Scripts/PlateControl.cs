@@ -38,8 +38,9 @@ public class PlateControl : MonoBehaviour
     void CheckToStepOnJumpPlate()
     {
         Debug.DrawRay(MiddleRayCast.transform.position, new Vector2(0, 5), Color.red, 3.0f);
-        if (Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")))
-            PlateCollider.SetActive(true);
+        if (Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
+            Physics2D.Raycast(LeftRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
+            Physics2D.Raycast(RightRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player"))) PlateCollider.SetActive(true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

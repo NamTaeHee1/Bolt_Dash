@@ -8,13 +8,20 @@ using TMPro;
 public class PauseButtonControl : MonoBehaviour
 {
     [SerializeField] private Animator PauseButtonAnim, PauseButtonPanelAnim;
+
     [SerializeField] private GameObject PauseButtonMovement, PauseImage, PlayImage, PauseButtonPanelBlock, InfoPanel;
+
     [SerializeField] private Image[] ButtonImages;
     [SerializeField] private Image PauseButtonPanel;
+
     [SerializeField] private Button PauseButton;
+
     [SerializeField] private TextMeshProUGUI PauseCountDownText;
+
     bool isON = false, isPause = false;
+
     private float AlphaThreshold = 0.1f;
+
     IEnumerator PauseOffCountDown = null;
 
     private void Start()

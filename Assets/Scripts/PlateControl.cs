@@ -7,8 +7,6 @@ public class PlateControl : MonoBehaviour
 {
     Transform PlateTransform;
 
-    Rigidbody2D PlateRigidbody;
-
     SpriteRenderer PlateSpriteRenderer;
 
     DanielLochner.Assets.SimpleScrollSnap.ColorInfo ObjectColor;
@@ -18,13 +16,13 @@ public class PlateControl : MonoBehaviour
     [SerializeField] GameObject LeftRayCast;
     [SerializeField] GameObject MiddleRayCast;
     [SerializeField] GameObject RightRayCast;
+    [SerializeField] GameObject PlateCollider;
 
     private void Awake()
     {
         ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;
         PlateTransform = GetComponent<Transform>();
         PlateSpriteRenderer = GetComponent<SpriteRenderer>();
-        PlateRigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -41,7 +39,7 @@ public class PlateControl : MonoBehaviour
     {
         Debug.DrawRay(MiddleRayCast.transform.position, new Vector2(0, 5), Color.red, 3.0f);
         if (Physics2D.Raycast(MiddleRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")))
-            Debug.Log("R");
+            PlateCollider.SetActive(true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,8 +48,7 @@ public class PlateControl : MonoBehaviour
           {
             PlateSpriteRenderer.color = ObjectColor.CircleColor;
             if (!isStepOn)
-                PlateRigidbody.AddForce(Vector2.down * 100.0f, ForceMode2D.Impulse);
-            //PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.05f, 0.3f).SetEase(Ease.InBack, 5);
+                PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.05f, 0.3f).SetEase(Ease.InBack, 5);
             isStepOn = true;
           }
     }

@@ -16,7 +16,7 @@ public class MainSceneManager : MonoBehaviour
         if(AcadeSceneInfo != null)
         {
             FindObjectOfType<AcadeManager>().isAcadeOn = true;
-
+            Camera.main.transform.position = new Vector3(AcadeSceneInfo.GetComponent<AcadeSceneInfo>().MainSceneCameraX, 0, -10);
         }
     }
 }

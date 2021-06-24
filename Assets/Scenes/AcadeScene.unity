@@ -24911,9 +24911,9 @@ MonoBehaviour:
   - {fileID: 1875129616}
   - {fileID: 2102488176}
   - {fileID: 1426028571}
-  PauseButtonPanel: {fileID: 0}
-  PauseButton: {fileID: 0}
-  PauseCountDownText: {fileID: 0}
+  PauseButtonPanel: {fileID: 1595532615}
+  PauseButton: {fileID: 1426028573}
+  PauseCountDownText: {fileID: 517551009}
 --- !u!1 &1596370990
 GameObject:
   m_ObjectHideFlags: 0

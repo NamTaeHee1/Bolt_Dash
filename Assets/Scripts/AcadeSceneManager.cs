@@ -50,5 +50,6 @@ public class AcadeSceneManager : MonoBehaviour
     public void CreateAcadeSceneInfoObject()
     {
         GameObject AcadeSceneInfoObject = Instantiate(InfoObject);
+        DontDestroyOnLoad(AcadeSceneInfoObject);
     }
 }

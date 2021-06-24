@@ -8,7 +8,7 @@ public class AcadeSceneInfo : MonoBehaviour
 
     public float MainSceneCameraX;
 
-    private bool isAchieve;
+    public bool isAchieve;
 
     public AcadeSceneInfo()
     {

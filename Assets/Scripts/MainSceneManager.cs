@@ -16,6 +16,7 @@ public class MainSceneManager : MonoBehaviour
     {
         if (isClickPauseButtonQuit)
             LoadingManager.FadeOut();
+        isClickPauseButtonQuit = false;
         if(AcadeSceneInfo != null)
         {
             FindObjectOfType<AcadeManager>().isAcadeOn = true;

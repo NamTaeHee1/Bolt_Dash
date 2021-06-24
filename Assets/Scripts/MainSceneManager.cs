@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainSceneManager : MonoBehaviour
 {
     private GameObject AcadeSceneInfo;
+    public bool isClickPauseButtonQuit = false;
 
     private void Awake()
     {

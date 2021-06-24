@@ -21438,6 +21438,7 @@ MonoBehaviour:
   ShowLevelText: {fileID: 1356510689}
   PlayerInputScrollSnap: {fileID: 1643781404}
   InfoObject: {fileID: 0}
+  PauseButtonAnimator: {fileID: 0}
 --- !u!4 &1399335116
 Transform:
   m_ObjectHideFlags: 0
@@ -24725,6 +24726,7 @@ GameObject:
   - component: {fileID: 1595532616}
   - component: {fileID: 1595532615}
   - component: {fileID: 1595532614}
+  - component: {fileID: 1595532617}
   m_Layer: 5
   m_Name: PauseButtonPanel
   m_TagString: Untagged
@@ -24810,6 +24812,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595532612}
   m_CullTransparentMesh: 1
+--- !u!114 &1595532617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595532612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd83a3b96d67b144b8c01e0aa065cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseButtonAnim: {fileID: 1642485999}
+  PauseButtonPanelAnim: {fileID: 1595532614}
+  PauseButtonMovement: {fileID: 1042890053}
+  PauseImage: {fileID: 1703555569}
+  PlayImage: {fileID: 2131724126}
+  PauseButtonPanelBlock: {fileID: 0}
+  InfoPanel: {fileID: 0}
+  ButtonImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PauseButtonPanel: {fileID: 0}
+  PauseButton: {fileID: 0}
+  PauseCountDownText: {fileID: 0}
 --- !u!1 &1596370990
 GameObject:
   m_ObjectHideFlags: 0
@@ -25831,7 +25860,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0028076172, y: 0.0010375977}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 123.51, y: 25.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1642485999
 Animator:
@@ -25865,7 +25894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

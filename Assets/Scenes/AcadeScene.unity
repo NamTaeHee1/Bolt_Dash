@@ -24909,8 +24909,8 @@ MonoBehaviour:
   ButtonImages:
   - {fileID: 917938266}
   - {fileID: 1875129616}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2102488176}
+  - {fileID: 1426028571}
   PauseButtonPanel: {fileID: 0}
   PauseButton: {fileID: 0}
   PauseCountDownText: {fileID: 0}

@@ -51,8 +51,8 @@ public class LoadingManager : MonoBehaviour
                     yield break;
                 }
             }
-            FadeOut();
         }
+        FadeOut();
     }
 
     IEnumerator LoadingTextAnimation()
@@ -75,7 +75,7 @@ public class LoadingManager : MonoBehaviour
         GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeIn");
     }
 
-    public static void FadeOut()
+    public static void FadeOut() //¾îµÓ°Ô
     {
         GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeOut");
     }

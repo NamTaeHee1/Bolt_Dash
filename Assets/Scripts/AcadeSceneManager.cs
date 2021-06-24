@@ -29,7 +29,6 @@ public class AcadeSceneManager : MonoBehaviour
     {
         LoadingManager.FadeIn();
         yield return new WaitForSeconds(1.0f);
-        PauseButtonAnimator.Play("GameStart");
         for(int i = 0; i < AcadeLevel.Length; i++)
         {
             ShowLevelText.text += AcadeLevel[i];

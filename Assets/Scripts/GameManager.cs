@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI BestScoreText;
 
     [SerializeField] GameObject[] GameObjects;
+    [SerializeField] GameObject InGameCanvas;
+    [SerializeField] GameObject ToMoveObjects;
 
     IEnumerator ScoreSettingCoroutine = null;
    
@@ -42,6 +44,11 @@ public class GameManager : MonoBehaviour
         }
         ScoreSettingCoroutine = BestScoreToScore();
         StartCoroutine(ScoreSettingCoroutine);
+    }
+
+    void MoveToInGameCanvas()
+    {
+        
     }
 
     IEnumerator BestScoreToScore()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainSceneManager : MonoBehaviour
 {
     private GameObject AcadeSceneInfo;
-    public static bool isClickPauseButtonQuit = false;
+    public static bool isClickPauseButtonQuit;
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class MainSceneManager : MonoBehaviour
     private void Start()
     {
         if (isClickPauseButtonQuit)
-            LoadingManager.FadeOut();
+            LoadingManager.FadeIn();
         isClickPauseButtonQuit = false;
         if(AcadeSceneInfo != null)
         {

@@ -19,8 +19,6 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] GameObject InfoObject;
 
-    [SerializeField] Animator PauseButtonAnimator;
-
     void Start()
     {
         StartCoroutine(StartAnimation());

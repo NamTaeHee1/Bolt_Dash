@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI BestScoreText;
 
     [SerializeField] GameObject[] MainGameObjects;
+    [SerializeField] GameObject[] HideObjects;
     [SerializeField] GameObject InGameCanvas;
     [SerializeField] GameObject ToMoveObjects;
 
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
     IEnumerator HideMenuObject()
     {
         yield return new WaitForSecondsRealtime(3.0f);
-        for (int i = 1; i < MainGameObjects.Length; i++)
-            MainGameObjects[i].SetActive(false);
+        for (int i = 1; i < HideObjects.Length; i++)
+            HideObjects[i].SetActive(false);
     }
 }

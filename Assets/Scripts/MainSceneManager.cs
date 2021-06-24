@@ -10,4 +10,9 @@ public class MainSceneManager : MonoBehaviour
     {
         AcadeSceneInfo = GameObject.Find("AcadeSceneInfo") != null ? GameObject.Find("AcadeSceneInfo").gameObject : null;
     }
+
+    private void Start()
+    {
+        
+    }
 }

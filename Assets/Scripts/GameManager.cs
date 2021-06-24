@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI BestScoreText;
 
-    [SerializeField] GameObject[] GameObjects;
+    [SerializeField] GameObject[] MainGameObjects;
     [SerializeField] GameObject InGameCanvas;
     [SerializeField] GameObject ToMoveObjects;
 
@@ -23,15 +23,15 @@ public class GameManager : MonoBehaviour
 
     public void ReStart()
     {
-        GameObjects[0].GetComponent<Animator>().Play("GameStart", -1, 0f);
+        MainGameObjects[0].GetComponent<Animator>().Play("GameStart", -1, 0f);
         SettingScoreText();
         FindObjectOfType<PauseButtonControl>().StopButtonClick("ReStart");
     }
 
     public void BeforeTheGameStartProduction()
     {
-        for (int i = 0; i < GameObjects.Length; i++)
-            GameObjects[i].GetComponent<Animator>().SetTrigger("GameStart");
+        for (int i = 0; i < MainGameObjects.Length; i++)
+            MainGameObjects[i].GetComponent<Animator>().SetTrigger("GameStart");
         FindObjectOfType<PauseButtonControl>().GameStart();
         MoveToInGameCanvas();
     }
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     IEnumerator HideMenuObject()
     {
         yield return new WaitForSecondsRealtime(3.0f);
-        for (int i = 1; i < GameObjects.Length; i++)
-            GameObjects[i].SetActive(false);
+        for (int i = 1; i < MainGameObjects.Length; i++)
+            MainGameObjects[i].SetActive(false);
     }
 }

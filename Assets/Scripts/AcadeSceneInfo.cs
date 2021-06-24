@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AcadeSceneInfo : MonoBehaviour
 {
-    private string AcadeLevel;
+    public string AcadeLevel;
 
-    private float MainSceneCameraX;
+    public float MainSceneCameraX;
 
     private bool isAchieve;
 

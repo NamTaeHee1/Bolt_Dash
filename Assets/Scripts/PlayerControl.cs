@@ -28,6 +28,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             Vector3 ArrowRotation = FindObjectOfType<PlayerArrowControl>().GetArrowAngle();
             float JumpPower = FindObjectOfType<PlayerArrowControl>().GetJumpPower();
             PlayerRigid.AddForce(ArrowRotation *  JumpPower, ForceMode2D.Impulse);
+            FindObjectOfType<PlateControl>().CheckAfterJump();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

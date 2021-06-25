@@ -8,14 +8,21 @@ using TMPro;
 public class SettingManager : MonoBehaviour
 {
     public Button[] Buttons;
+
     public GameObject SettingParents;
     public GameObject SettingObject;
     [SerializeField] GameObject SettingPanelImage, SettingPanelLeftLine, SettingPanelRightLine, PauseButtonBlock;
+
     [SerializeField] Animator SettingAnim;
+
     [SerializeField] Slider LightControlSlider, SoundEffectControlSlider, BGMSoundControlSlider;
+
     [SerializeField] TextMeshProUGUI LightControlSliderValueText, SoundEffectControlSliderValueText, BGMSoundControlSliderValueText;
+
     [SerializeField] private PostProcessVolume PostProcessVolume;
+
     Bloom Bloom;
+
     FloatParameter floatParameter;
 
     void Start()

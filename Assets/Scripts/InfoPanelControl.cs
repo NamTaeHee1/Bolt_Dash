@@ -7,7 +7,9 @@ using TMPro;
 public class InfoPanelControl : MonoBehaviour
 {
     [SerializeField] private Animator InfoPanelAnim;
+
     [SerializeField] private TextMeshProUGUI TitleText;
+
     [SerializeField] private GameObject PauseButtonBlock, PauseButtonPanelBlock;
 
     private void OnEnable()

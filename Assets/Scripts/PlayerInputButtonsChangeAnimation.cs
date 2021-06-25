@@ -10,8 +10,11 @@ namespace DanielLochner.Assets.SimpleScrollSnap
     public class PlayerInputButtonsChangeAnimation : MonoBehaviour
     {
         [SerializeField] SimpleScrollSnap InputScroll;
+
         [SerializeField] Image[] InputButtons;
+
         [SerializeField] GameObject BlockScrollRectButtonObject;
+
         private float AlphaThreshold = 0.1f;
 
         private void Start()

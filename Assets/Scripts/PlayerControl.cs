@@ -21,7 +21,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             PlayerSpriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        private void Start() => PlayerSpriteRenderer.color = StoreManager.CharacterColor.CircleColor;
+        private void Start()
+        {
+            PlayerSpriteRenderer.color = StoreManager.CharacterColor.CircleColor;
+        }
 
         public void PlayerJump()
         {

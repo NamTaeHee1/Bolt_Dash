@@ -30,22 +30,29 @@ public class PlateControl : MonoBehaviour
         PlateSpriteRenderer.color = new Color32(ObjectColor.CircleColor.r, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
     }
 
-    private void Update()
+    public void CheckAfterJump()
     {
-        CheckToStepOnJumpPlate();
+        StartCoroutine(CheckToStepOnJumpPlate());
     }
 
-    void CheckToStepOnJumpPlate()
+    IEnumerator CheckToStepOnJumpPlate()
     {
-        Debug.DrawRay(MiddleUpRayCast.transform.position, new Vector2(0, 5), Color.red, 3.0f);
-        if (Physics2D.Raycast(MiddleUpRayCast.transform.position, Vector2.up, 3.0f,  LayerMask.GetMask("Player")) ||
-            Physics2D.Raycast(LeftUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
-            Physics2D.Raycast(RightUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player"))) PlateCollider.SetActive(true);
-        if (Physics2D.Raycast(LeftRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player")) ||
-            Physics2D.Raycast(RightRayCast.transform.position, Vector2.right, 3.0f, LayerMask.GetMask("Player")) ||
-            Physics2D.Raycast(LeftDownRayCast.transform.position, Vector2.down, 3.0f, LayerMask.GetMask("Player")) ||
-            Physics2D.Raycast(MiddleDownRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player")) ||
-            Physics2D.Raycast(RightDownRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player"))) PlateCollider.SetActive(false);
+        float Timer = 0;
+        while (true)
+        {
+            Timer += Time.deltaTime;
+            if (Timer >= 3.0f)
+                yield return null;
+            Debug.DrawRay(MiddleUpRayCast.transform.position, new Vector2(0, 5), Color.red, 3.0f);
+            if (Physics2D.Raycast(MiddleUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
+                Physics2D.Raycast(LeftUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
+                Physics2D.Raycast(RightUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player"))) PlateCollider.SetActive(true);
+            if (Physics2D.Raycast(LeftRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player")) ||
+                Physics2D.Raycast(RightRayCast.transform.position, Vector2.right, 3.0f, LayerMask.GetMask("Player")) ||
+                Physics2D.Raycast(LeftDownRayCast.transform.position, Vector2.down, 3.0f, LayerMask.GetMask("Player")) ||
+                Physics2D.Raycast(MiddleDownRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player")) ||
+                Physics2D.Raycast(RightDownRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player"))) PlateCollider.SetActive(false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

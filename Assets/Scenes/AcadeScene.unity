@@ -22151,8 +22151,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StopButtonControl, Assembly-CSharp
+      - m_Target: {fileID: 1595532617}
+        m_TargetAssemblyTypeName: PauseButtonControl, Assembly-CSharp
         m_MethodName: StopButtonClick
         m_Mode: 1
         m_Arguments:
@@ -29211,7 +29211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1595532617}
         m_TargetAssemblyTypeName: PauseButtonControl, Assembly-CSharp
         m_MethodName: SettingButtonClick
         m_Mode: 1
@@ -32550,9 +32550,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1595532617}
         m_TargetAssemblyTypeName: PauseButtonControl, Assembly-CSharp
-        m_MethodName: MainSceneQuitButtonClick
+        m_MethodName: AcadeSceneQuitButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

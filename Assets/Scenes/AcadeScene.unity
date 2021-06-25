@@ -28266,7 +28266,7 @@ MonoBehaviour:
   InfoPanelAnim: {fileID: 1806277225}
   TitleText: {fileID: 1949445741}
   PauseButtonBlock: {fileID: 0}
-  PauseButtonPanelBlock: {fileID: 0}
+  PauseButtonPanelBlock: {fileID: 678623159}
 --- !u!95 &1806277225
 Animator:
   serializedVersion: 3

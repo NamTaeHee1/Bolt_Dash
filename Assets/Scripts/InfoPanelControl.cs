@@ -10,7 +10,7 @@ public class InfoPanelControl : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI TitleText;
 
-    [SerializeField] private GameObject PauseButtonBlock, PauseButtonPanelBlock;
+    [SerializeField] private GameObject PauseButtonPanelBlock;
 
     private void OnEnable()
     {

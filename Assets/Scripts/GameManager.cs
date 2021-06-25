@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < MainGameObjects.Length; i++)
             MainGameObjects[i].GetComponent<Animator>().SetTrigger("GameStart");
-        FindObjectOfType<PauseButtonControl>().GameStart();
+        FindObjectOfType<PauseButtonControl>().GameStart(-955.3f);
         MoveToInGameCanvas();
     }
 

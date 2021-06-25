@@ -21612,7 +21612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLevelText: {fileID: 1356510689}
   PlayerInputScrollSnap: {fileID: 1643781404}
-  InfoObject: {fileID: 0}
+  AcadeInfoObject: {fileID: 0}
+  PauseButton: {fileID: 1595532617}
 --- !u!4 &1399335116
 Transform:
   m_ObjectHideFlags: 0

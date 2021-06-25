@@ -17,7 +17,7 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] SimpleScrollSnap PlayerInputScrollSnap;
 
-    [SerializeField] GameObject InfoObject;
+    [SerializeField] GameObject AcadeInfoObject;
 
     [SerializeField] PauseButtonControl PauseButton;
 
@@ -31,6 +31,7 @@ public class AcadeSceneManager : MonoBehaviour
     {
         LoadingManager.FadeIn();
         yield return new WaitForSeconds(1.0f);
+        PauseButton.GameStart(-955.6f);
         for(int i = 0; i < AcadeLevel.Length; i++)
         {
             ShowLevelText.text += AcadeLevel[i];
@@ -51,7 +52,7 @@ public class AcadeSceneManager : MonoBehaviour
 
     public void CreateAcadeSceneInfoObject()
     {
-        GameObject AcadeSceneInfoObject = Instantiate(InfoObject);
+        GameObject AcadeSceneInfoObject = Instantiate(AcadeInfoObject);
         DontDestroyOnLoad(AcadeSceneInfoObject);
     }
 }

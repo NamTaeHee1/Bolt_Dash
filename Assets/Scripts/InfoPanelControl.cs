@@ -46,6 +46,6 @@ public class InfoPanelControl : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.4f);
         this.gameObject.SetActive(false);
-        PauseButtonBlock.SetActive(false);
+        PauseButtonPanelBlock.SetActive(false);
     }
 }

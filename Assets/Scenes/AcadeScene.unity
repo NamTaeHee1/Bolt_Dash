@@ -11065,7 +11065,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &742090067
 MonoBehaviour:
@@ -21641,7 +21641,7 @@ MonoBehaviour:
   ShowLevelText: {fileID: 1356510689}
   PlayerInputScrollSnap: {fileID: 1643781404}
   AcadeInfoObject: {fileID: 0}
-  PauseButton: {fileID: 0}
+  PauseButton: {fileID: 742090067}
 --- !u!4 &1399335116
 Transform:
   m_ObjectHideFlags: 0

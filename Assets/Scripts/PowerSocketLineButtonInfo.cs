@@ -7,9 +7,13 @@ using TMPro;
 public class PowerSocketLineButtonInfo : MonoBehaviour
 {
     private Image StageButtonImage;
+
     private SpriteRenderer StageSpriteRenderer;
+
     public TextMeshProUGUI StageButtonText;
+
     [SerializeField] private bool isAchieve = false;
+
     [SerializeField] private Color32 ChangeColor = new Color32(255, 255, 255, 0);
     [SerializeField] private Color32 BasicColor = new Color32(255, 255, 255, 255);
 

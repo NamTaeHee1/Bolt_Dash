@@ -5,7 +5,9 @@ using UnityEngine;
 public class PowerSocketEffect : MonoBehaviour
 {
     [SerializeField] private GameObject Prefab = null;
+
     [SerializeField] private float e_Force = 5.0f;
+
     int RandomX, RandomY;
 
     void Start() => Explosion();

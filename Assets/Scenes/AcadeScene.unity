@@ -10976,6 +10976,7 @@ GameObject:
   - component: {fileID: 742090066}
   - component: {fileID: 742090065}
   - component: {fileID: 742090064}
+  - component: {fileID: 742090067}
   m_Layer: 0
   m_Name: InGameCanvas
   m_TagString: Untagged
@@ -11066,6 +11067,33 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &742090067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742090062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd83a3b96d67b144b8c01e0aa065cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseButtonAnim: {fileID: 1642485999}
+  PauseButtonPanelAnim: {fileID: 1595532614}
+  PauseButtonMovement: {fileID: 1042890053}
+  PauseImage: {fileID: 1703555569}
+  PlayImage: {fileID: 2131724126}
+  PauseButtonPanelBlock: {fileID: 678623159}
+  InfoPanel: {fileID: 1806277222}
+  ButtonImages:
+  - {fileID: 917938266}
+  - {fileID: 1875129616}
+  - {fileID: 2102488176}
+  - {fileID: 1426028571}
+  PauseButtonPanel: {fileID: 1595532615}
+  PauseButton: {fileID: 1426028573}
+  PauseCountDownText: {fileID: 517551009}
 --- !u!1 &746343945
 GameObject:
   m_ObjectHideFlags: 0
@@ -13881,7 +13909,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1595532617}
+      - m_Target: {fileID: 742090067}
         m_TargetAssemblyTypeName: PauseButtonControl, Assembly-CSharp
         m_MethodName: ReStartButtonClick
         m_Mode: 1
@@ -21613,7 +21641,7 @@ MonoBehaviour:
   ShowLevelText: {fileID: 1356510689}
   PlayerInputScrollSnap: {fileID: 1643781404}
   AcadeInfoObject: {fileID: 0}
-  PauseButton: {fileID: 1595532617}
+  PauseButton: {fileID: 0}
 --- !u!4 &1399335116
 Transform:
   m_ObjectHideFlags: 0
@@ -22151,7 +22179,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1595532617}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseButtonControl, Assembly-CSharp
         m_MethodName: StopButtonClick
         m_Mode: 1
@@ -24902,7 +24930,6 @@ GameObject:
   - component: {fileID: 1595532616}
   - component: {fileID: 1595532615}
   - component: {fileID: 1595532614}
-  - component: {fileID: 1595532617}
   m_Layer: 5
   m_Name: PauseButtonPanel
   m_TagString: Untagged
@@ -24988,33 +25015,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595532612}
   m_CullTransparentMesh: 1
---- !u!114 &1595532617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595532612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd83a3b96d67b144b8c01e0aa065cd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseButtonAnim: {fileID: 1642485999}
-  PauseButtonPanelAnim: {fileID: 1595532614}
-  PauseButtonMovement: {fileID: 1042890053}
-  PauseImage: {fileID: 1703555569}
-  PlayImage: {fileID: 2131724126}
-  PauseButtonPanelBlock: {fileID: 678623159}
-  InfoPanel: {fileID: 1806277222}
-  ButtonImages:
-  - {fileID: 917938266}
-  - {fileID: 1875129616}
-  - {fileID: 2102488176}
-  - {fileID: 1426028571}
-  PauseButtonPanel: {fileID: 1595532615}
-  PauseButton: {fileID: 1426028573}
-  PauseCountDownText: {fileID: 517551009}
 --- !u!1 &1596370990
 GameObject:
   m_ObjectHideFlags: 0
@@ -29211,7 +29211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1595532617}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseButtonControl, Assembly-CSharp
         m_MethodName: SettingButtonClick
         m_Mode: 1
@@ -32550,7 +32550,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1595532617}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseButtonControl, Assembly-CSharp
         m_MethodName: AcadeSceneQuitButtonClick
         m_Mode: 1

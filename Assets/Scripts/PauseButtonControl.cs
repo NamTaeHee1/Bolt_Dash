@@ -98,7 +98,7 @@ public class PauseButtonControl : MonoBehaviour
         InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 다시시작 하시겠습니까?");
     }
 
-    public void MainSceneQuitButtonClick()
+    public void QuitButtonClick()
     {
         InfoPanel.SetActive(true);
         InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 종료하시겠습니까?");

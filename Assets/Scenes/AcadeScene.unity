@@ -21542,7 +21542,7 @@ MonoBehaviour:
   ShowLevelText: {fileID: 1356510689}
   PlayerInputScrollSnap: {fileID: 1643781404}
   AcadeInfoObject: {fileID: 0}
-  PauseButton: {fileID: 0}
+  PauseButton: {fileID: 38444430}
 --- !u!4 &1399335116
 Transform:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class PauseButtonControl : MonoBehaviour
 
     public void GameStart(float StartPauseButtonY, float AfterPauseButtonY)
     {
-        PauseButtonMovement.GetComponent<RectTransform>().anchoredPosition = new Vector2(PauseButtonMovement.GetComponent<RectTransform>().anchoredPosition.x, -953.7935f);
+        PauseButtonMovement.GetComponent<RectTransform>().anchoredPosition = new Vector2(PauseButtonMovement.GetComponent<RectTransform>().anchoredPosition.x, StartPauseButtonY);
         PauseButtonMovement.GetComponent<RectTransform>().DOAnchorPosY(AfterPauseButtonY, 1.0f).SetEase(Ease.OutBack);
         StartCoroutine(InteractableOnPauseButton());
     }

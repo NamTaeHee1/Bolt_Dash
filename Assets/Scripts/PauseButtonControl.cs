@@ -104,11 +104,6 @@ public class PauseButtonControl : MonoBehaviour
         InfoPanel.GetComponent<InfoPanelControl>().SendText("게임을 종료하시겠습니까?");
     }
 
-    public void AcadeSceneQuitButtonClick()
-    {
-        FindObjectOfType<AcadeSceneManager>().CreateAcadeSceneInfoObject();
-    }
-
     public void SettingButtonClick()
     {
         PauseButtonPanelBlock.SetActive(true);

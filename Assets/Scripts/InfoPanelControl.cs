@@ -38,7 +38,7 @@ public class InfoPanelControl : MonoBehaviour
         }
         else if(SceneManager.GetActiveScene().name == "AcadeScene")
         {
-
+            Debug.Log("Á¾·á");
         }
         ClickNo();
     }

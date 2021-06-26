@@ -29110,7 +29110,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 38444430}
         m_TargetAssemblyTypeName: PauseButtonControl, Assembly-CSharp
         m_MethodName: SettingButtonClick
         m_Mode: 1

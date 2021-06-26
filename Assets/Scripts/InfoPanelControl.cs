@@ -25,14 +25,17 @@ public class InfoPanelControl : MonoBehaviour
 
     public void ClickYes()
     {
-        if (TitleText.text.Contains("종료"))
+        if (SceneManager.GetActiveScene().name == "GameScene")
         {
-            MainSceneManager.isClickPauseButtonQuit = true;
-            LoadingManager.LoadScene("GameScene");
+            if (TitleText.text.Contains("종료"))
+            {
+                MainSceneManager.isClickPauseButtonQuit = true;
+                LoadingManager.LoadScene("GameScene");
+            }
+            else
+                FindObjectOfType<GameManager>().ReStart();
+            Time.timeScale = 1;
         }
-        else
-            FindObjectOfType<GameManager>().ReStart();
-        Time.timeScale = 1;
         ClickNo();
     }
 

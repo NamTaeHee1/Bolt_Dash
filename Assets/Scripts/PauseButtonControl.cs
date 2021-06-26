@@ -30,10 +30,10 @@ public class PauseButtonControl : MonoBehaviour
             ButtonImages[i].alphaHitTestMinimumThreshold = AlphaThreshold;
     }
 
-    public void GameStart(float PauseButtonY)
+    public void GameStart(float AfterPauseButtonY)
     {
         PauseButtonMovement.GetComponent<RectTransform>().anchoredPosition = new Vector2(PauseButtonMovement.GetComponent<RectTransform>().anchoredPosition.x, -953.7935f);
-        PauseButtonMovement.GetComponent<RectTransform>().DOAnchorPosY(PauseButtonY, 1.0f).SetEase(Ease.OutBack);
+        PauseButtonMovement.GetComponent<RectTransform>().DOAnchorPosY(AfterPauseButtonY, 1.0f).SetEase(Ease.OutBack);
         StartCoroutine(InteractableOnPauseButton());
     }
 

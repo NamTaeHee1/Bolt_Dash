@@ -10,10 +10,10 @@ public class AcadeSceneInfo : MonoBehaviour
 
     public bool isAchieve;
 
-    public AcadeSceneInfo()
+/*    public AcadeSceneInfo()
     {
         AcadeLevel = AcadeSceneManager.AcadeLevel;
         MainSceneCameraX = AcadeSceneManager.MainSceneCameraX;
         isAchieve = AcadeSceneManager.isAchieve;
-    }
+    }*/
 }

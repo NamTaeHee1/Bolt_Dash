@@ -31,7 +31,7 @@ public class AcadeSceneManager : MonoBehaviour
     {
         LoadingManager.FadeIn();
         yield return new WaitForSeconds(1.0f);
-        PauseButton.GameStart(1095.656f, 840f);
+        PauseButton.GameStart(1052f, 840f);
         for(int i = 0; i < AcadeLevel.Length; i++)
         {
             ShowLevelText.text += AcadeLevel[i];

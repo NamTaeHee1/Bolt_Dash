@@ -36,6 +36,10 @@ public class InfoPanelControl : MonoBehaviour
                 FindObjectOfType<GameManager>().ReStart();
             Time.timeScale = 1;
         }
+        else if(SceneManager.GetActiveScene().name == "AcadeScene")
+        {
+
+        }
         ClickNo();
     }
 

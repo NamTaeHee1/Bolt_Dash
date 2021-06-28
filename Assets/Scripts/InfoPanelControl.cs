@@ -49,6 +49,11 @@ public class InfoPanelControl : MonoBehaviour
         StartCoroutine(ExitInfo());
     }
 
+    public void TestClick()
+    {
+        LoadingManager.LoadScene("GameScene");
+    }
+
     IEnumerator ExitInfo()
     {
         yield return new WaitForSecondsRealtime(0.4f);

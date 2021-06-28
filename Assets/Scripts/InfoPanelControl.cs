@@ -49,11 +49,6 @@ public class InfoPanelControl : MonoBehaviour
         StartCoroutine(ExitInfo());
     }
 
-    public void TestClick()
-    {
-
-    }
-
     IEnumerator ExitInfo()
     {
         yield return new WaitForSecondsRealtime(0.4f);

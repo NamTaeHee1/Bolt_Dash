@@ -11,7 +11,6 @@ public class InfoPanelControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI TitleText;
 
     [SerializeField] private GameObject PauseButtonPanelBlock;
-    [SerializeField] private GameObject BackGroundCanvas;
 
     private void OnEnable()
     {

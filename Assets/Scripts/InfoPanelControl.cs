@@ -41,7 +41,7 @@ public class InfoPanelControl : MonoBehaviour
             //FindObjectOfType<AcadeSceneManager>().CreateAcadeSceneInfoObject();
 
 
-            LoadingManager.LoadScene("GameScene");
+            SceneManager.LoadScene("GameScene");
         }
         ClickNo();
     }

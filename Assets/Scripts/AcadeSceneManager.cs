@@ -27,6 +27,11 @@ public class AcadeSceneManager : MonoBehaviour
         SettingInputPanel();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+            LoadingManager.LoadScene("GameScene");
+    }
     IEnumerator StartAnimation()
     {
         LoadingManager.FadeIn();

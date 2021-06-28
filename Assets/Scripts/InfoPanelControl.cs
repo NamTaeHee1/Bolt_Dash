@@ -51,7 +51,7 @@ public class InfoPanelControl : MonoBehaviour
 
     public void TestClick()
     {
-        LoadingManager.LoadScene("GameScene");
+
     }
 
     IEnumerator ExitInfo()

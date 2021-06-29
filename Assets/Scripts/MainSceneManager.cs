@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainSceneManager : MonoBehaviour
 {
     private GameObject AcadeSceneInfo;
+    [SerializeField] private GameObject GameSceneReload;
 
     private void Awake()
     {
@@ -22,6 +23,6 @@ public class MainSceneManager : MonoBehaviour
 
     public void CreateMainSceneReloadObject()
     {
-
+        DontDestroyOnLoad(Instantiate(GameSceneReload));
     }
 }

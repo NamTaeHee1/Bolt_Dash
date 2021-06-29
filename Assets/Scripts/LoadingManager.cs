@@ -84,6 +84,7 @@ public class LoadingManager : MonoBehaviour
     public static void FadeIn() //¹à°Ô
     {
         GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeIn", -1, 0f);
+        Debug.Log("¹à°Ô");
     }
 
     public static void FadeOut() //¾îµÓ°Ô

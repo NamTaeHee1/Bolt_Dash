@@ -22,7 +22,6 @@ public class LoadingManager : MonoBehaviour
     public static void LoadScene(string SceneName)
     {
         Time.timeScale = 1f;
-
         FadeOut();
         NextScene = SceneName;
         SceneManager.LoadScene("LoadingScene");

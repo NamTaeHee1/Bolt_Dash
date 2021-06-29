@@ -65,9 +65,9 @@ public class LoadingManager : MonoBehaviour
 
     IEnumerator LoadingTextAnimation()
     {
-        if (!isSuccessLoadScene)
+        while (true)
         {
-            while (true)
+            if (!isSuccessLoadScene)
             {
                 for (int i = 0; i < LoadingText.Length; i++)
                 {

@@ -29,6 +29,7 @@ public class InfoPanelControl : MonoBehaviour
         {
             if (TitleText.text.Contains("Á¾·á"))
             {
+
                 LoadingManager.LoadScene("GameScene");
             }
             else

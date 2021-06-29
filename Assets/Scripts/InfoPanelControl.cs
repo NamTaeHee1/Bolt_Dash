@@ -34,7 +34,6 @@ public class InfoPanelControl : MonoBehaviour
             }
             else
                 FindObjectOfType<GameManager>().ReStart();
-            Time.timeScale = 1;
         }
         else if(SceneManager.GetActiveScene().name == "AcadeScene")
         {

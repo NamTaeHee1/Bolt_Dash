@@ -23,6 +23,7 @@ public class MainSceneManager : MonoBehaviour
 
     public void CreateMainSceneReloadObject()
     {
-        DontDestroyOnLoad(Instantiate(GameSceneReload));
+        GameObject GameSceneReloadObject = Instantiate(GameSceneReload);
+
     }
 }

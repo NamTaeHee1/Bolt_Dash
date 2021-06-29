@@ -11,6 +11,8 @@ public class LoadingManager : MonoBehaviour
 
     [SerializeField] Image ProgressBar;
 
+    [SerializeField] GameObject MainSceneReload;
+
     public static string NextScene = "";
 
     private void Start()
@@ -30,7 +32,7 @@ public class LoadingManager : MonoBehaviour
     IEnumerator LoadScene()
     {
         FadeIn();
-        yield return new WaitForSecondsRealtime(2.0f);
+        yield return new WaitForSecondsRealtime(1.0f);
         AsyncOperation Op = SceneManager.LoadSceneAsync(NextScene);
         Op.allowSceneActivation = false;
         float Timer = 0.0f;

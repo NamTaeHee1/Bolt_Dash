@@ -29,7 +29,6 @@ public class InfoPanelControl : MonoBehaviour
         {
             if (TitleText.text.Contains("Á¾·á"))
             {
-                MainSceneManager.isClickPauseButtonQuit = true;
                 LoadingManager.LoadScene("GameScene");
             }
             else

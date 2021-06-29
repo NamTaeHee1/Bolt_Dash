@@ -6,8 +6,6 @@ public class MainSceneManager : MonoBehaviour
 {
     private GameObject AcadeSceneInfo;
 
-    public static bool isClickPauseButtonQuit;
-
     private void Awake()
     {
         AcadeSceneInfo = GameObject.Find("AcadeSceneInfo") != null ? GameObject.Find("AcadeSceneInfo").gameObject : null;
@@ -15,9 +13,6 @@ public class MainSceneManager : MonoBehaviour
 
     private void Start()
     {
-        if (isClickPauseButtonQuit)
-            LoadingManager.FadeIn();
-        isClickPauseButtonQuit = false;
         if(AcadeSceneInfo != null)
         {
             FindObjectOfType<AcadeManager>().isAcadeOn = true;

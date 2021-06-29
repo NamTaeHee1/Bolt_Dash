@@ -49,13 +49,13 @@ public class LoadingManager : MonoBehaviour
                 ProgressBar.fillAmount = Mathf.Lerp(ProgressBar.fillAmount, 1f, Timer);
                 if(ProgressBar.fillAmount == 1.0f)
                 {
+                    FadeOut();
                     yield return new WaitForSecondsRealtime(2.0f);
                     Op.allowSceneActivation = true;
                     yield break;
                 }
             }
         }
-        FadeOut();
     }
 
     IEnumerator LoadingTextAnimation()

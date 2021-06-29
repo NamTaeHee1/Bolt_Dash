@@ -15,6 +15,8 @@ public class LoadingManager : MonoBehaviour
 
     public static string NextScene = "";
 
+    public bool isSuccessLoadScene = false;
+
     private void Start()
     {
         StartCoroutine(LoadingTextAnimation());
@@ -52,7 +54,7 @@ public class LoadingManager : MonoBehaviour
                 if(ProgressBar.fillAmount == 1.0f)
                 {
                     FadeOut();
-                    yield return new WaitForSecondsRealtime(2.0f);
+                    yield return new WaitForSecondsRealtime(0.5f);
                     Op.allowSceneActivation = true;
                     yield break;
                 }

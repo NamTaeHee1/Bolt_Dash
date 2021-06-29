@@ -53,6 +53,7 @@ public class LoadingManager : MonoBehaviour
                 ProgressBar.fillAmount = Mathf.Lerp(ProgressBar.fillAmount, 1f, Timer);
                 if(ProgressBar.fillAmount == 1.0f)
                 {
+                    isSuccessLoadScene = true;
                     FadeOut();
                     yield return new WaitForSecondsRealtime(0.5f);
                     Op.allowSceneActivation = true;

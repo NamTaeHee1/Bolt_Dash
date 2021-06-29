@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour
 {
-    private GameObject AcadeSceneInfo;
+    private GameObject AcadeSceneInfo = null;
     [SerializeField] private GameObject GameSceneReload;
 
     private void Awake()

@@ -25,12 +25,12 @@ public class InfoPanelControl : MonoBehaviour
 
     public void ClickYes()
     {
-        if (SceneManager.GetActiveScene().name == "GameScene")
+        if (SceneManager.GetActiveScene().name == "MainScene")
         {
             if (TitleText.text.Contains("Á¾·á"))
             {
                 FindObjectOfType<MainSceneManager>().CreateMainSceneReloadObject();
-                LoadingManager.LoadScene("GameScene");
+                LoadingManager.LoadScene("MainScene");
             }
             else
                 FindObjectOfType<GameManager>().ReStart();

@@ -19,4 +19,9 @@ public class MainSceneManager : MonoBehaviour
             Camera.main.transform.position = new Vector3(AcadeSceneInfo.GetComponent<AcadeSceneInfo>().MainSceneCameraX, 0, -10);
         }
     }
+
+    public void CreateMainSceneReloadObject()
+    {
+
+    }
 }

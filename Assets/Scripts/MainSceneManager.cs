@@ -14,6 +14,7 @@ public class MainSceneManager : MonoBehaviour
 
     private void Start()
     {
+
         if(AcadeSceneInfo != null)
         {
             FindObjectOfType<AcadeManager>().isAcadeOn = true;

@@ -86,7 +86,7 @@ public class PauseButtonControl : MonoBehaviour
         {
             PauseCountDownText.text = (3 - i).ToString();
             PauseButtonPanelAnim.Play("PauseOffCountDown", -1, 0f);
-            yield return new WaitForSecondsRealtime(1.0f);
+            yield return new WaitForSecondsRealtime(0.7f);
         }
         Time.timeScale = 1;
         PauseCountDownText.text = string.Empty;

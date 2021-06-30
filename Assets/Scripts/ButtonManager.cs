@@ -12,14 +12,17 @@ public class ButtonManager : MonoBehaviour
 
     public static void ButtonInteractableControl(Button[] buttons, bool boolean)
     {
-        Debug.Log(buttons.GetType());
         for (int i = 0; i < buttons.Length; i++)
             buttons[i].interactable = boolean;
-
     }
 
-    static void ButtonAlphaHitTestMinimumThresholdControl(Image button, bool boolean)
+    public static void ButtonAlphaHitTestMinimumThresholdControl(Image buttonImage)
     {
+        buttonImage.alphaHitTestMinimumThreshold = 0.1f;
+}
 
+    public static void ButtonAlphaHitTestMinimumThresholdControl(Image[] buttonImages)
+    {
+        
     }
 }

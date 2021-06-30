@@ -24,6 +24,7 @@ public class MainMenuButtonManager : MonoBehaviour
     public void ClickStore()
     {
         Debug.Log("Store!");
+        ButtonManager.ButtonInteractableControl(MainButtons, false);
         FindObjectOfType<DanielLochner.Assets.SimpleScrollSnap.StoreManager>().ClickStore();
         MainButtons[1].GetComponent<Animator>().SetTrigger("Pressed");
     }

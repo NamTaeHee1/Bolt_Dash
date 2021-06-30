@@ -89,7 +89,7 @@ public class PauseButtonControl : MonoBehaviour
         }
         Time.timeScale = 1;
         PauseCountDownText.text = "";
-        PauseButtonPanel.color = new Color(0, 0, 0, 0);
+        PauseButtonPanel.color = Color.clear;
     }
 
     public void ReStartButtonClick()

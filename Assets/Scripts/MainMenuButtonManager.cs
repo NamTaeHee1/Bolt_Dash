@@ -40,10 +40,9 @@ public class MainMenuButtonManager : MonoBehaviour
     public void ClickSetting()
     {
         Debug.Log("Setting!");
+        ButtonManager.ButtonInteractableControl(MainButtons, false);
         FindObjectOfType<SettingManager>().ClickSetting();
         MainButtons[3].GetComponent<Animator>().SetTrigger("Pressed");
     }
-
-
 
 }

@@ -15,9 +15,13 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         public bool isHaveThisColor = false;
         public bool isSelectThisColor = false;
+
         public int NecessaryElectronic;
+
         TextMeshProUGUI ColorText;
+
         SpriteRenderer CircleSpriteRenderer;
+
         GameObject Lock;
 
         private void Awake()

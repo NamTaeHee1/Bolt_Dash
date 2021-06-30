@@ -6,13 +6,11 @@ using UnityEngine.UI;
 public class MainMenuButtonManager : MonoBehaviour
 {
     [SerializeField] Button[] MainButtons;
-
-    private float AlphaThreshold = 0.1f;
+    [SerializeField] Image[] MainButtonImages;
 
     private void Start()
     {
-        for (int i = 0; i < MainButtons.Length; i++)
-            MainButtons[i].GetComponent<Image>().alphaHitTestMinimumThreshold = AlphaThreshold;
+        ButtonManager.ButtonAlphaHitTestMinimumThresholdControl(MainButtonImages);
     }
 
     public void ClickPlay()

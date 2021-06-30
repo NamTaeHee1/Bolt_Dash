@@ -10,7 +10,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
     public class ColorInfo : MonoBehaviour
     {
         public Color32 CircleColor;
+
         public string ColorNameText;
+
         public bool isHaveThisColor = false;
         public bool isSelectThisColor = false;
         public int NecessaryElectronic;

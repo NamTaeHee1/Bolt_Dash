@@ -63,7 +63,7 @@ public class PauseButtonControl : MonoBehaviour
             PauseOffCountDown = PauseCountDown();
             StartCoroutine(PauseOffCountDown);
         }
-        PauseButtonPanel.color = new Color(0, 0, 0, 0.3f);
+        PauseButtonPanel.color = new Color32(0, 0, 0, 80);
     }
 
     public void StopButtonClick(string content)

@@ -18,7 +18,7 @@ public class PauseButtonControl : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI PauseCountDownText;
 
-    bool isON = false;
+    private bool isON = false;
     bool isPause = false;
 
     private float AlphaThreshold = 0.1f;

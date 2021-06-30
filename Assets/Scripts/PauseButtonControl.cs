@@ -75,7 +75,7 @@ public class PauseButtonControl : MonoBehaviour
             PauseImage.SetActive(isON ? false : true);
             PlayImage.SetActive(isON ? true : false);
             PauseButtonAnim.SetBool("isON", isON);
-            PauseButtonPanel.color = new Color(0, 0, 0, 0);
+            PauseButtonPanel.color = Color.clear;
         }
     }
 

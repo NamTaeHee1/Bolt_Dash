@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonManager : MonoBehaviour
+namespace DanielLochner.Assets.SimpleScrollSnap
 {
+    public class ButtonManager : MonoBehaviour
+    {
 
+    }
 }

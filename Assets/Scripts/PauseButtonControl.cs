@@ -89,7 +89,7 @@ public class PauseButtonControl : MonoBehaviour
             yield return new WaitForSecondsRealtime(1.0f);
         }
         Time.timeScale = 1;
-        PauseCountDownText.text = "";
+        PauseCountDownText.text = string.Empty;
         PauseButtonPanel.color = Color.clear;
     }
 

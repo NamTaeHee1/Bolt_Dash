@@ -109,5 +109,4 @@ public class PauseButtonControl : MonoBehaviour
         PauseButtonPanelBlock.SetActive(true);
         FindObjectOfType<SettingManager>().ClickSetting();
     }
-
 }

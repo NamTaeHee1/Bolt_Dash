@@ -14,6 +14,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         static void ButtonInteractableControl(Button[] buttons, bool boolean)
         {
+            for (int i = 0; i < buttons.Length; i++)
+                buttons[i].interactable = boolean;
+        }
+
+        static void ButtonAlphaHitTestMinimumThresholdControl(Image button, bool boolean)
+        {
 
         }
     }

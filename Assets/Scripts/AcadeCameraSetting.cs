@@ -5,6 +5,7 @@ using UnityEngine;
 public class AcadeCameraSetting : MonoBehaviour
 {
     [SerializeField] private GameObject Target;
+
     private Transform CameraTransform;
 
     void Start() => CameraTransform = GetComponent<Transform>();

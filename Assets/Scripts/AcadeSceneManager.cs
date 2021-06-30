@@ -30,7 +30,7 @@ public class AcadeSceneManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
-            LoadingManager.LoadScene("GameScene");
+            LoadingManager.LoadScene("MainScene");
     }
     IEnumerator StartAnimation()
     {

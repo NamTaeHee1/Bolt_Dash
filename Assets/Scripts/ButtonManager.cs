@@ -23,6 +23,7 @@ public class ButtonManager : MonoBehaviour
 
     public static void ButtonAlphaHitTestMinimumThresholdControl(Image[] buttonImages)
     {
-        
+        for (int i = 0; i < buttonImages.Length; i++)
+            buttonImages[i].alphaHitTestMinimumThreshold = 0.1f;
     }
 }

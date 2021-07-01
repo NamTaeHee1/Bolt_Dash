@@ -35,10 +35,7 @@ public class SettingManager : MonoBehaviour
     {
         SettingParents.SetActive(true);
         SettingAnim.Play("SettingON", -1, 0f);
-        for (int i = 0; i < Buttons.Length; i++)
-        {
-            Buttons[i].interactable = false;
-        }
+        ButtonManager.ButtonInteractableControl(Buttons, false);
     }
 
     public void SettingClickBackButton()

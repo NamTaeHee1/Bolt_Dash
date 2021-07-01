@@ -25,6 +25,7 @@ public class InfoPanelControl : MonoBehaviour
 
     public void ClickYes()
     {
+        Time.timeScale = 1;
         if (SceneManager.GetActiveScene().name == "MainScene")
         {
             if (TitleText.text.Contains("Á¾·á"))

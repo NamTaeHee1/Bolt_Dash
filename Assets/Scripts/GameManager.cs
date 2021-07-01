@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void ReStart()
     {
-        MainGameObjects[0].GetComponent<Animator>().Play("GameStart", -1, 0f);
+        MainGameObjects[0].GetComponent<Animator>().Play("GameStart");
         SettingScoreText();
         FindObjectOfType<PauseButtonControl>().StopButtonClick("ReStart");
     }
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < MainGameObjects.Length; i++)
             MainGameObjects[i].GetComponent<Animator>().SetTrigger("GameStart");
-        FindObjectOfType<PauseButtonControl>().GameStart(-953.7935f, -955.3f);
+        FindObjectOfType<PauseButtonControl>().GameStart(-953.7935f, -955.55f);
         MoveToInGameCanvas();
     }
 

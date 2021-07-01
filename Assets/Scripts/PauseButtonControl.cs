@@ -46,7 +46,6 @@ public class PauseButtonControl : MonoBehaviour
 
     public void StopButtonClick()
     {
-        Debug.Log("Å¬¸¯");
         isON = !isON;
         isPause = !isPause;
         PauseImage.SetActive(isON ? false : true);

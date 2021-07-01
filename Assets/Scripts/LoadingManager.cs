@@ -19,8 +19,11 @@ public class LoadingManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(LoadingTextAnimation());
-        StartCoroutine(LoadScene());
+        if (SceneManager.GetActiveScene().name.Equals("LoadingScene"))
+        {
+            StartCoroutine(LoadingTextAnimation());
+            StartCoroutine(LoadScene());
+        }
     }
 
     public static void LoadScene(string SceneName)

@@ -48,8 +48,7 @@ public class SettingManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.55f);
         SettingParents.SetActive(false);
-        for (int i = 0; i < Buttons.Length; i++)
-            Buttons[i].interactable = true;
+        ButtonManager.ButtonInteractableControl(Buttons, true);
         PauseButtonBlock.SetActive(false);
     }
 

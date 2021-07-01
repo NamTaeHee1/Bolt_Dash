@@ -46,6 +46,7 @@ public class InfoPanelControl : MonoBehaviour
     {
         InfoPanelAnim.SetBool("isON", false);
         StartCoroutine(ExitInfo());
+        ColorUtility colorUtility;
     }
 
     IEnumerator ExitInfo()

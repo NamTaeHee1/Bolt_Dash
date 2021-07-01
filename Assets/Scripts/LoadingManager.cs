@@ -81,12 +81,7 @@ public class LoadingManager : MonoBehaviour
         }
     }
 
-    public static void FadeIn() //¹à°Ô
-    {
-
-    }
-
-    public static IEnumerator FadeInCoroutine()
+    public static IEnumerator FadeInCoroutine() // ¹à°Ô
     {
         yield return new WaitForSeconds(1.0f);
         GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeIn", -1, 0f);

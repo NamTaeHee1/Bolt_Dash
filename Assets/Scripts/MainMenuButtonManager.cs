@@ -18,7 +18,6 @@ public class MainMenuButtonManager : MonoBehaviour
         Debug.Log("Play!");
         ButtonManager.ButtonInteractableControl(MainButtons, false);
         FindObjectOfType<GameManager>().GameStart();
-        MainButtons[0].GetComponent<Animator>().SetTrigger("Pressed");
     }
 
     public void ClickStore()

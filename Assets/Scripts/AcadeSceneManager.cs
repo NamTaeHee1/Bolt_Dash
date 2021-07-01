@@ -34,7 +34,7 @@ public class AcadeSceneManager : MonoBehaviour
     }
     IEnumerator StartAnimation()
     {
-        LoadingManager.FadeIn();
+        StartCoroutine(LoadingManager.FadeInCoroutine());
         yield return new WaitForSeconds(1.0f);
         PauseButton.GameStart(1052f, 840f);
         for(int i = 0; i < AcadeLevel.Length; i++)

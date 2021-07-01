@@ -9,6 +9,7 @@ public class MainSceneManager : MonoBehaviour
 
     private void Awake()
     {
+        Destroy(GameObject.Find("[DOTween]"));
         AcadeSceneInfo = GameObject.Find("AcadeSceneInfo") != null ? GameObject.Find("AcadeSceneInfo").gameObject : null;
     }
 

@@ -54,7 +54,7 @@ public class LoadingManager : MonoBehaviour
                 if(ProgressBar.fillAmount == 1.0f)
                 {
                     isSuccessLoadScene = true;
-                    FadeOut();
+                    StartCoroutine(FadeOutCoroutine());
                     yield return new WaitForSecondsRealtime(0.5f);
                     Op.allowSceneActivation = true;
                     yield break;

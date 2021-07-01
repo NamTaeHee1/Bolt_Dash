@@ -32,7 +32,6 @@ public class MainMenuButtonManager : MonoBehaviour
         Debug.Log("Acade!");
         ButtonManager.ButtonInteractableControl(MainButtons, false);
         FindObjectOfType<AcadeManager>().ClickAcade();
-        MainButtons[2].GetComponent<Animator>().SetTrigger("Pressed");
     }
 
     public void ClickSetting()

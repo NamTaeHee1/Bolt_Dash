@@ -26,14 +26,13 @@ public class LoadingManager : MonoBehaviour
     public static void LoadScene(string SceneName)
     {
         Time.timeScale = 1f;
-        FadeOut();
         NextScene = SceneName;
         SceneManager.LoadScene("LoadingScene");
     }
 
     IEnumerator LoadScene()
     {
-        FadeIn();
+        StartCoroutine(FadeInCoroutine());
         yield return new WaitForSecondsRealtime(1.0f);
         AsyncOperation Op = SceneManager.LoadSceneAsync(NextScene);
         Op.allowSceneActivation = false;
@@ -79,6 +78,11 @@ public class LoadingManager : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             }
         }
+    }
+
+    void FadeIn()
+    {
+        StartCoroutine(FadeInCoroutine());
     }
 
     public static IEnumerator FadeInCoroutine() // ¹à°Ô

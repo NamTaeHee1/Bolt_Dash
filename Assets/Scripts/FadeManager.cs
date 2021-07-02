@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class FadeManager : MonoBehaviour
 {
-
+    private static FadeManager instance = null;
 }

@@ -21,6 +21,11 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] PauseButtonControl PauseButton;
 
+    private void Awake()
+    {
+        Debug.Log(string.Format("Level : {0}, MainCameraX : {1}", AcadeLevel, MainSceneCameraX));
+    }
+
     void Start()
     {
         StartCoroutine(StartAnimation());

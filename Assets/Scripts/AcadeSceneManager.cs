@@ -39,7 +39,7 @@ public class AcadeSceneManager : MonoBehaviour
     }
     IEnumerator StartAnimation()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         PauseButton.GameStart(1052f, 840f);
         for(int i = 0; i < AcadeLevel.Length; i++)
         {

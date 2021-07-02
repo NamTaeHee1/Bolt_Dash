@@ -17,14 +17,11 @@ public class LoadingManager : MonoBehaviour
 
     public bool isSuccessLoadScene = false;
 
-    private void Start()
-    {
-        if (SceneManager.GetActiveScene().name.Equals("LoadingScene"))
-        {
-            StartCoroutine(LoadingTextAnimation());
-            StartCoroutine(LoadScene());
-        }
-    }
+     private void Start()
+      {
+        StartCoroutine(LoadingTextAnimation());
+        StartCoroutine(LoadScene());
+      }
 
     public static void LoadScene(string SceneName)
     {

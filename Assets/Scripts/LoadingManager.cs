@@ -32,7 +32,6 @@ public class LoadingManager : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        FadeIn();
         yield return new WaitForSecondsRealtime(1.0f);
         AsyncOperation Op = SceneManager.LoadSceneAsync(NextScene);
         Op.allowSceneActivation = false;
@@ -53,7 +52,6 @@ public class LoadingManager : MonoBehaviour
                 if(ProgressBar.fillAmount == 1.0f)
                 {
                     isSuccessLoadScene = true;
-                    FadeOut();
                     yield return new WaitForSecondsRealtime(0.5f);
                     Op.allowSceneActivation = true;
                     yield break;

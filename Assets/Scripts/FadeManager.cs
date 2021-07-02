@@ -16,4 +16,14 @@ public class FadeManager : MonoBehaviour
         else
             Destroy(this.gameObject);
     }
+
+    public FadeManager Instance
+    {
+        get
+        {
+            if (instance == null)
+                return null;
+            return Instance;
+        }
+    }
 }

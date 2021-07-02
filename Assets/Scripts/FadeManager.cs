@@ -26,6 +26,4 @@ public class FadeManager : MonoBehaviour
             return Instance;
         }
     }
-
-
 }

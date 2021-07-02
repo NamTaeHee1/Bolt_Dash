@@ -17,7 +17,7 @@ public class LoadingManager : MonoBehaviour
 
     public bool isSuccessLoadScene = false;
 
-     public void LoadingSceneSetting()
+     private void Start()
       {
         StartCoroutine(LoadingTextAnimation());
         StartCoroutine(LoadScene());
@@ -80,19 +80,4 @@ public class LoadingManager : MonoBehaviour
         }
     }
 
-    void FadeIn() => StartCoroutine(FadeInCoroutine());
-
-    void FadeOut() => StartCoroutine(FadeOutCoroutine());
-
-    public static IEnumerator FadeInCoroutine() // ¹à°Ô
-    {
-        GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeIn", -1, 0f);
-        yield return new WaitForSecondsRealtime(0.5f);
-    }
-
-    public static IEnumerator FadeOutCoroutine() // ¾îµÓ°Ô
-    {
-        yield return new WaitForSecondsRealtime(0.5f);
-        GameObject.Find("BlackScreen").GetComponent<Animator>().Play("FadeOut", -1, 0f);
-    }
 }

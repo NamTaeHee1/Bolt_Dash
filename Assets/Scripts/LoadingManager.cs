@@ -83,10 +83,7 @@ public class LoadingManager : MonoBehaviour
         }
     }
 
-    void FadeIn()
-    {
-        StartCoroutine(FadeInCoroutine());
-    }
+    void FadeIn() => StartCoroutine(FadeInCoroutine());
 
     void FadeOut() => StartCoroutine(FadeOutCoroutine());
 

@@ -17,7 +17,7 @@ public class LoadingManager : MonoBehaviour
 
     public bool isSuccessLoadScene = false;
 
-     private void Start()
+     public void LoadingSceneSetting()
       {
         StartCoroutine(LoadingTextAnimation());
         StartCoroutine(LoadScene());

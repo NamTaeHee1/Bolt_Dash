@@ -16,7 +16,7 @@ public class MainSceneManager : MonoBehaviour
     private void Start()
     {
         if (GameObject.Find("GameSceneReload"))
-            StartCoroutine(LoadingManager.FadeInCoroutine());
+            Debug.Log("FadeIn");
         if(AcadeSceneInfo != null)
         {
             FindObjectOfType<AcadeManager>().isAcadeOn = true;

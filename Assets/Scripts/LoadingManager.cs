@@ -88,10 +88,7 @@ public class LoadingManager : MonoBehaviour
         StartCoroutine(FadeInCoroutine());
     }
 
-    void FadeOut()
-    {
-        StartCoroutine(FadeOutCoroutine());
-    }
+    void FadeOut() => StartCoroutine(FadeOutCoroutine());
 
     public static IEnumerator FadeInCoroutine() // ¹à°Ô
     {

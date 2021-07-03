@@ -19,16 +19,6 @@ public class FadeManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    public FadeManager Instance
-    {
-        get
-        {
-            if (instance == null)
-                return null;
-            return Instance;
-        }
-    }
-
     public void FadeIn()
     {
         BlackScreenAnimator.Play("FadeIn", -1, 0f);

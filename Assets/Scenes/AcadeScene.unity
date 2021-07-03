@@ -4489,7 +4489,6 @@ GameObject:
   m_Component:
   - component: {fileID: 365559438}
   - component: {fileID: 365559437}
-  - component: {fileID: 365559436}
   - component: {fileID: 365559434}
   m_Layer: 0
   m_Name: Plate
@@ -4519,27 +4518,6 @@ MonoBehaviour:
   MiddleDownRayCast: {fileID: 662462864}
   RightDownRayCast: {fileID: 1036068408}
   PlateCollider: {fileID: 340304910}
---- !u!50 &365559436
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365559433}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!212 &365559437
 SpriteRenderer:
   m_ObjectHideFlags: 0

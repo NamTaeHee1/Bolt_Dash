@@ -19,8 +19,6 @@ public class PlayerArrowControl : MonoBehaviour
 
     private void Update()
     {
-        if (ArrowTransform.eulerAngles.z <= 0)
-
         if (ArrowTransform.eulerAngles.z >= 45)
         {
             Debug.Log("fwefwe");

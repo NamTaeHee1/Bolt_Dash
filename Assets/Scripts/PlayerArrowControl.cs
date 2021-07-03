@@ -19,7 +19,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     private void Update()
     {
-
+        //if(ArrowTransform.localEulerAngles.z >= 60)
         ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
     }
 

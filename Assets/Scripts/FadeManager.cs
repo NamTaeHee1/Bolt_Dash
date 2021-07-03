@@ -22,6 +22,7 @@ public class FadeManager : MonoBehaviour
     public void FadeIn()
     {
         BlackScreenAnimator.Play("FadeIn", -1, 0f);
+        Debug.Log("¹à°Ô");
     }
 
     public void FadeOut()

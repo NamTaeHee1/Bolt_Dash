@@ -33,4 +33,9 @@ public class FadeManager : MonoBehaviour
     {
 
     }
+
+    public static void FadeOut()
+    {
+
+    }
 }

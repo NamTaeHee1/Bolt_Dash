@@ -28,7 +28,6 @@ public class LoadingManager : MonoBehaviour
         Time.timeScale = 1f;
         NextScene = SceneName;
         FadeManager.instance.FadeOut();
-        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("LoadingScene");
     }
 

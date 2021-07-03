@@ -21542,7 +21542,6 @@ MonoBehaviour:
   ShowLevelText: {fileID: 1356510689}
   PlayerInputScrollSnap: {fileID: 1643781404}
   AcadeInfoObject: {fileID: 6255211750189330085, guid: d31ba47747f7d6244b464a5517089dd6, type: 3}
-  BackGroundCanvas: {fileID: 38444425}
   PauseButton: {fileID: 38444430}
 --- !u!4 &1399335116
 Transform:

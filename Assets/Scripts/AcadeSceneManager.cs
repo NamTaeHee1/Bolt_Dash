@@ -23,7 +23,7 @@ public class AcadeSceneManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(string.Format("Level : {0}, MainCameraX : {1}", AcadeLevel, MainSceneCameraX));
+        FadeManager.instance.FadeIn();
     }
 
     void Start()

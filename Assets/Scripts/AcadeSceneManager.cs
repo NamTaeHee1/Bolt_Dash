@@ -32,11 +32,6 @@ public class AcadeSceneManager : MonoBehaviour
         SettingInputPanel();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-            LoadingManager.LoadScene("MainScene");
-    }
     IEnumerator StartAnimation()
     {
         yield return new WaitForSeconds(0.5f);

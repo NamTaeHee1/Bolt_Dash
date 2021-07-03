@@ -22,12 +22,6 @@ public class PlayerArrowControl : MonoBehaviour
         ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Equals("LeftRotationLimit") || collision.gameObject.name.Equals("RightRotationLimit"))
-            ArrowRotateSpeed *= -1;
-    }
-
     public Vector3 GetArrowAngle()
     {
         return ArrowTransform.transform.up;

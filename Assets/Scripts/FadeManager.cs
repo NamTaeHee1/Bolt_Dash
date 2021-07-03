@@ -6,6 +6,8 @@ public class FadeManager : MonoBehaviour
 {
     private static FadeManager instance = null;
 
+    [SerializeField] private Animator BlackScreenAnimator;
+
     private void Awake()
     {
         if (instance == null)

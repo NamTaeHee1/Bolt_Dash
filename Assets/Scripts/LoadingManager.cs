@@ -32,6 +32,8 @@ public class LoadingManager : MonoBehaviour
 
     IEnumerator LoadScene()
     {
+        FadeManager.instance.FadeIn();
+        yield return new WaitForSecondsRealtime(0.5f);
         AsyncOperation Op = SceneManager.LoadSceneAsync(NextScene);
         Op.allowSceneActivation = false;
         float Timer = 0.0f;

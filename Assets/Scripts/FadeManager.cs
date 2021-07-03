@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeManager : MonoBehaviour
 {
-    private static FadeManager instance = null;
+    public static FadeManager instance = null;
 
     [SerializeField] private Animator BlackScreenAnimator;
 

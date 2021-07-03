@@ -23,10 +23,12 @@ public class LoadingManager : MonoBehaviour
         StartCoroutine(LoadScene());
       }
 
-    public static void LoadScene(string SceneName)
+    public static IEnumerator LoadScene(string SceneName)
     {
         Time.timeScale = 1f;
         NextScene = SceneName;
+        FadeManager.instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("LoadingScene");
     }
 

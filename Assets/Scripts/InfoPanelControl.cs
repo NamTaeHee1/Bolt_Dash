@@ -31,7 +31,7 @@ public class InfoPanelControl : MonoBehaviour
             if (TitleText.text.Contains("Á¾·á"))
             {
                 FindObjectOfType<MainSceneManager>().CreateMainSceneReloadObject();
-                LoadingManager.LoadScene("MainScene");
+                StartCoroutine(LoadingManager.LoadScene("MainScene"));
             }
             else
                 FindObjectOfType<GameManager>().ReStart();

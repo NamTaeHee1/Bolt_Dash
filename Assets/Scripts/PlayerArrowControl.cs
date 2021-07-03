@@ -17,7 +17,10 @@ public class PlayerArrowControl : MonoBehaviour
         ArrowTransform.rotation = Quaternion.identity;
     }
 
-    private void Update() => ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
+    private void Update()
+    {
+        ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -19,6 +19,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     private void Update()
     {
+
         ArrowTransform.Rotate(Vector3.forward * ArrowRotateSpeed * Time.deltaTime);
     }
 

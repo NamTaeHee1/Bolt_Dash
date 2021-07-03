@@ -29,7 +29,7 @@ public class FadeManager : MonoBehaviour
         }
     }
 
-    IEnumerator FadeIn()
+    public static void FadeIn()
     {
 
     }

@@ -6,8 +6,6 @@ public class FadeManager : MonoBehaviour
 {
     private static FadeManager instance = null;
 
-    public Animator BlackScreenAnimator;
-
     private void Awake()
     {
         if (instance == null)
@@ -29,12 +27,12 @@ public class FadeManager : MonoBehaviour
         }
     }
 
-    public static void FadeIn()
+    public void FadeIn()
     {
         
     }
 
-    public static void FadeOut()
+    public void FadeOut()
     {
 
     }

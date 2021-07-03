@@ -23,7 +23,7 @@ public class LoadingManager : MonoBehaviour
         StartCoroutine(LoadScene());
       }
 
-    public static IEnumerator LoadScene(string SceneName)
+    public static void LoadScene(string SceneName)
     {
         Time.timeScale = 1f;
         NextScene = SceneName;

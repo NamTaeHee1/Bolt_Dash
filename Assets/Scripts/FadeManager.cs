@@ -6,7 +6,7 @@ public class FadeManager : MonoBehaviour
 {
     private static FadeManager instance = null;
 
-    [SerializeField] private GameObject BlackScreen;
+    public Animator BlackScreenAnimator;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class FadeManager : MonoBehaviour
 
     public static void FadeIn()
     {
-
+        
     }
 
     public static void FadeOut()

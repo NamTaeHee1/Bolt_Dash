@@ -148,6 +148,6 @@ public class AcadeManager : MonoBehaviour
         AcadeSceneManager.AcadeLevel = CurrentAcadeLevel;
         AcadeSceneManager.MainSceneCameraX = MainCameraX;
         yield return new WaitForSeconds(0.45f);
-        StartCoroutine(LoadingManager.LoadScene("AcadeScene"));
+        LoadingManager.LoadScene("AcadeScene");
     }
 }

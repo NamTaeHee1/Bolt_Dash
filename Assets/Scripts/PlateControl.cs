@@ -18,7 +18,7 @@ public class PlateControl : MonoBehaviour
     [SerializeField] GameObject LeftDownRayCast, MiddleDownRayCast, RightDownRayCast;
     [SerializeField] GameObject PlateCollider;
 
-    [SerializeField] Collider2D collider;
+    [SerializeField] Collider2D[] PlateColliders;
 
     private void Awake()
     {

@@ -4012,7 +4012,6 @@ GameObject:
   - component: {fileID: 340304913}
   - component: {fileID: 340304912}
   - component: {fileID: 340304914}
-  - component: {fileID: 340304915}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -4082,27 +4081,6 @@ CircleCollider2D:
   m_Offset: {x: 1.604817, y: 0.03130351}
   serializedVersion: 2
   m_Radius: 0.35919705
---- !u!114 &340304915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340304910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 359344bfa24aeea42a470e36481549d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftUpRayCast: {fileID: 909868145}
-  MiddleUpRayCast: {fileID: 1819523533}
-  RightUpRayCast: {fileID: 2135334251}
-  LeftRayCast: {fileID: 1609377119}
-  RightRayCast: {fileID: 1261056541}
-  LeftDownRayCast: {fileID: 367450820}
-  MiddleDownRayCast: {fileID: 662462864}
-  RightDownRayCast: {fileID: 1036068408}
-  PlateCollider: {fileID: 340304910}
 --- !u!1 &343072826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4511,6 +4489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 365559438}
   - component: {fileID: 365559437}
+  - component: {fileID: 365559434}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Untagged
@@ -4518,6 +4497,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &365559434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365559433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359344bfa24aeea42a470e36481549d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftUpRayCast: {fileID: 909868145}
+  MiddleUpRayCast: {fileID: 1819523533}
+  RightUpRayCast: {fileID: 2135334251}
+  LeftRayCast: {fileID: 1609377119}
+  RightRayCast: {fileID: 1261056541}
+  LeftDownRayCast: {fileID: 367450820}
+  MiddleDownRayCast: {fileID: 662462864}
+  RightDownRayCast: {fileID: 1036068408}
+  PlateCollider: {fileID: 340304910}
 --- !u!212 &365559437
 SpriteRenderer:
   m_ObjectHideFlags: 0

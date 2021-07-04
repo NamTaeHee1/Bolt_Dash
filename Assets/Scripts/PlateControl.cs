@@ -48,6 +48,11 @@ public class PlateControl : MonoBehaviour
             if (Physics2D.Raycast(MiddleUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
                 Physics2D.Raycast(LeftUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
                 Physics2D.Raycast(RightUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")))
+            {
+                for (int i = 0; i < PlateColliders.Length; i++)
+                    PlateColliders[i].isTrigger = false;
+            }
+
             if (Physics2D.Raycast(LeftRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player")) ||
                 Physics2D.Raycast(RightRayCast.transform.position, Vector2.right, 3.0f, LayerMask.GetMask("Player")) ||
                 Physics2D.Raycast(LeftDownRayCast.transform.position, Vector2.down, 3.0f, LayerMask.GetMask("Player")) ||

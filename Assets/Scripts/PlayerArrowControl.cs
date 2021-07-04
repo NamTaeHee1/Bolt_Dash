@@ -27,6 +27,12 @@ public class PlayerArrowControl : MonoBehaviour
         return ArrowTransform.transform.up;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("LeftRotationLimit") || collision.gameObject.name.Equals("RightRotationLimit"))
+            ArrowRotateSpeed *= -1;
+    }
+
     public float GetJumpPower()
     {
         return ChargeCount * 2.0f;

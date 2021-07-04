@@ -4439,7 +4439,6 @@ MonoBehaviour:
   LeftDownRayCast: {fileID: 367450820}
   MiddleDownRayCast: {fileID: 662462864}
   RightDownRayCast: {fileID: 1036068408}
-  PlateCollider: {fileID: 1399335114}
   PlateColliders:
   - {fileID: 365559439}
   - {fileID: 365559436}
@@ -4454,7 +4453,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.604817, y: 0.03130351}
@@ -4470,7 +4469,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.6048166, y: 0.03130351}
@@ -4560,7 +4559,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.012226031, y: 0.2}

@@ -15,7 +15,7 @@ public class MainSceneManager : MonoBehaviour
 
     private void Start()
     {
-        if (GameObject.Find("GameSceneReload"))
+        if (GameObject.Find("GameSceneReload(Clone)"))
             FadeManager.instance.FadeIn();
         if (AcadeSceneInfo != null)
         {

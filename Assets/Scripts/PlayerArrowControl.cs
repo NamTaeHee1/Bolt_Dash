@@ -19,7 +19,7 @@ public class PlayerArrowControl : MonoBehaviour
 
     private void Update()
     {
-        if (ArrowTransform.eulerAngles.z >= 45)
+        if (ArrowTransform.eulerAngles.z <= -45)
         {
             ArrowRotateSpeed *= -1;
         }

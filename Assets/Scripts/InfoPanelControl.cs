@@ -32,6 +32,7 @@ public class InfoPanelControl : MonoBehaviour
             {
                 FindObjectOfType<MainSceneManager>().CreateMainSceneReloadObject();
                 LoadingManager.LoadScene("MainScene");
+                FadeManager.instance.FadeOut();
             }
             else
                 FindObjectOfType<GameManager>().ReStart();

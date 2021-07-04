@@ -18,6 +18,8 @@ public class PlateControl : MonoBehaviour
     [SerializeField] GameObject LeftDownRayCast, MiddleDownRayCast, RightDownRayCast;
     [SerializeField] GameObject PlateCollider;
 
+    [SerializeField] ArrayList[] PlateColliders;
+
     private void Awake()
     {
         ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;

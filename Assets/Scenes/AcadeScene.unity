@@ -4439,7 +4439,7 @@ MonoBehaviour:
   LeftDownRayCast: {fileID: 367450820}
   MiddleDownRayCast: {fileID: 662462864}
   RightDownRayCast: {fileID: 1036068408}
-  PlateCollider: {fileID: 0}
+  PlateCollider: {fileID: 1399335114}
 --- !u!58 &365559435
 CircleCollider2D:
   m_ObjectHideFlags: 0

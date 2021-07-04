@@ -16,7 +16,6 @@ public class PlateControl : MonoBehaviour
     [SerializeField] GameObject LeftUpRayCast, MiddleUpRayCast, RightUpRayCast;
     [SerializeField] GameObject LeftRayCast, RightRayCast;
     [SerializeField] GameObject LeftDownRayCast, MiddleDownRayCast, RightDownRayCast;
-    [SerializeField] GameObject PlateCollider;
 
     [SerializeField] Collider2D[] PlateColliders;
 
@@ -48,12 +47,12 @@ public class PlateControl : MonoBehaviour
             Debug.DrawRay(MiddleUpRayCast.transform.position, new Vector2(0, 5), Color.red, 3.0f);
             if (Physics2D.Raycast(MiddleUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
                 Physics2D.Raycast(LeftUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")) ||
-                Physics2D.Raycast(RightUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player"))) PlateCollider.SetActive(true);
+                Physics2D.Raycast(RightUpRayCast.transform.position, Vector2.up, 3.0f, LayerMask.GetMask("Player")))
             if (Physics2D.Raycast(LeftRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player")) ||
                 Physics2D.Raycast(RightRayCast.transform.position, Vector2.right, 3.0f, LayerMask.GetMask("Player")) ||
                 Physics2D.Raycast(LeftDownRayCast.transform.position, Vector2.down, 3.0f, LayerMask.GetMask("Player")) ||
                 Physics2D.Raycast(MiddleDownRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player")) ||
-                Physics2D.Raycast(RightDownRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player"))) PlateCollider.SetActive(false);
+                Physics2D.Raycast(RightDownRayCast.transform.position, Vector2.left, 3.0f, LayerMask.GetMask("Player")))
         }
     }
 

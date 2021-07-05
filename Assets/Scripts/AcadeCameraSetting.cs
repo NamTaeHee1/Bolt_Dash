@@ -8,7 +8,10 @@ public class AcadeCameraSetting : MonoBehaviour
 
     private Transform CameraTransform;
 
-    void Start() => CameraTransform = GetComponent<Transform>();
+    void Start()
+    {
+        CameraTransform = GetComponent<Transform>();
+    }
 
     private void LateUpdate()
     {

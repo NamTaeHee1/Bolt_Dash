@@ -38,9 +38,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             Debug.Log(PlayerRigid.velocity);
             if (collision.gameObject.name.Equals("RightWall"))
-                PlayerRigid.AddForce(Vector2.left * 3.0f, ForceMode2D.Impulse);
+                PlayerRigid.AddForce(Vector2.left * 4.5f, ForceMode2D.Impulse);
             else if (collision.gameObject.name.Equals("LeftWall"))
-                PlayerRigid.AddForce(Vector2.right * 3.0f, ForceMode2D.Impulse);
+                PlayerRigid.AddForce(Vector2.right * 4.5f, ForceMode2D.Impulse);
         }
     }
 

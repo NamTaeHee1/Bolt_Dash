@@ -8,6 +8,8 @@ public class AcadeCameraSetting : MonoBehaviour
 
     private void LateUpdate()
     {
-        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, Target.transform.position, 0.5f);
+        Vector3 pos = Vector3.Lerp(Camera.main.transform.position, Target.transform.position, 0.1f);
+        pos.z = -10;
+        Camera.main.transform.position = pos;
     }
 }

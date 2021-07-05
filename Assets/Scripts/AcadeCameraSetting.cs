@@ -5,9 +5,10 @@ using UnityEngine;
 public class AcadeCameraSetting : MonoBehaviour
 {
     [SerializeField] private GameObject Target;
+    [SerializeField] private float Speed;
 
     private void LateUpdate()
     {
-        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, Target.transform.position, 3 * Time.deltaTime);
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, Target.transform.position, 0.5f);
     }
 }

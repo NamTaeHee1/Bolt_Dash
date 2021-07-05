@@ -15,6 +15,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
        private SpriteRenderer PlayerSpriteRenderer;
 
+        public bool isGround = true;
+
         private void Awake()
         {
             PlayerTransform = GetComponent<Transform>();
@@ -36,7 +38,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log(PlayerRigid.velocity);
+            if (collision.gameObject.CompareTag("Ground"))
+                isGround = true;
             if (collision.gameObject.name.Equals("RightWall"))
                 PlayerRigid.AddForce(Vector2.left * 4.5f, ForceMode2D.Impulse);
             else if (collision.gameObject.name.Equals("LeftWall"))

@@ -5,7 +5,6 @@ using UnityEngine;
 public class AcadeCameraSetting : MonoBehaviour
 {
     [SerializeField] private GameObject Target;
-    [SerializeField] private float Speed;
 
     private void LateUpdate()
     {

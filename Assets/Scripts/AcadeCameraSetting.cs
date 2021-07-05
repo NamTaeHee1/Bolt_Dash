@@ -6,4 +6,8 @@ public class AcadeCameraSetting : MonoBehaviour
 {
     [SerializeField] private GameObject Target;
 
+    private void Update()
+    {
+        
+    }
 }

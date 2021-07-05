@@ -48,41 +48,37 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             switch (ButtonName)
             {
                 case "JumpButton":
-                    if (FindObjectOfType<PlayerControl>().isGround)
-                    {
-                        isJumpEnd = false;
-                        float WaitTime = 0.35f;
-                        int YellowBoxCount = 0;
-                        PlayerArrowControl.ChargeCount = 0;
-                        for (float i = 0; i < JumpButtonTiles.Length; i++)
+                    isJumpEnd = false;
+                    float WaitTime = 0.35f;
+                    int YellowBoxCount = 0;
+                    PlayerArrowControl.ChargeCount = 0;
+                    for (float i = 0; i < JumpButtonTiles.Length; i++)
                         {
-                            if (i % 2 == 1)
-                                JumpYellowBoxParts[YellowBoxCount++].SetActive(true);
-                            JumpButtonTiles[(int)i].SetActive(true);
-                            PlayerArrowControl.ChargeCount++;
-                            WaitTime -= 0.025f;
-                            yield return new WaitForSeconds(WaitTime);
-                        }
-                        for (int i = 0; i < 3; i++)
+                        if (i % 2 == 1)
+                            JumpYellowBoxParts[YellowBoxCount++].SetActive(true);
+                        JumpButtonTiles[(int)i].SetActive(true);
+                        PlayerArrowControl.ChargeCount++;
+                        WaitTime -= 0.025f;
+                        yield return new WaitForSeconds(WaitTime);
+                         }
+                    for (int i = 0; i < 3; i++)
                         {
-                            for (int j = 0; j < JumpButtonTiles.Length; j++)
-                                JumpButtonTiles[j].SetActive(false);
-                            for (int j = 0; j < JumpYellowBoxParts.Length; j++)
-                                JumpYellowBoxParts[j].SetActive(false);
-                            yield return new WaitForSeconds(0.1f);
-                            for (int j = 0; j < JumpButtonTiles.Length; j++)
-                                JumpButtonTiles[j].SetActive(true);
-                            for (int j = 0; j < JumpYellowBoxParts.Length; j++)
-                                JumpYellowBoxParts[j].SetActive(true);
-                            yield return new WaitForSeconds(0.1f);
-                        }
                         for (int j = 0; j < JumpButtonTiles.Length; j++)
                             JumpButtonTiles[j].SetActive(false);
                         for (int j = 0; j < JumpYellowBoxParts.Length; j++)
                             JumpYellowBoxParts[j].SetActive(false);
-                        isJumpEnd = true;
-                        FindObjectOfType<PlayerControl>().isGround = false;
-                    }
+                        yield return new WaitForSeconds(0.1f);
+                        for (int j = 0; j < JumpButtonTiles.Length; j++)
+                            JumpButtonTiles[j].SetActive(true);
+                        for (int j = 0; j < JumpYellowBoxParts.Length; j++)
+                            JumpYellowBoxParts[j].SetActive(true);
+                        yield return new WaitForSeconds(0.1f);
+                         }
+                    for (int j = 0; j < JumpButtonTiles.Length; j++)
+                        JumpButtonTiles[j].SetActive(false);
+                    for (int j = 0; j < JumpYellowBoxParts.Length; j++)
+                        JumpYellowBoxParts[j].SetActive(false);
+                    isJumpEnd = true;
                     break;
 
                 case "RunUpButton":

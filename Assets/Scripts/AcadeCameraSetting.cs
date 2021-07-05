@@ -9,6 +9,5 @@ public class AcadeCameraSetting : MonoBehaviour
     private void LateUpdate()
     {
         Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, Target.transform.position, 3 * Time.deltaTime);
-
     }
 }

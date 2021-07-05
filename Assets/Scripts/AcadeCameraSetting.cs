@@ -6,15 +6,8 @@ public class AcadeCameraSetting : MonoBehaviour
 {
     [SerializeField] private GameObject Target;
 
-    private Transform CameraTransform;
-
-    void Start()
-    {
-        CameraTransform = GetComponent<Transform>();
-    }
-
     private void LateUpdate()
     {
-        
+        Vector3 CameraPosition = Camera.main.transform.position;
     }
 }

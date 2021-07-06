@@ -76,5 +76,8 @@ public class PlateControl : MonoBehaviour
           }
     }
 
-
+    IEnumerator ActiveGravity()
+    {
+        yield return null;
+    }
 }

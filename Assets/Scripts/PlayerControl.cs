@@ -14,7 +14,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
        private SpriteRenderer PlayerSpriteRenderer;
 
-        public bool isGround = true;
+        public bool isGround;
 
         private void Awake()
         {
@@ -23,6 +23,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         private void Start()
         {
+            isGround = true;
             PlayerSpriteRenderer.color = StoreManager.CharacterColor.CircleColor;
         }
 

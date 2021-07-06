@@ -6,7 +6,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 {
     public class PlayerControl : MonoBehaviour
     {
-       private Transform PlayerTransform;
         [SerializeField] private Transform ArrowTransform;
 
         [SerializeField] private Rigidbody2D PlayerRigid;
@@ -19,7 +18,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         private void Awake()
         {
-            PlayerTransform = GetComponent<Transform>();
             PlayerSpriteRenderer = GetComponent<SpriteRenderer>();
         }
 

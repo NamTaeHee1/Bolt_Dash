@@ -78,6 +78,12 @@ public class PlateControl : MonoBehaviour
     
     IEnumerator ActiveGravity()
     {
+        for(int i = 0; i < 10; i++)
+        {
+            PlateRigidbody.mass += 1;
+            yield return new WaitForSeconds(0.03f);
+        }
+        PlateRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
         yield return null;
     }
 }

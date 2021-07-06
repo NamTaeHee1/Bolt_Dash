@@ -4414,7 +4414,7 @@ GameObject:
   - component: {fileID: 365559435}
   m_Layer: 0
   m_Name: Plate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10373,6 +10373,7 @@ MonoBehaviour:
   ArrowTransform: {fileID: 1292139577}
   PlayerRigid: {fileID: 709410931}
   Arrow: {fileID: 1292139575}
+  isGround: 1
 --- !u!1 &709436802
 GameObject:
   m_ObjectHideFlags: 0
@@ -31876,7 +31877,7 @@ GameObject:
   - component: {fileID: 2077403073}
   - component: {fileID: 2077403074}
   m_Layer: 0
-  m_Name: Line (1)
+  m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33056,7 +33057,7 @@ GameObject:
   - component: {fileID: 4099369355269246312}
   m_Layer: 0
   m_Name: Line
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

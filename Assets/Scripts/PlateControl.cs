@@ -80,7 +80,7 @@ public class PlateControl : MonoBehaviour
     {
         for(int i = 0; i < 10; i++)
         {
-            PlateRigidbody.mass += 1;
+            PlateRigidbody.mass += 10;
             yield return new WaitForSeconds(0.03f);
         }
         PlateRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;

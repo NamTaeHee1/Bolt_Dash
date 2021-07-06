@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class PlateControl : MonoBehaviour
 {
-    Transform PlateTransform;
+    Rigidbody2D PlateRigidbody;
 
     SpriteRenderer PlateSpriteRenderer;
 
@@ -22,7 +22,7 @@ public class PlateControl : MonoBehaviour
     private void Awake()
     {
         ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;
-        PlateTransform = GetComponent<Transform>();
+        PlateRigidbody = GetComponent<Rigidbody2D>();
         PlateSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 

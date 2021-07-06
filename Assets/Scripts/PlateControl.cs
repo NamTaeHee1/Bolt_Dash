@@ -22,12 +22,12 @@ public class PlateControl : MonoBehaviour
     private void Awake()
     {
         ObjectColor = DanielLochner.Assets.SimpleScrollSnap.StoreManager.InGameObjectColor;
-        PlateRigidbody = GetComponent<Rigidbody2D>();
         PlateSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
+        PlateRigidbody = GetComponent<Rigidbody2D>();
         PlateSpriteRenderer.color = new Color32(ObjectColor.CircleColor.r, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
     }
 
@@ -83,7 +83,7 @@ public class PlateControl : MonoBehaviour
             PlateRigidbody.mass += 10;
             yield return new WaitForSeconds(0.03f);
         }
-        PlateRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+        this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
         yield return null;
     }
 }

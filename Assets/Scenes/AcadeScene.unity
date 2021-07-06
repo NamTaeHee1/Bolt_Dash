@@ -4408,11 +4408,11 @@ GameObject:
   m_Component:
   - component: {fileID: 365559438}
   - component: {fileID: 365559437}
+  - component: {fileID: 365559440}
   - component: {fileID: 365559434}
   - component: {fileID: 365559439}
   - component: {fileID: 365559436}
   - component: {fileID: 365559435}
-  - component: {fileID: 365559440}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Ground

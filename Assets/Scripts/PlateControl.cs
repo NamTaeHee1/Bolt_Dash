@@ -28,7 +28,7 @@ public class PlateControl : MonoBehaviour
     private void Start()
     {
         PlateRigidbody = GetComponent<Rigidbody2D>();
-        PlateSpriteRenderer.color = new Color32(ObjectColor.CircleColor.r, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
+        //PlateSpriteRenderer.color = new Color32(ObjectColor.CircleColor.r, ObjectColor.CircleColor.g, ObjectColor.CircleColor.b, 140);
     }
 
     public void CheckAfterJump()
@@ -69,7 +69,7 @@ public class PlateControl : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
           {
-            PlateSpriteRenderer.color = ObjectColor.CircleColor;
+            //PlateSpriteRenderer.color = ObjectColor.CircleColor;
             if (!isStepOn)
                 StartCoroutine(ActiveGravity());
             isStepOn = true;
@@ -83,7 +83,7 @@ public class PlateControl : MonoBehaviour
             PlateRigidbody.mass += 10;
             yield return new WaitForSeconds(0.03f);
         }
-        this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
+        PlateRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
         yield return null;
     }
 }

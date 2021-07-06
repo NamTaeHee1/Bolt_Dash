@@ -75,7 +75,7 @@ public class PlateControl : MonoBehaviour
             isStepOn = true;
           }
     }
-
+    
     IEnumerator ActiveGravity()
     {
         yield return null;

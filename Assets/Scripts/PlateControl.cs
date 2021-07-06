@@ -83,7 +83,7 @@ public class PlateControl : MonoBehaviour
             PlateRigidbody.mass += 10;
             yield return new WaitForSeconds(0.03f);
         }
-        PlateRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+        PlateRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return null;
     }
 }

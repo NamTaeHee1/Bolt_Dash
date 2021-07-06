@@ -75,4 +75,6 @@ public class PlateControl : MonoBehaviour
             isStepOn = true;
           }
     }
+
+
 }

@@ -34,7 +34,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             float JumpPower = FindObjectOfType<PlayerArrowControl>().GetJumpPower();
             PlayerRigid.AddForce(ArrowRotation *  JumpPower, ForceMode2D.Impulse);
             FindObjectOfType<PlateControl>().CheckAfterJump();
-            isGround = false;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

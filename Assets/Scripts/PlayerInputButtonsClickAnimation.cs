@@ -136,7 +136,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             if (isFallButtonDown && isFallEnd)
                 StartCoroutine(ButtonClick("FallButton"));
 
-            if (isJumpButtonDown && isJumpEnd)
+            if (isJumpButtonDown && isJumpEnd && FindObjectOfType<PlayerControl>().isGround)
                 StartCoroutine(ButtonClick("JumpButton"));
         }
 
@@ -161,6 +161,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             StopAllCoroutines();
             isJumpEnd = true;
             FindObjectOfType<PlayerControl>().PlayerJump();
+            FindObjectOfType<PlayerControl>().isGround = false;
             for (int i = 0; i < JumpButtonTiles.Length; i++)
                 JumpButtonTiles[i].SetActive(false);
             for (int i = 0; i < JumpYellowBoxParts.Length; i++)

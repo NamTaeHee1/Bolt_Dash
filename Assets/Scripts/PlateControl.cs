@@ -71,7 +71,7 @@ public class PlateControl : MonoBehaviour
           {
             PlateSpriteRenderer.color = ObjectColor.CircleColor;
             if (!isStepOn)
-                PlateTransform.DOLocalMoveY(PlateTransform.position.y + 0.05f, 0.3f).SetEase(Ease.InBack, 5);
+                StartCoroutine(ActiveGravity());
             isStepOn = true;
           }
     }

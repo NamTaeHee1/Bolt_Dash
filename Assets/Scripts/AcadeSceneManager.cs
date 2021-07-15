@@ -19,7 +19,7 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] private GameObject AcadeInfoObject;
 
-    [SerializeField] PauseButtonControl PauseButton;
+    [SerializeField] private PauseButtonControl PauseButton;
 
     private void Awake()
     {

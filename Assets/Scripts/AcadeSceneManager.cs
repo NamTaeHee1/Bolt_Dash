@@ -15,7 +15,7 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ShowLevelText;
 
-    [SerializeField] SimpleScrollSnap PlayerInputScrollSnap;
+    [SerializeField] private SimpleScrollSnap PlayerInputScrollSnap;
 
     [SerializeField] GameObject AcadeInfoObject;
 

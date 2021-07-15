@@ -26,7 +26,7 @@ public class AcadeSceneManager : MonoBehaviour
         FadeManager.instance.FadeIn();
     }
 
-    void Start()
+    private void Start()
     {
         StartCoroutine(StartAnimation());
         SettingInputPanel();

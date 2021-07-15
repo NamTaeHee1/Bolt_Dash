@@ -13,7 +13,7 @@ public class AcadeSceneManager : MonoBehaviour
 
     static public bool isAchieve;
 
-    [SerializeField] TextMeshProUGUI ShowLevelText;
+    [SerializeField] private TextMeshProUGUI ShowLevelText;
 
     [SerializeField] SimpleScrollSnap PlayerInputScrollSnap;
 

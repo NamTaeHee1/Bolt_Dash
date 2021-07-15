@@ -43,7 +43,7 @@ public class AcadeSceneManager : MonoBehaviour
         }
     }
 
-    void SettingInputPanel()
+    private void SettingInputPanel()
     {
         int AcadeLevelNumber = int.Parse(AcadeLevel[6].ToString());
         if (AcadeLevelNumber >= 7) // FALL

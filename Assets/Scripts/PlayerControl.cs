@@ -45,5 +45,4 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 PlayerRigid.AddForce(Vector2.right * 4.5f, ForceMode2D.Impulse);
         }
     }
-
 }

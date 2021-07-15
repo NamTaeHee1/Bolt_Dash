@@ -17,7 +17,7 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] private SimpleScrollSnap PlayerInputScrollSnap;
 
-    [SerializeField] GameObject AcadeInfoObject;
+    [SerializeField] private GameObject AcadeInfoObject;
 
     [SerializeField] PauseButtonControl PauseButton;
 

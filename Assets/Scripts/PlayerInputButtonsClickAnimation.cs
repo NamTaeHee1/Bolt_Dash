@@ -12,8 +12,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         [SerializeField] GameObject[] RunUpButtonTiles, RunDownButtonTiles;
         [SerializeField] GameObject[] FallButtonTiles;
 
-        bool isFallButtonDown = false, isFallEnd = true;
-        bool isJumpButtonDown = false, isJumpEnd = true;
+        bool isButtonDown = false, isButtonUp = true;
 
         IEnumerator RunUpCoroutine = null, RunDownCoroutine = null;
 
@@ -48,7 +47,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             switch (ButtonName)
             {
                 case "JumpButton":
-                    isJumpEnd = false;
+                    isButtonUp = false;
                     float WaitTime = 0.35f;
                     int YellowBoxCount = 0;
                     PlayerArrowControl.ChargeCount = 0;
@@ -78,7 +77,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                         JumpButtonTiles[j].SetActive(false);
                     for (int j = 0; j < JumpYellowBoxParts.Length; j++)
                         JumpYellowBoxParts[j].SetActive(false);
-                    isJumpEnd = true;
+                    isButtonUp = true;
                     break;
 
                 case "RunUpButton":
@@ -112,7 +111,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                     break;
 
                 case "FallButton":
-                    isFallEnd = false;
+                    isButtonUp = false;
                     for (int i = FallButtonTiles.Length - 4; i > -1; i--)
                     {
                         FallButtonTiles[i].SetActive(true);
@@ -126,40 +125,40 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                         FallButtonTiles[i + 3].SetActive(false);
                     }
                     yield return new WaitForSeconds(0.1f);
-                    isFallEnd = true;
+                    isButtonUp = true;
                     break;
             }
         }
 
         private void Update()
         {
-            if (isFallButtonDown && isFallEnd)
+            if (isButtonDown && isButtonUp)
                 StartCoroutine(ButtonClick("FallButton"));
 
-            if (isJumpButtonDown && isJumpEnd && FindObjectOfType<PlayerControl>().isGround)
+            if (isButtonDown && isButtonUp && FindObjectOfType<PlayerControl>().isGround)
                 StartCoroutine(ButtonClick("JumpButton"));
         }
 
         public void FallButtonDown()
         {
-            isFallButtonDown = true;
+            isButtonDown = true;
         }
 
         public void FallButtonUp()
         {
-            isFallButtonDown = false;
+            isButtonDown = false;
         }
 
         public void JumpButtonDown()
         {
-            isJumpButtonDown = true;
+            isButtonDown = true;
         }
 
         public void JumpButtonUp()
         {
-            isJumpButtonDown = false;
+            isButtonDown = false;
             StopAllCoroutines();
-            isJumpEnd = true;
+            isButtonUp = true;
             FindObjectOfType<PlayerControl>().PlayerJump();
             FindObjectOfType<PlayerControl>().isGround = false;
             for (int i = 0; i < JumpButtonTiles.Length; i++)

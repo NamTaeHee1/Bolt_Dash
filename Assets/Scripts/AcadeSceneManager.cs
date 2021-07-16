@@ -56,8 +56,10 @@ public class AcadeSceneManager : MonoBehaviour
         {// RUN
             PlayerInputScrollSnap.startingPanel = 1;
         }
-        else // JUMP
+        else
+        { // JUMP
             PlayerInputScrollSnap.startingPanel = 0;
+        }
 
 
     }

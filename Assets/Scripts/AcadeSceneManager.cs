@@ -52,8 +52,8 @@ public class AcadeSceneManager : MonoBehaviour
         {
             PlayerInputScrollSnap.startingPanel = 2;
         }
-        else if (AcadeLevelNumber >= 4)
-        {// RUN
+        else if (AcadeLevelNumber >= 4) // RUN
+        {
             PlayerInputScrollSnap.startingPanel = 1;
         }
         else

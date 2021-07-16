@@ -26,4 +26,10 @@ public class ButtonManager : MonoBehaviour
         for (int i = 0; i < buttonImages.Length; i++)
             buttonImages[i].alphaHitTestMinimumThreshold = 0.1f;
     }
+
+    public static void ButtonImageControl(Image[] buttonImage, bool boolean)
+    {
+        for (int i = 0; i < buttonImage.Length; i++)
+            buttonImage[i].enabled = boolean;
+    }
 }

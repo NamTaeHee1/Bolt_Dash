@@ -23,7 +23,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 InputButtons[i].alphaHitTestMinimumThreshold = AlphaThreshold;
         }
 
-        void Update()
+        private void Update()
          {
             if (Input.GetKeyDown(KeyCode.Space))
             {

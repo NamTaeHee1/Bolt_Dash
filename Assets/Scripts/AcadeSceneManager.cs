@@ -48,8 +48,10 @@ public class AcadeSceneManager : MonoBehaviour
     private void SettingInputPanel()
     {
         int AcadeLevelNumber = int.Parse(AcadeLevel[6].ToString());
-        if (AcadeLevelNumber >= 7) // FALL
+        if (AcadeLevelNumber >= 7)
+        {// FALL 
             PlayerInputScrollSnap.startingPanel = 2;
+        }
         else if (AcadeLevelNumber >= 4) // RUN
             PlayerInputScrollSnap.startingPanel = 1;
         else // JUMP

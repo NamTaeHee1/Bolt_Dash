@@ -19,6 +19,8 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] private GameObject AcadeInfoObject;
 
+    [SerializeField] private Image[] PlayerInputPanelImages;
+
     [SerializeField] private PauseButtonControl PauseButton;
 
     private void Awake()
@@ -52,6 +54,8 @@ public class AcadeSceneManager : MonoBehaviour
             PlayerInputScrollSnap.startingPanel = 1;
         else // JUMP
             PlayerInputScrollSnap.startingPanel = 0;
+
+
     }
 
     public void CreateAcadeSceneInfoObject()

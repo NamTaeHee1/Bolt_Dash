@@ -57,6 +57,7 @@ public class AcadeSceneManager : MonoBehaviour
         else if (AcadeLevelNumber >= 4) // RUN
         {
             PlayerInputScrollSnap.startingPanel = 1;
+            PlayerInputPanelImages[1].enabled = true;
         }
         else // JUMP
         {

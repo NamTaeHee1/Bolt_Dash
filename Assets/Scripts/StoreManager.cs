@@ -39,7 +39,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             ReloadElectronicMoney();
         }
 
-        void Start()
+        private void Start()
         {
             CharacterColor = CharacterColorContent.transform.GetChild(0).GetComponent<ColorInfo>();
             InGameObjectColor = InGameObjectColorContent.transform.GetChild(0).GetComponent<ColorInfo>();

@@ -13,6 +13,8 @@ public class AcadeSceneManager : MonoBehaviour
 
     static public bool isAchieve;
 
+    private PlayerInputButtonStateControl PlayerButtonControl;
+
     [SerializeField] private TextMeshProUGUI ShowLevelText;
 
     [SerializeField] private SimpleScrollSnap PlayerInputScrollSnap;
@@ -26,11 +28,24 @@ public class AcadeSceneManager : MonoBehaviour
     private void Awake()
     {
         FadeManager.instance.FadeIn();
+        PlayerButtonControl = FindObjectOfType<PlayerInputButtonStateControl>();
     }
 
     private void Start()
     {
         StartCoroutine(StartAnimation());
+        SettingInputPanel();
+    }
+
+    private void SettingInputPanel()
+    {
+        int Level = int.Parse(AcadeLevel);
+        if (Level >= 7)
+            PlayerButtonControl.SetButtonState(2);
+        else if (Level >= 4)
+            PlayerButtonControl.SetButtonState(1);
+        else
+            PlayerButtonControl.SetButtonState(0);
     }
 
     IEnumerator StartAnimation()

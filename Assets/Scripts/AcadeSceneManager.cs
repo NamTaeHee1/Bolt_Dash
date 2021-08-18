@@ -52,12 +52,13 @@ public class AcadeSceneManager : MonoBehaviour
         if (AcadeLevelNumber >= 7) // FALL 
         {
             PlayerInputScrollSnap.startingPanel = 2;
-            PlayerInputPanelImages[2].enabled = true;
+            PlayerInputPanelImages[3].enabled = true;
         }
         else if (AcadeLevelNumber >= 4) // RUN
         {
             PlayerInputScrollSnap.startingPanel = 1;
             PlayerInputPanelImages[1].enabled = true;
+            PlayerInputPanelImages[2].enabled = true;
         }
         else // JUMP
         {

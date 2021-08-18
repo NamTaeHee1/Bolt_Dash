@@ -19064,7 +19064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -4}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 62, y: 8.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1233495765
@@ -21536,6 +21536,7 @@ MonoBehaviour:
   ShowLevelText: {fileID: 1356510689}
   PlayerInputScrollSnap: {fileID: 1643781404}
   AcadeInfoObject: {fileID: 6255211750189330085, guid: d31ba47747f7d6244b464a5517089dd6, type: 3}
+  PlayerInputPanelImages: []
   PauseButton: {fileID: 38444430}
 --- !u!4 &1399335116
 Transform:
@@ -24849,8 +24850,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 196.24}
-  m_SizeDelta: {x: 58.92, y: 2.9}
+  m_AnchoredPosition: {x: 0, y: 0.017487}
+  m_SizeDelta: {x: 58.92, y: 31.889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1595532614
 Animator:

@@ -88,6 +88,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                     break;
 
                 case "RunUpButton":
+                    if (PlayerButtonState.GetButtonState() != InputButtonType.RUN)
+                        break;
                     for (int i = 3; i < RunUpButtonTiles.Length; i++)
                         {
                         RunUpButtonTiles[i].SetActive(true);
@@ -103,6 +105,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                     break;
 
                 case "RunDownButton":
+                    if (PlayerButtonState.GetButtonState() != InputButtonType.RUN)
+                        break;
                     for (int i = RunDownButtonTiles.Length - 4; i > -1; i--)
                         {
                         RunDownButtonTiles[i].SetActive(true);
@@ -139,10 +143,10 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         private void Update()
         {
-            if (isButtonDown && isButtonUp && PlayerInputButtonStateControl.ButtonState == PlayerInputButtonStateControl.ButtonType.)
+            if (isButtonDown && isButtonUp && PlayerButtonState.GetButtonState() == InputButtonType.FALL)
                 StartCoroutine(ButtonClick("FallButton"));
 
-            if (isButtonDown && isButtonUp)
+            if (isButtonDown && isButtonUp && PlayerButtonState.GetButtonState() == InputButtonType.JUMP)
                 StartCoroutine(ButtonClick("JumpButton"));
         }
 

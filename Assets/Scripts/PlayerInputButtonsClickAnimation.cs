@@ -135,7 +135,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             if (isButtonDown && isButtonUp)
                 StartCoroutine(ButtonClick("FallButton"));
 
-            if (isButtonDown && isButtonUp && FindObjectOfType<PlayerControl>().isGround)
+            if (isButtonDown && isButtonUp)
                 StartCoroutine(ButtonClick("JumpButton"));
         }
 

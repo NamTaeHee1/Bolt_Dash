@@ -31,7 +31,6 @@ public class AcadeSceneManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartAnimation());
-        SettingInputPanel();
     }
 
     IEnumerator StartAnimation()
@@ -42,28 +41,6 @@ public class AcadeSceneManager : MonoBehaviour
         {
             ShowLevelText.text += AcadeLevel[i];
             yield return new WaitForSeconds(0.3f);
-        }
-    }
-
-    private void SettingInputPanel()
-    {
-        int AcadeLevelNumber = int.Parse(AcadeLevel[6].ToString());
-        ButtonManager.ButtonImageControl(PlayerInputPanelImages, false);
-        if (AcadeLevelNumber >= 7) // FALL 
-        {
-            PlayerInputScrollSnap.startingPanel = 2;
-            PlayerInputPanelImages[3].enabled = true;
-        }
-        else if (AcadeLevelNumber >= 4) // RUN
-        {
-            PlayerInputScrollSnap.startingPanel = 1;
-            PlayerInputPanelImages[1].enabled = true;
-            PlayerInputPanelImages[2].enabled = true;
-        }
-        else // JUMP
-        {
-            PlayerInputScrollSnap.startingPanel = 0;
-            PlayerInputPanelImages[0].enabled = true;
         }
     }
 

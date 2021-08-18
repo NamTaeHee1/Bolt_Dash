@@ -12,4 +12,6 @@ public class PlayerInputButtonStateControl : MonoBehaviour
         ButtonState = (ButtonType)TypeIndex;
     }
 
+
+
 }

@@ -16,6 +16,13 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         IEnumerator RunUpCoroutine = null, RunDownCoroutine = null;
 
+        PlayerInputButtonStateControl PlayerButtonState;
+
+        private void Start()
+        {
+            PlayerButtonState = FindObjectOfType<PlayerInputButtonStateControl>();
+        }
+
         public void RunUpButtonClick()
         {
             if (RunUpCoroutine != null)
@@ -82,7 +89,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
                 case "RunUpButton":
                     for (int i = 3; i < RunUpButtonTiles.Length; i++)
-                    {
+                        {
                         RunUpButtonTiles[i].SetActive(true);
                         RunUpButtonTiles[i - 1].SetActive(true);
                         RunUpButtonTiles[i - 2].SetActive(true);
@@ -92,12 +99,12 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                         RunUpButtonTiles[i - 1].SetActive(false);
                         RunUpButtonTiles[i - 2].SetActive(false);
                         RunUpButtonTiles[i - 3].SetActive(false);
-                    }
+                        }
                     break;
 
                 case "RunDownButton":
                     for (int i = RunDownButtonTiles.Length - 4; i > -1; i--)
-                    {
+                        {
                         RunDownButtonTiles[i].SetActive(true);
                         RunDownButtonTiles[i + 1].SetActive(true);
                         RunDownButtonTiles[i + 2].SetActive(true);
@@ -107,7 +114,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                         RunDownButtonTiles[i + 1].SetActive(false);
                         RunDownButtonTiles[i + 2].SetActive(false);
                         RunDownButtonTiles[i + 3].SetActive(false);
-                    }
+                        }
                     break;
 
                 case "FallButton":
@@ -132,7 +139,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         private void Update()
         {
-            if (isButtonDown && isButtonUp)
+            if (isButtonDown && isButtonUp && PlayerInputButtonStateControl.ButtonState == PlayerInputButtonStateControl.ButtonType.)
                 StartCoroutine(ButtonClick("FallButton"));
 
             if (isButtonDown && isButtonUp)

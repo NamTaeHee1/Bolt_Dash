@@ -143,6 +143,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 
         private void Update()
         {
+            Debug.Log(PlayerButtonState.GetButtonState());
+
             if (isButtonDown && isButtonUp && PlayerButtonState.GetButtonState() == InputButtonType.FALL)
                 StartCoroutine(ButtonClick("FallButton"));
 

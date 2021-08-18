@@ -14,7 +14,7 @@ public class PlayerInputButtonStateControl : MonoBehaviour
 
     public void GetButtonState()
     {
-        return 
+
     }
 
 }

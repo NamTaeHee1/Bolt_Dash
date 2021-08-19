@@ -18023,8 +18023,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 312146418}
-          m_TargetAssemblyTypeName: PlayerInputButtonsClickAnimation, Assembly-CSharp
-          m_MethodName: JumpButtonDown
+          m_TargetAssemblyTypeName: DanielLochner.Assets.SimpleScrollSnap.PlayerInputButtonsClickAnimation,
+            Assembly-CSharp
+          m_MethodName: ButtonDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -21795,8 +21796,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 312146418}
-          m_TargetAssemblyTypeName: PlayerInputButtonsClickAnimation, Assembly-CSharp
-          m_MethodName: FallButtonDown
+          m_TargetAssemblyTypeName: DanielLochner.Assets.SimpleScrollSnap.PlayerInputButtonsClickAnimation,
+            Assembly-CSharp
+          m_MethodName: ButtonDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

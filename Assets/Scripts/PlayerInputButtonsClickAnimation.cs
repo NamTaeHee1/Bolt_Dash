@@ -145,14 +145,14 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         {
             Debug.Log(PlayerButtonState.GetButtonState());
 
-            if (isButtonDown && isButtonUp && PlayerButtonState.GetButtonState() == InputButtonType.FALL)
+            if (isButtonDown && PlayerButtonState.GetButtonState() == InputButtonType.FALL)
                 StartCoroutine(ButtonClick("FallButton"));
 
-            if (isButtonDown && isButtonUp && PlayerButtonState.GetButtonState() == InputButtonType.JUMP)
+            if (isButtonDown && PlayerButtonState.GetButtonState() == InputButtonType.JUMP)
                 StartCoroutine(ButtonClick("JumpButton"));
         }
 
-        public void FallButtonDown()
+        public void ButtonDown()
         {
             isButtonDown = true;
         }
@@ -160,11 +160,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         public void FallButtonUp()
         {
             isButtonDown = false;
-        }
-
-        public void JumpButtonDown()
-        {
-            isButtonDown = true;
         }
 
         public void JumpButtonUp()

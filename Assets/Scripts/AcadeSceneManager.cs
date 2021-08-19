@@ -41,11 +41,20 @@ public class AcadeSceneManager : MonoBehaviour
     {
         int Level = int.Parse(AcadeLevel);
         if (Level >= 7)
+        {
             PlayerButtonControl.SetButtonState(2);
+            PlayerInputScrollSnap.startingPanel = 2;
+        }
         else if (Level >= 4)
+        {
             PlayerButtonControl.SetButtonState(1);
+            PlayerInputScrollSnap.startingPanel = 1;
+        }
         else
+        {
             PlayerButtonControl.SetButtonState(0);
+            PlayerInputScrollSnap.startingPanel = 0;
+        }
     }
 
     IEnumerator StartAnimation()

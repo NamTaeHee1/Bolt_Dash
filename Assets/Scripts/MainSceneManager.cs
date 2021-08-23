@@ -6,6 +6,7 @@ public class MainSceneManager : MonoBehaviour
 {
     private GameObject AcadeSceneInfo = null;
     [SerializeField] private GameObject GameSceneReload;
+    [SerializeField] private GameObject GameCanvasObject;
 
     private void Awake()
     {

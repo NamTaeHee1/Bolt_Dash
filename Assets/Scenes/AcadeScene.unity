@@ -3630,8 +3630,8 @@ RectTransform:
   m_Children:
   - {fileID: 860857076}
   - {fileID: 891362060}
-  - {fileID: 1719471718}
   - {fileID: 1643781403}
+  - {fileID: 1719471718}
   - {fileID: 2058270276}
   m_Father: {fileID: 38444429}
   m_RootOrder: 2
@@ -14559,7 +14559,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d3292af8c6ae17844891ec17840ce22e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20957,7 +20957,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d3292af8c6ae17844891ec17840ce22e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -26041,7 +26041,7 @@ RectTransform:
   m_Children:
   - {fileID: 1847382067}
   m_Father: {fileID: 312146417}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27099,7 +27099,7 @@ RectTransform:
   m_LocalScale: {x: 5.709375, y: 3.0307968, z: 1}
   m_Children: []
   m_Father: {fileID: 312146417}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

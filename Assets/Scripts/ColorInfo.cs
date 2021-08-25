@@ -9,14 +9,14 @@ namespace DanielLochner.Assets.SimpleScrollSnap
 {
     public class ColorInfo : MonoBehaviour
     {
-        public Color32 CircleColor;
+        public Color32 CircleColor; // 색깔 RGB
 
-        public string ColorNameText;
+        public string ColorNameText; // 색깔의 이름 ex) Yellow, Red, Green
 
-        public bool isHaveThisColor = false;
-        public bool isSelectThisColor = false;
+        public bool isHaveThisColor = false; // 이 색깔을 보유하고 있는가
+        public bool isSelectThisColor = false; // 이 색깔을 선택했는가
 
-        public int NecessaryElectronic;
+        public int NecessaryElectronic; // 필요 값
 
         TextMeshProUGUI ColorText;
 

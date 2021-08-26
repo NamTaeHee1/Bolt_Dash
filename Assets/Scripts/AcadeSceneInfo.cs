@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcadeSceneInfo : MonoBehaviour
+[CreateAssetMenu]
+public class AcadeSceneInfo : ScriptableObject
 {
     public string AcadeLevel;
 
     public float MainSceneCameraX;
 
     public bool isAchieve;
-
-/*    public AcadeSceneInfo()
-    {
-        AcadeLevel = AcadeSceneManager.AcadeLevel;
-        MainSceneCameraX = AcadeSceneManager.MainSceneCameraX;
-        isAchieve = AcadeSceneManager.isAchieve;
-    }*/
 }

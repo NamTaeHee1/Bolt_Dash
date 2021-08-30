@@ -19,7 +19,7 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] private SimpleScrollSnap PlayerInputScrollSnap;
 
-    [SerializeField] private GameObject AcadeInfoObject;
+    [SerializeField] private AcadeSceneInfo AcadeSceneInfo;
 
     [SerializeField] private Image[] PlayerInputPanelImages;
 
@@ -34,10 +34,10 @@ public class AcadeSceneManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartAnimation());
-        SettingInputPanel();
+        SettingAcadeScene();
     }
 
-    private void SettingInputPanel()
+    private void SettingAcadeScene()
     {
         int Level = int.Parse(AcadeLevel);
         if (Level >= 7)
@@ -68,9 +68,8 @@ public class AcadeSceneManager : MonoBehaviour
         }
     }
 
-    public void CreateAcadeSceneInfoObject()
+    public void ChangeAcadeSceneData()
     {
-        GameObject AcadeSceneInfoObject = Instantiate(AcadeInfoObject);
-        DontDestroyOnLoad(AcadeSceneInfoObject);
+        AcadeSceneInfo.isAchieve = isAchieve;
     }
 }

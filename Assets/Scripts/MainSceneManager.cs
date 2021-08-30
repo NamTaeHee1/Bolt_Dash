@@ -17,7 +17,7 @@ public class MainSceneManager : MonoBehaviour
     private void Start()
     {
         FadeManager.instance.FadeIn();
-        if (AcadeSceneInfo.AcadeLevel.Equals(""))
+        if (!AcadeSceneInfo.AcadeLevel.Equals(""))
         {
             FindObjectOfType<AcadeManager>().isAcadeOn = true;
             Camera.main.transform.position = new Vector3(AcadeSceneInfo.MainSceneCameraX, 0, -10);

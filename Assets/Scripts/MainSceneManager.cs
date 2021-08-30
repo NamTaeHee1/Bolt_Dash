@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour
 {
-    private GameObject AcadeSceneInfo = null;
+    [SerializeField] AcadeSceneInfo AcadeSceneInfo;
+
     [SerializeField] private GameObject GameSceneReload;
     [SerializeField] private GameObject GameCanvasObject;
 
     private void Awake()
     {
         Destroy(GameObject.Find("[DOTween]"));
-        AcadeSceneInfo = GameObject.Find("AcadeSceneInfo") != null ? GameObject.Find("AcadeSceneInfo").gameObject : null;
     }
 
     private void Start()
     {
         FadeManager.instance.FadeIn();
-        if (AcadeSceneInfo != null)
+        if (AcadeSceneInfo.AcadeLevel.Equals(""))
         {
             FindObjectOfType<AcadeManager>().isAcadeOn = true;
-            Camera.main.transform.position = new Vector3(AcadeSceneInfo.GetComponent<AcadeSceneInfo>().MainSceneCameraX, 0, -10);
+            Camera.main.transform.position = new Vector3(AcadeSceneInfo.MainSceneCameraX, 0, -10);
         }
     }
 

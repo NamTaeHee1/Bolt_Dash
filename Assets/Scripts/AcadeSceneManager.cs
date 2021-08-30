@@ -71,5 +71,7 @@ public class AcadeSceneManager : MonoBehaviour
     public void ChangeAcadeSceneData()
     {
         AcadeSceneInfo.isAchieve = isAchieve;
+        AcadeSceneInfo.MainSceneCameraX = MainSceneCameraX;
+        AcadeSceneInfo.AcadeLevel = AcadeLevel;
     }
 }

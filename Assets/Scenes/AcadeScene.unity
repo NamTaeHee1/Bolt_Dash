@@ -21549,7 +21549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLevelText: {fileID: 1356510689}
   PlayerInputScrollSnap: {fileID: 1643781404}
-  AcadeInfoObject: {fileID: 6255211750189330085, guid: d31ba47747f7d6244b464a5517089dd6, type: 3}
+  AcadeSceneInfo: {fileID: 11400000, guid: f6576558524f90d48a8d6b4f232c2bea, type: 2}
   PlayerInputPanelImages:
   - {fileID: 1157327763}
   - {fileID: 1198045402}

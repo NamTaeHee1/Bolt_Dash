@@ -68,7 +68,7 @@ public class AcadeSceneManager : MonoBehaviour
         }
     }
 
-    public void ChangeAcadeSceneData()
+    public void SetAcadeSceneData()
     {
         AcadeSceneInfo.isAchieve = isAchieve;
         AcadeSceneInfo.MainSceneCameraX = MainSceneCameraX;

@@ -157,14 +157,19 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             isButtonDown = true;
         }
 
-        public void FallButtonUp()
+        private void ButtonUp()
         {
             isButtonDown = false;
         }
 
+        public void FallButtonUp()
+        {
+            ButtonUp();
+        }
+
         public void JumpButtonUp()
         {
-            isButtonDown = false;
+            ButtonUp();
             StopAllCoroutines();
             isButtonUp = true;
             FindObjectOfType<PlayerControl>().PlayerJump();

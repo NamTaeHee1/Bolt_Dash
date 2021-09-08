@@ -18,13 +18,13 @@ public class CameraViewCanvasControl : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    private void Start()
+     private void SetCanvasGameObjectParent()
     {
-        
+
     }
 
-    private void Update()
+    private void DontDestroyCameraCanvas()
     {
-        
+
     }
 }

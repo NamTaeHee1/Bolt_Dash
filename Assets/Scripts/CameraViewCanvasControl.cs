@@ -18,7 +18,7 @@ public class CameraViewCanvasControl : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-     private void SetCanvasGameObjectParent()
+     private void SetCameraCanvasParent()
     {
 
     }

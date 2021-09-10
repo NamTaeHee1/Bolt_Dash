@@ -7,6 +7,8 @@ public class CameraViewCanvasControl : MonoBehaviour
 {
     public static CameraViewCanvasControl Instance = null;
 
+    [SerializeField] private GameObject CanvasObject;
+
     private void Awake()
     {
         if (Instance == null)
@@ -20,7 +22,7 @@ public class CameraViewCanvasControl : MonoBehaviour
 
      public void SetCameraCanvasParent()
     {
-        this.gameObject.transform.parent = GameObject.Find("Main Camera").gameObject.transform;
+        CanvasObject.transform.parent = GameObject.Find("Main Camera").gameObject.transform;
     }
 
     public void DontDestroyCameraCanvas()

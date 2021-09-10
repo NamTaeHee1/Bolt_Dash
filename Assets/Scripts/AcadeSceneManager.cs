@@ -21,8 +21,6 @@ public class AcadeSceneManager : MonoBehaviour
 
     [SerializeField] private AcadeSceneInfo AcadeSceneInfo;
 
-    [SerializeField] private Image[] PlayerInputPanelImages;
-
     [SerializeField] private PauseButtonControl PauseButton;
 
     private void Awake()

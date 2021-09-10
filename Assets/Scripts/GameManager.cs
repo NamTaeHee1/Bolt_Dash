@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < MainGameObjects.Length; i++)
             MainGameObjects[i].GetComponent<Animator>().SetTrigger("GameStart");
         FindObjectOfType<PauseButtonControl>().GameStart(-953.7935f, -955.55f);
-        MoveToInGameCanvas();
     }
 
     void SettingScoreText()
@@ -46,11 +45,6 @@ public class GameManager : MonoBehaviour
         }
         ScoreSettingCoroutine = BestScoreToScore();
         StartCoroutine(ScoreSettingCoroutine);
-    }
-
-    void MoveToInGameCanvas()
-    {
-        ToMoveObjects.transform.parent = InGameCanvas.transform;
     }
 
     IEnumerator BestScoreToScore()

@@ -18,13 +18,13 @@ public class CameraViewCanvasControl : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-     private void SetCameraCanvasParent()
+     public void SetCameraCanvasParent()
     {
-
+        this.gameObject.transform.parent = GameObject.Find("Main Camera").gameObject.transform;
     }
 
-    private void DontDestroyCameraCanvas()
+    public void DontDestroyCameraCanvas()
     {
-
+        DontDestroyOnLoad(this.gameObject);
     }
 }
